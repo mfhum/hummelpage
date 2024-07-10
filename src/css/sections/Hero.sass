@@ -1,0 +1,45 @@
+.circle
+  position: absolute
+  top: 20dvh
+  right: 20dvw
+  background: radial-gradient($primary-white 30%, blue)
+  width: 250px
+  height: 250px
+  filter: blur(50px)
+  animation: circle 15s infinite
+
+.content
+  margin: 0 $margin4
+  height: 100dvh
+
+.Name
+  height: calc(60dvh - #{$margin3})
+  display: flex
+  // justify-content: flex-end
+  align-items: flex-end
+  padding-bottom: $margin3
+
+.Description
+  height: 40dvh
+
+  @keyframes circle
+    0%
+      transform: scale(1)
+      position: absolute
+      top: 20dvh
+      right: 20dvw
+      border-radius: 0px
+
+    50%
+      transform: scale(1.2)
+      position: absolute
+      top: 25dvh
+      right: 25dvw
+      border-radius: 1000px
+
+    100%
+      transform: scale(1)
+      position: absolute
+      top: 20dvh
+      right: 20dvw
+      border-radius: 0px

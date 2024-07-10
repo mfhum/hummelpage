@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap')
+$body_font: "Outfit", sans-serif
+
+@font-face
+  font-family: "Outfit"
+  font-optical-sizing: auto
+  font-weight: 400
+  font-style: normal
+@font-face
+  font-family: "Outfit"
+  font-optical-sizing: auto
+  font-weight: 500
+  font-style: normal
+
+@font-face
+  font-family: "Outfit"
+  font-optical-sizing: auto
+  font-weight: 600
+  font-style: normal
+
+@font-face
+  ffont-family: "Outfit"
+  font-optical-sizing: auto
+  font-weight: 700
+  font-style: normal
+
+*
+  font-family: $body_font
+  font-weight: 400
+  scroll-behavior: smooth
+
+body
+  background-color: $primary-white
+  overflow-x: hidden !important
+  user-select: none
+img
+  pointer-events: none
+h1
+  font-size: px-to-rem(112px)
+  line-height: px-to-rem(120px)
+  font-family: $body_font
+  font-weight: 700
+h2
+  font-size: px-to-rem(40px)
+  line-height: px-to-rem(46px)
+  font-family: $body_font
+  font-weight: 400
+p,
+button,
+a
+  font-size: px-to-rem(16px)
+  line-height: px-to-rem(24px)
+  text-decoration: none
+  color: $primary-black
+  font-family: $body_font
+  font-weight: 400
+a:focus-visible
+  outline: 4px solid $secondary-color
+  border-radius: $main-outer-border-radius-focus
+  outline-offset: 2px
+
+.enable-select
+  user-select: all
