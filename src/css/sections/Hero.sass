@@ -2,25 +2,60 @@
   position: absolute
   top: 20dvh
   right: 20dvw
-  background: radial-gradient($primary-white 30%, blue)
+  background: radial-gradient($primary-white 30%, $secondary-color)
   width: 250px
   height: 250px
-  filter: blur(50px)
+  filter: blur(25px)
+  z-index: 2
   animation: circle 15s infinite
+  &:hover
+    animation-play-state: paused
 
 .content
   margin: 0 $margin4
   height: 100dvh
 
-.Name
+.name
   height: calc(60dvh - #{$margin3})
   display: flex
-  // justify-content: flex-end
-  align-items: flex-end
+  flex-direction: column-reverse
   padding-bottom: $margin3
 
+.nameHover
+  position: absolute
+  margin-left: calc($margin3 * 14)
+  margin-bottom: $margin2
+  width: 325px
+  opacity: 0%
+
+.svgHero
+  position: absolute
+
+.nameText
+  width: 740px
+  line-height: px-to-rem(220px)
+  background: linear-gradient($secondary-color 0 0) var(--p, 0) / var(--p, 0) no-repeat
+  transition: .4s, background-position 0s
+  &:hover
+    transform: scale(1.1)
+    //TODO: Fix the hover effect
+    .nameHover
+      opacity: 100%
 .Description
   height: 40dvh
+
+.DescriptionText
+  display: flex
+
+.hover
+  width: auto
+  border-bottom: $secondary-color 3px solid
+  background: linear-gradient($secondary-color 0 0) var(--p, 0) / var(--p, 0) no-repeat
+  transition: .4s, background-position 0s
+  &:hover
+    cursor: pointer
+    --p: 100%
+    color: #fff
 
   @keyframes circle
     0%
