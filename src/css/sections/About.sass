@@ -1,0 +1,87 @@
+.About
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100dvh
+  overflow-y: hidden
+.heroCircle
+  position: absolute
+  display: none
+  background-color: $primary-white
+  width: 200px
+  height: 200px
+  margin-left: -80px
+  margin-top: -80px
+  border-radius: 50%
+  z-index: 1
+  overflow-x: hidden
+.uniqueCircle
+  display: block
+  animation: uniqueCircle 0.7s ease
+.unique
+  background-color: rgba($secondary-color, .6)
+  z-index: 0
+.aboutQuestion
+  z-index: 3
+.aboutDesc
+  display: flex
+.svgUnique
+  transition: all .4s ease
+  position: absolute
+  margin-left: -$margin2 -$margin1
+.uniqueHover
+  transition: all .4s ease
+  &:hover
+    transform: scale(1.1)
+    cursor: pointer
+
+.uniqueContent
+  position: absolute
+  height: 100dvh
+  margin-bottom: $margin3
+  h3
+    animation: fadeIn 6s ease
+    color: #7297D2
+    // color: green
+    width: 150px
+    z-index: 2
+
+.findOutMore
+  position: absolute
+  width: 500px
+  bottom: 0
+  margin-bottom: $margin2
+  color: $primary-white !important
+  z-index: 3
+
+.discoverText
+  display: flex
+  text-align: center
+  justify-content: space-between
+  align-items: 200px
+  width: 90dvw
+  height: 100px
+  margin-top: 140px
+@keyframes background
+  0%
+    background-color: rgba($secondary-color, 0)
+  100%
+    background-color: rgba($secondary-color, .6)
+
+@keyframes uniqueCircle
+  0%
+    width: 5000px
+    height: 5000px
+    margin-left: -2250px
+    margin-top: -2250px
+  100%
+    width: 200px
+    height: 200px
+    margin-left: -90px
+    margin-top: -90px
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
