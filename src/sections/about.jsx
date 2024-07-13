@@ -5,18 +5,24 @@ function About() {
   const [mouseY, setMouseY] = React.useState(0);
   const [xp, setXp] = React.useState(0);
   const [yp, setYp] = React.useState(0);
+  const [viewPort, setViewPort] = React.useState(1000);
 
   React.useEffect(() => {
     const handleMouseMove = (e) => {
       setMouseX(e.pageX - 30);
       setMouseY(e.pageY - 30);
+      setViewPort(window.innerHeight);
     };
 
     document.getElementById('about').addEventListener('mousemove', handleMouseMove);
 
     const interval = setInterval(() => {
+      if (mouseY >= viewPort + 150 && mouseY <= viewPort * 2 - 200) {
+        setYp((prevYp) => prevYp + (mouseY - prevYp) / 6);
+      }
       setXp((prevXp) => prevXp + (mouseX - prevXp) / 6);
-      setYp((prevYp) => prevYp + (mouseY - prevYp) / 6);
+
+      console.log(xp, yp);
     }, 1);
 
     return () => {
@@ -55,31 +61,31 @@ function About() {
             <h3>secure and reliable.</h3>
           </div>
           <div className='discoverText'>
+            <h3>secure and reliable.</h3>
             <h3>visually appealing.</h3>
             <h3>tailored to your needs.</h3>
             <h3>fast and responsive.</h3>
             <h3>easy to use.</h3>
             <h3>creative design.</h3>
             <h3>optimized performance.</h3>
-            <h3>secure and reliable.</h3>
           </div>
           <div className='discoverText'>
+            <h3>optimized performance.</h3>
+            <h3>secure and reliable.</h3>
             <h3>visually appealing.</h3>
             <h3>tailored to your needs.</h3>
             <h3>fast and responsive.</h3>
             <h3>easy to use.</h3>
             <h3>creative design.</h3>
-            <h3>optimized performance.</h3>
-            <h3>secure and reliable.</h3>
           </div>
           <div className='discoverText'>
+            <h3>creative design.</h3>
+            <h3>optimized performance.</h3>
+            <h3>secure and reliable.</h3>
             <h3>visually appealing.</h3>
             <h3>tailored to your needs.</h3>
             <h3>fast and responsive.</h3>
             <h3>easy to use.</h3>
-            <h3>creative design.</h3>
-            <h3>optimized performance.</h3>
-            <h3>secure and reliable.</h3>
           </div>
           <h2 className='findOutMore'>See how by scrolling down!</h2>
         </div>
