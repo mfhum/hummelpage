@@ -17,12 +17,14 @@ function About() {
     document.getElementById('about').addEventListener('mousemove', handleMouseMove);
 
     const interval = setInterval(() => {
-      if (mouseY >= viewPort + 150 && mouseY <= viewPort * 2 - 200) {
+      if (mouseY <= viewPort + 150) {
+        setYp((prevYp) => viewPort + 150);
+      } else if (mouseY >= viewPort * 2 - 200) {
+        setYp((prevYp) => viewPort * 2 - 200);
+      } else {
         setYp((prevYp) => prevYp + (mouseY - prevYp) / 6);
       }
       setXp((prevXp) => prevXp + (mouseX - prevXp) / 6);
-
-      console.log(xp, yp);
     }, 1);
 
     return () => {
