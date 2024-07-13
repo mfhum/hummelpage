@@ -17,10 +17,10 @@ function About() {
     document.getElementById('about').addEventListener('mousemove', handleMouseMove);
 
     const interval = setInterval(() => {
-      if (mouseY <= viewPort + 150) {
-        setYp((prevYp) => viewPort + 150);
-      } else if (mouseY >= viewPort * 2 - 200) {
-        setYp((prevYp) => viewPort * 2 - 200);
+      if (mouseY <= viewPort + 175) {
+        setYp((prevYp) => viewPort + 175);
+      } else if (mouseY >= viewPort * 2 - 250) {
+        setYp((prevYp) => viewPort * 2 - 250);
       } else {
         setYp((prevYp) => prevYp + (mouseY - prevYp) / 6);
       }
