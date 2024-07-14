@@ -12,9 +12,10 @@ function Hero() {
                 strokeWidth='2'
               />
             </svg>
-            <h1 className='nameText'>Hummel</h1>
+            <h1 className='nameText heroTitle'>Hummel</h1>
           </div>
-          <h1>Marius</h1>
+          <h1 className='heroTitle'>Marius</h1>
+          <div className='titleWrapper'></div>
         </div>
         <div className='Description'>
           <div className='descText'>

@@ -18,6 +18,9 @@
   margin-top: $margin2
   margin-left: $margin4
 
+.navLogo
+  animation: fadeIn 1.5s
+
 .logo
   display: flex
   position: absolute
@@ -68,10 +71,8 @@
 .svgNav
   position: absolute
   display: none
-  margin-left: $margin2
-  &:last-child
-    margin-left: -$margin1
-
+  width: clamp(275px, 30dvw,550px)
+  height: auto
 .svgMenu
   position: absolute
   display: none
@@ -99,7 +100,7 @@
   animation: openMenuNavbar 1.5s
 
 .navItem
-  width: 900px
+  width: clamp(350px, 80dvw,1000px)
   margin-right: -$margin4 - $margin4 - $margin4
 
 .navItem:first-child,
@@ -126,3 +127,9 @@
   100%
     opacity: 100%
     transform: scale(1)
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1

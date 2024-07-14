@@ -175,8 +175,8 @@ img {
 }
 
 h1 {
-  font-size: 12.5rem;
-  line-height: 12.5rem;
+  font-size: clamp(6.25rem, 10dvw, 12.5rem);
+  line-height: clamp(6.875rem, 10dvw, 13.75rem);
   font-family: "Outfit", sans-serif;
   font-weight: 400;
 }
@@ -252,13 +252,19 @@ a:focus-visible {
 
 .svgHero {
   position: absolute;
+  width: clamp(350px, 35dvw, 750px);
+  height: auto;
+}
+
+.heroTitle {
+  display: inline-block;
+  width: 750px;
+  height: auto;
+  transition: 0.4s, background-position 0s;
 }
 
 .nameText {
   width: 740px;
-  line-height: 13.75rem;
-  background: linear-gradient(#1a57ba 0 0) var(--p, 0)/var(--p, 0) no-repeat;
-  transition: 0.4s, background-position 0s;
   z-index: 0;
 }
 
@@ -346,6 +352,10 @@ a:focus-visible {
   margin-left: 144px;
 }
 
+.navLogo {
+  animation: fadeIn 1.5s;
+}
+
 .logo {
   display: flex;
   position: absolute;
@@ -408,10 +418,8 @@ a:focus-visible {
 .svgNav {
   position: absolute;
   display: none;
-  margin-left: 32px;
-}
-.svgNav:last-child {
-  margin-left: -16px;
+  width: clamp(275px, 30dvw, 550px);
+  height: auto;
 }
 
 .svgMenu {
@@ -446,7 +454,7 @@ a:focus-visible {
 }
 
 .navItem {
-  width: 900px;
+  width: clamp(350px, 80dvw, 1000px);
   margin-right: -432px;
 }
 
@@ -482,7 +490,15 @@ a:focus-visible {
     transform: scale(1);
   }
 }
-.About {
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.UniqueSection {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -513,11 +529,11 @@ a:focus-visible {
   z-index: 0;
 }
 
-.aboutQuestion {
+.uniqueQuestion {
   z-index: 3;
 }
 
-.aboutDesc {
+.uniqueDesc {
   display: flex;
 }
 
@@ -543,17 +559,23 @@ a:focus-visible {
 .uniqueContent h3 {
   animation: fadeIn 6s ease;
   color: #7297D2;
-  width: 150px;
+  width: 175px;
   z-index: 2;
 }
 
 .findOutMore {
   position: absolute;
-  width: 500px;
-  bottom: 0;
-  margin-bottom: 32px;
-  color: #f6f6f6 !important;
+  bottom: -100dvh;
+  left: 0;
+  margin-bottom: 54px;
+  margin-left: 144px;
+  width: auto;
+  color: #f6f6f6;
   z-index: 3;
+}
+
+.closed {
+  color: #111;
 }
 
 .discoverText {
@@ -595,6 +617,46 @@ a:focus-visible {
   100% {
     opacity: 1;
   }
+}
+/* Process Section */
+.ProcessSection {
+  width: 100dvw;
+}
+
+.processTitle {
+  margin-top: 144px;
+  margin-left: 144px;
+}
+
+.processSteps {
+  width: clamp(700px, 70dvw, 1250px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.step {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 144px;
+  margin-top: 54px;
+  margin-bottom: 54px;
+  padding: 32px;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  box-shadow: 0 0 10px 0 #111;
+  transition: 0.4s ease;
+}
+.step h2 {
+  width: clamp(90px, 25%, 200px);
+  min-width: clamp(90px, 25%, 200px);
+  word-wrap: break-word;
+  margin-right: 32px;
+}
+.step:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */

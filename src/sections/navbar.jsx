@@ -1,12 +1,33 @@
 import React from 'react';
 function Navbar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [number, setNumber] = React.useState('00');
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const uniqueSection = document.getElementById('uniqueSection');
+      const position = uniqueSection.getBoundingClientRect();
+
+      // Check if the unique section is in view
+      if (position.top >= 0 && position.bottom <= window.innerHeight) {
+        setNumber('01');
+      } else {
+        setNumber('00');
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup function to remove the event listener
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <>
       <nav className={menuOpen ? 'navActive' : 'nav'}>
-        {!menuOpen && <h2 className='pageNumber'>(00)</h2>}
+        {!menuOpen && <h2 className='pageNumber'>({number})</h2>}
         <a onClick={() => setMenuOpen(false)} href='#top' className='svg logo'>
-          <h2>Hummel.</h2>
+          {(number != '00' || menuOpen) && <h2 className='navLogo'>Hummel.</h2>}
           <svg className='svgLogo' width='225' height='70' viewBox='0 0 208 76' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <path
               d='M76.745 9.45193C134.666 -19.6104 257.173 42.7656 183.502 65.0947C91.4141 93.0061 -63.1681 51.7313 30.4697 10.9644C71.1818 -6.76029 135.209 11.0767 154.288 19.5854'
@@ -43,8 +64,8 @@ function Navbar() {
                 </a>
               </li>
               <li className='navItem'>
-                <a onClick={() => setMenuOpen(!menuOpen)} href='#about' className='svg linkItem'>
-                  <h1>About /</h1>
+                <a onClick={() => setMenuOpen(!menuOpen)} href='#uniqueSection' className='svg linkItem'>
+                  <h1>Process /</h1>
                   <h3>(01)</h3>
                   <svg className='svgNav' width='550' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path
