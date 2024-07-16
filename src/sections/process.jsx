@@ -6,6 +6,7 @@ function Process() {
   const [xp, setXp] = React.useState(0);
   const [yp, setYp] = React.useState(0);
   const [viewPort, setViewPort] = React.useState(1000);
+  const [currentStep, setCurrentStep] = React.useState(0);
 
   React.useEffect(() => {
     const handleMouseMove = (e) => {
@@ -96,21 +97,39 @@ function Process() {
         )}
         <h2 className={unique ? 'findOutMore' : 'findOutMore closed'}>See how by scrolling down!</h2>
       </section>
+      {/* new section */}
       <section id='processSection' className='ProcessSection'>
         <h1 className='processTitle'>Process</h1>
+        <div className='processVisuals'>
+          <div className='number'>
+            <h1>{currentStep}</h1>
+          </div>
+          <div className='number'>
+            <h1>{currentStep}</h1>
+          </div>
+          <div className='number'>
+            <h1>{currentStep}</h1>
+          </div>
+          <div className='number'>
+            <h1>{currentStep}</h1>
+          </div>
+        </div>
         <div className='processSteps'>
           <div className='step'>
             <h2>planning & strategy</h2>
             <h3>We create a plan that covers the project’s scope, strategy, goals, deliverables, timeline and resources.</h3>
           </div>
+
           <div className='step'>
             <h2>design</h2>
             <h3>We design your website with the user and your ultra unique info you gave us in mind. We help you stand out</h3>
           </div>
+
           <div className='step'>
             <h2>development</h2>
             <h3>We develop your website with the latest technologies and make sure it is responsive and fast. Our main focus is being able to adjust content by yourself without needing our help.</h3>
           </div>
+
           <div className='step'>
             <h2>testing & launch</h2>
             <h3>

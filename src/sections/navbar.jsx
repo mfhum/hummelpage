@@ -9,10 +9,10 @@ function Navbar() {
       const position = uniqueSection.getBoundingClientRect();
 
       // Check if the unique section is in view
-      if (position.top >= 0 && position.bottom <= window.innerHeight) {
-        setNumber('01');
-      } else {
+      if (position.top >= 0) {
         setNumber('00');
+      } else {
+        setNumber('01');
       }
     };
 

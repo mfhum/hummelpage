@@ -97,27 +97,36 @@
 
 /* Process Section */
 .ProcessSection
+  box-shadow: inset 0 200px 250px -200px $primary-black
   width: 100dvw
+
 .processTitle
-  margin-top: $margin4
+  padding-top: $margin4
   margin-left: $margin4
+
 .processSteps
   width: clamp(700px, 70dvw, 1250px)
   display: flex
+  margin-top: $margin2
   flex-direction: column
   justify-content: space-between
+  float: left
+
 .step
   display: flex
   align-items: flex-end
   justify-content: center
   margin: $margin4
-  margin-top: $margin3
-  margin-bottom: $margin3
+  margin-top: $margin2
+  margin-bottom: $margin2
   padding: $margin2
-  border-radius: 10px
-  background-color: $primary-white
-  box-shadow: 0 0 10px 0 $primary-black
   transition: .4s ease
+  background: rgba(255, 255, 255, 0.38)
+  border-radius: 16px
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+  backdrop-filter: blur(4px)
+  -webkit-backdrop-filter: blur(4px)
+  border: 1px solid rgba(255, 255, 255, 0.64)
   h2
     width: clamp(90px, 25%, 200px)
     min-width: clamp(90px, 25%, 200px)
@@ -126,3 +135,24 @@
   &:hover
     transform: scale(1.1)
     cursor: pointer
+
+.processVisuals
+  margin-left: 45dvw
+  position: absolute
+  float: right
+  display: flex
+  margin-top: $margin2
+  flex-direction: column
+  justify-content: space-between
+
+.number
+  color: $secondary-color
+  filter: blur(2px)
+  display: flex
+  align-items: flex-end
+  justify-content: center
+  margin: $margin4
+  margin-top: $margin2
+  margin-bottom: $margin2
+  padding: $margin2
+  height: 200px
