@@ -258,23 +258,10 @@ a:focus-visible {
 
 .heroTitle {
   display: inline-block;
-  width: 750px;
+  width: auto;
   height: auto;
   transition: 0.4s, background-position 0s;
-}
-
-.nameText {
-  width: 740px;
   z-index: 0;
-}
-
-.heroHover {
-  transition: 0.4s ease 0.4s;
-}
-.heroHover:hover .svgHero,
-.heroHover:hover .nameText {
-  transform: scale(1.1);
-  cursor: pointer;
 }
 
 .Description {
@@ -283,11 +270,10 @@ a:focus-visible {
 
 .descText {
   display: flex;
-  width: 725px;
+  width: 700px;
 }
 .descText:hover .descDesigner {
-  background-color: #f6f6f6;
-  width: 205px;
+  width: 185px;
 }
 .descText:hover .descSometimes {
   display: block;
@@ -325,9 +311,11 @@ a:focus-visible {
 @keyframes sometimes {
   0% {
     width: 0px;
+    opacity: 0;
   }
   100% {
     width: 205px;
+    opacity: 1;
   }
 }
 .nav {
@@ -656,8 +644,8 @@ a:focus-visible {
   border: 1px solid rgba(255, 255, 255, 0.64);
 }
 .step h2 {
-  width: clamp(90px, 25%, 200px);
-  min-width: clamp(90px, 25%, 200px);
+  width: clamp(90px, 25%, 185px);
+  min-width: clamp(90px, 25%, 185px);
   word-wrap: break-word;
   margin-right: 32px;
 }

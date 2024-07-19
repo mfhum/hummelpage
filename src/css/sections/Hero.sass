@@ -33,32 +33,21 @@
 
 .heroTitle
   display: inline-block // This line is added
-  width: 750px
+  width: auto
   height: auto
   transition: .4s, background-position 0s
-.nameText
-  width: 740px
   z-index: 0
-
-.heroHover
-  transition: .4s ease 0.4s
-  &:hover
-    .svgHero,
-    .nameText
-      transform: scale(1.1)
-      cursor: pointer
 
 .Description
   height: 40dvh
 
 .descText
   display: flex
-  width: 725px
+  width: 700px
 
   &:hover
     .descDesigner
-      background-color: $primary-white
-      width: 205px
+      width: 185px
     .descSometimes
       display: block
       animation: sometimes 0.4s ease
@@ -93,5 +82,8 @@
 @keyframes sometimes
   0%
     width: 0px
+    opacity: 0
+
   100%
     width: 205px
+    opacity: 1
