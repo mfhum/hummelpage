@@ -682,6 +682,9 @@ a:focus-visible {
 .footerTitle {
   height: 15%;
 }
+.footerTitle h1 {
+  margin-bottom: 16px;
+}
 
 .footerContact {
   height: 70%;
@@ -694,6 +697,7 @@ a:focus-visible {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  left: calc(50% - 155px);
 }
 .footerContactSvg:hover {
   transform: scale(1.1);

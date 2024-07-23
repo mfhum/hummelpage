@@ -3,8 +3,9 @@ function Footer() {
   return (
     <footer id='footer' className='footer'>
       <div className='footerTitle'>
-        <h2>Marius Hummel.</h2>
-        <p>Web Developer & Designer</p>
+        <h1>Contact</h1>
+        {/* <h2>Marius Hummel.</h2>
+        <h3>Web Developer & Designer</h3> */}
       </div>
       <div className='footerContact'>
         <a
@@ -22,9 +23,9 @@ function Footer() {
         </a>
       </div>
       <div className='footerBase'>
-        <p>Impressum</p>
-        <p>LinkedIn</p>
-        <p>Github</p>
+        <h3>Impressum</h3>
+        <h3>LinkedIn</h3>
+        <h3>Github</h3>
       </div>
     </footer>
   );
