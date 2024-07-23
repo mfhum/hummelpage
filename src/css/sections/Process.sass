@@ -1,122 +1,26 @@
-.UniqueSection
-  display: flex
-  justify-content: center
-  align-items: center
-  height: 100dvh
-  overflow-y: hidden
-.heroCircle
-  position: absolute
-  display: none
-  background-color: $primary-white
-  width: 200px
-  height: 200px
-  margin-left: -80px
-  margin-top: -80px
-  border-radius: 50%
-  z-index: 1
-  overflow-x: hidden
-
-.uniqueCircle
-  display: block
-  animation: uniqueCircle 0.7s ease
-
-.unique
-  background-color: rgba($secondary-color, .6)
-  z-index: 0
-
-.uniqueQuestion
-  z-index: 3
-
-.uniqueDesc
-  display: flex
-
-.svgUnique
-  transition: all .4s ease
-  position: absolute
-  margin-left: -$margin2 -$margin1
-
-.uniqueHover
-  transition: all .4s ease
-  &:hover
-    transform: scale(1.1)
-    cursor: pointer
-
-.uniqueContent
-  position: absolute
-  height: 100dvh
-  margin-bottom: $margin3
-  h3
-    animation: fadeIn 6s ease
-    color: #7297D2
-    width: 175px
-    z-index: 2
-.findOutMore
-  position: absolute
-  bottom: -100dvh
-  left: 0
-  margin-bottom: $margin3
-  margin-left: $margin4
-  width: auto
-  color: $primary-white
-  z-index: 3
-
-.closed
-  color: $primary-black
-
-.discoverText
-  display: flex
-  text-align: center
-  justify-content: space-between
-  align-items: 200px
-  width: 90dvw
-  height: 100px
-  margin-top: 140px
-@keyframes background
-  0%
-    background-color: rgba($secondary-color, 0)
-  100%
-    background-color: rgba($secondary-color, .6)
-
-@keyframes uniqueCircle
-  0%
-    width: 5000px
-    height: 5000px
-    margin-left: -2250px
-    margin-top: -2250px
-  100%
-    width: 200px
-    height: 200px
-    margin-left: -90px
-    margin-top: -90px
-
-@keyframes fadeIn
-  0%
-    opacity: 0
-  100%
-    opacity: 1
-
 /* Process Section */
 .ProcessSection
-  box-shadow: inset 0 200px 250px -200px $primary-black
+  box-shadow: inset 0 200px 100px -200px #cccccc, inset 0 -200px 50px -200px rgba($secondary-color, .6)
   width: 100dvw
+  height: auto
 
 .processTitle
   padding-top: $margin4
   margin-left: $margin4
 
 .processSteps
+  margin-left: $margin4
   width: clamp(700px, 70dvw, 1250px)
   display: flex
   margin-top: $margin2
   flex-direction: column
   justify-content: space-between
-  float: left
+  padding-bottom: $margin4
 
 .step
   display: flex
   align-items: flex-end
   justify-content: center
-  margin: $margin4
   margin-top: $margin2
   margin-bottom: $margin2
   padding: $margin2
@@ -135,24 +39,13 @@
   &:hover
     transform: scale(1.1)
     cursor: pointer
-
-.processVisuals
-  margin-left: 45dvw
-  position: absolute
-  float: right
-  display: flex
-  margin-top: $margin2
-  flex-direction: column
-  justify-content: space-between
-
-.number
-  color: $secondary-color
-  filter: blur(2px)
-  display: flex
-  align-items: flex-end
-  justify-content: center
-  margin: $margin4
-  margin-top: $margin2
-  margin-bottom: $margin2
-  padding: $margin2
-  height: 200px
+    background: rgba($secondary-color, 0.2)
+  &:not(:last-child)::after
+    content: ''
+    position: absolute
+    top: 100%
+    left: 50%
+    height: 64px
+    width: 3px
+    background-color: $secondary-color
+    transform: translate(-50%, 0)

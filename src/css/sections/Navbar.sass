@@ -48,12 +48,13 @@
   position: fixed
   right: 0
   bottom: 0
-  margin-right: $margin3 + $margin3
-  margin-bottom: $margin3 + $margin2
+  margin-right: $margin1 + $margin3
+  margin-bottom: $margin1 + $margin2
   z-index: 2
-  h3
+  animation: fadeIn 1.5s
+  p
     z-index: 0
-    width: 100px
+    width: 50px
     text-align: center
   &:hover
     cursor: pointer
@@ -86,8 +87,8 @@
 
 .svgTop
   position: absolute
-  margin-top: -$margin2
-  margin-left: -$margin2 - $margin1
+  margin-top: -$margin1
+  margin-left: -$margin1 -$margin1 /2
 .navList
   position: absolute
   z-index: -1

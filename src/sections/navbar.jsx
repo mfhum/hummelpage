@@ -5,14 +5,18 @@ function Navbar() {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      const uniqueSection = document.getElementById('uniqueSection');
-      const position = uniqueSection.getBoundingClientRect();
+      const process = document.getElementById('process');
+      const processPosition = process.getBoundingClientRect();
+      const footer = document.getElementById('footer');
+      const footerPosition = footer.getBoundingClientRect();
 
       // Check if the unique section is in view
-      if (position.top >= 0) {
+      if (processPosition.top >= 25) {
         setNumber('00');
-      } else {
+      } else if (footerPosition.top >= 25) {
         setNumber('01');
+      } else {
+        setNumber('02');
       }
     };
 
@@ -64,7 +68,7 @@ function Navbar() {
                 </a>
               </li>
               <li className='navItem'>
-                <a onClick={() => setMenuOpen(!menuOpen)} href='#uniqueSection' className='svg linkItem'>
+                <a onClick={() => setMenuOpen(!menuOpen)} href='#processSection' className='svg linkItem'>
                   <h1>Process /</h1>
                   <h3>(01)</h3>
                   <svg className='svgNav' width='550' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -77,8 +81,8 @@ function Navbar() {
                 </a>
               </li>
               <li className='navItem'>
-                <a onClick={() => setMenuOpen(!menuOpen)} href='#blog' className='svg linkItem'>
-                  <h1>Others /</h1>
+                <a onClick={() => setMenuOpen(!menuOpen)} href='#footer' className='svg linkItem'>
+                  <h1>Contact /</h1>
                   <h3>(02)</h3>
                   <svg className='svgNav' width='650' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path
@@ -92,19 +96,19 @@ function Navbar() {
             </ul>
           </div>
         )}
+        {number != '00' && !menuOpen && (
+          <a className='svg backtotop' href='#top'>
+            <svg className='svgTop' width='100' height='100' viewBox='0 0 412 353' fill='none' xmlns='http://www.w3.org/2000/svg'>
+              <path
+                d='M125.797 31.9289C276.796 -44.571 430.296 36.9289 408.797 204.929C379.792 431.57 -33.1897 388.529 3.8549 126.929C34.7963 -91.5707 297.296 24.9292 350.296 106.929'
+                stroke='black'
+                strokeWidth='2'
+              />
+            </svg>
+            <p>Back to the start</p>
+          </a>
+        )}
       </nav>
-      {!menuOpen && (
-        <a className='svg backtotop' href='#top'>
-          <svg className='svgTop' width='200' height='200' viewBox='0 0 412 353' fill='none' xmlns='http://www.w3.org/2000/svg'>
-            <path
-              d='M125.797 31.9289C276.796 -44.571 430.296 36.9289 408.797 204.929C379.792 431.57 -33.1897 388.529 3.8549 126.929C34.7963 -91.5707 297.296 24.9292 350.296 106.929'
-              stroke='black'
-              strokeWidth='2'
-            />
-          </svg>
-          <h3>Back to the start</h3>
-        </a>
-      )}
     </>
   );
 }
