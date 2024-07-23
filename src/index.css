@@ -526,6 +526,9 @@ a:focus-visible {
 .uniqueQuestion {
   z-index: 3;
 }
+.uniqueQuestion h2 {
+  margin-bottom: 16px;
+}
 
 .uniqueDesc {
   display: flex;
@@ -534,7 +537,8 @@ a:focus-visible {
 .svgUnique {
   transition: all 0.4s ease;
   position: absolute;
-  margin-left: -48px;
+  margin-left: -16px;
+  margin-top: -24px;
 }
 
 .uniqueHover {
@@ -697,7 +701,7 @@ a:focus-visible {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  left: calc(50% - 155px);
+  left: calc(50% - 180px);
 }
 .footerContactSvg:hover {
   transform: scale(1.1);
@@ -712,7 +716,7 @@ a:focus-visible {
 .svgFooter {
   position: absolute;
   height: auto;
-  width: 500px;
+  width: 550px;
   margin-left: -86px;
 }
 

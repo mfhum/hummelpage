@@ -69,7 +69,7 @@ function Navbar() {
               </li>
               <li className='navItem'>
                 <a onClick={() => setMenuOpen(!menuOpen)} href='#processSection' className='svg linkItem'>
-                  <h1>Process /</h1>
+                  <h1>Prozess /</h1>
                   <h3>(01)</h3>
                   <svg className='svgNav' width='550' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path
@@ -82,7 +82,7 @@ function Navbar() {
               </li>
               <li className='navItem'>
                 <a onClick={() => setMenuOpen(!menuOpen)} href='#footer' className='svg linkItem'>
-                  <h1>Contact /</h1>
+                  <h1>Kontakt /</h1>
                   <h3>(02)</h3>
                   <svg className='svgNav' width='650' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path
