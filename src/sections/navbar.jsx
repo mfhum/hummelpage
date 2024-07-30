@@ -105,7 +105,7 @@ function Navbar() {
                 strokeWidth='2'
               />
             </svg>
-            <p>Back to the start</p>
+            <p>Zurück zum Anfang</p>
           </a>
         )}
       </nav>
