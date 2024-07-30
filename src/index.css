@@ -728,4 +728,38 @@ a:focus-visible {
   margin: 0 54px;
 }
 
+.linked:hover {
+  transform: scale(1.1);
+}
+.linked:hover .svgLinked {
+  display: flex;
+}
+
+.svgLinked {
+  position: absolute;
+  display: none;
+  margin-top: -54px;
+  margin-left: -54px;
+}
+
+.github:hover {
+  transform: scale(1.1);
+}
+.github:hover .svgGithub {
+  display: flex;
+}
+.github:hover {
+  transform: scale(1.1);
+}
+.github:hover .svgLinked {
+  display: flex;
+}
+
+.svgGithub {
+  position: absolute;
+  display: none;
+  margin-top: -54px;
+  margin-left: -54px;
+}
+
 /*# sourceMappingURL=index.css.map */

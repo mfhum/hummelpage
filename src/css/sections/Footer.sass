@@ -40,3 +40,29 @@
   align-items: center
   justify-content: space-between
   margin: 0 $margin3
+
+.linked
+  &:hover
+    transform: scale(1.1)
+    .svgLinked
+      display: flex
+.svgLinked
+  position: absolute
+  display: none
+  margin-top: -$margin3
+  margin-left: -$margin3
+
+.github
+  &:hover
+    transform: scale(1.1)
+    .svgGithub
+      display: flex
+  &:hover
+    transform: scale(1.1)
+    .svgLinked
+      display: flex
+.svgGithub
+  position: absolute
+  display: none
+  margin-top: -$margin3
+  margin-left: -$margin3

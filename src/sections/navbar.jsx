@@ -11,7 +11,7 @@ function Navbar() {
       const footerPosition = footer.getBoundingClientRect();
 
       // Check if the unique section is in view
-      if (processPosition.top >= 25) {
+      if (processPosition.top >= 200) {
         setNumber('00');
       } else if (footerPosition.top >= 25) {
         setNumber('01');
