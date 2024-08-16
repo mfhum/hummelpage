@@ -166,7 +166,6 @@ table {
 
 body {
   background-color: #f6f6f6;
-  overflow-x: hidden !important;
   user-select: none;
 }
 
@@ -216,6 +215,26 @@ a:focus-visible {
   user-select: all;
 }
 
+@media only screen and (max-width: 800px) {
+  h1 {
+    font-size: clamp(3.125rem, 60dvw, 4.6875rem);
+    line-height: clamp(3.75rem, 30dvw, 5.625rem);
+  }
+  h2 {
+    font-size: 1.875rem;
+    line-height: 2.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+  p,
+  button,
+  a {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
 .nav {
   width: 100dvw;
   height: 125px;
@@ -386,6 +405,30 @@ a:focus-visible {
     opacity: 1;
   }
 }
+@media only screen and (max-width: 800px) {
+  .pageNumber {
+    margin-left: 32px;
+    margin-top: 32px;
+  }
+  .menu {
+    margin-right: 32px;
+  }
+  .logo {
+    margin-left: calc(50% - 60px);
+  }
+  .svgHero {
+    margin-left: -32px;
+  }
+  .svgMenu {
+    width: 100px;
+    margin-left: -16px;
+    margin-top: -8px;
+  }
+  .svgLogo {
+    width: 150px;
+    margin-left: -16px;
+  }
+}
 .circle {
   position: absolute;
   margin-top: -10dvh;
@@ -428,7 +471,6 @@ a:focus-visible {
 
 .heroTitle {
   display: inline-block;
-  width: auto;
   height: auto;
   transition: 0.4s, background-position 0s;
   z-index: 0;
@@ -490,6 +532,18 @@ a:focus-visible {
   100% {
     width: 205px;
     opacity: 1;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .content {
+    margin: 0 54px;
+  }
+  .descText:hover .descSometimes {
+    display: none;
+    animation: sometimes 0.4s ease;
+  }
+  .descText:hover .descDesigner {
+    width: 0px;
   }
 }
 .UniqueSection {
@@ -616,6 +670,20 @@ a:focus-visible {
     opacity: 1;
   }
 }
+@media only screen and (max-width: 800px) {
+  .uniqueContent,
+  .uniqueQuestion {
+    margin: 0 32px;
+  }
+  .svgUnique {
+    width: 175px;
+    margin-top: -32px;
+  }
+  .findOutMore {
+    margin-left: 32px;
+    width: 60dvw;
+  }
+}
 /* Process Section */
 .ProcessSection {
   box-shadow: inset 0 200px 100px -200px #cccccc, inset 0 -200px 50px -200px rgba(26, 87, 186, 0.6);
@@ -675,6 +743,42 @@ a:focus-visible {
   transform: translate(-50%, 0);
 }
 
+@media only screen and (max-width: 900px) {
+  .processTitle {
+    margin-left: 32px;
+    padding-top: 86px;
+  }
+  .processSteps {
+    margin-left: 32px;
+    width: clamp(200px, 85dvw, 700px);
+  }
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .step h2 {
+    width: clamp(90px, 75%, 185px);
+    min-width: clamp(90px, 75%, 185px);
+    word-wrap: break-word;
+    margin-right: 32px;
+    margin-bottom: 16px;
+  }
+  .step:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    background: rgba(26, 87, 186, 0.2);
+  }
+  .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    height: 64px;
+    width: 3px;
+    background-color: #1a57ba;
+    transform: translate(-50%, 0);
+  }
+}
 .footer {
   width: calc(100dvw - 288px);
   height: calc(100dvh - 16px - 144px);
