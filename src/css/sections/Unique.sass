@@ -35,10 +35,12 @@
 .svgUnique
   transition: all .4s ease
   position: absolute
-  margin-left: -$margin1
+  margin-left: -$margin1 - $margin4 / 2
   margin-top: -$margin1 - $margin1 / 2
 
 .uniqueHover
+  background: none
+  border: none
   transition: all .4s ease
   &:hover
     transform: scale(1.1)

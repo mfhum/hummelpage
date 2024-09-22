@@ -30,7 +30,7 @@ function Navbar() {
     <>
       <nav className={menuOpen ? 'navActive' : 'nav'}>
         {!menuOpen && <h2 className='pageNumber'>({number})</h2>}
-        <a onClick={() => setMenuOpen(false)} href='/#top' className='svg logo'>
+        <a onClick={() => setMenuOpen(false)} href='#top' className='svg logo' aria-label='Zurück zum Start'>
           {(number != '00' || menuOpen) && <h2 className='navLogo'>Hummel.</h2>}
           <svg className='svgLogo' width='225' height='70' viewBox='0 0 208 76' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <path
@@ -40,7 +40,7 @@ function Navbar() {
             />
           </svg>
         </a>
-        <a onClick={() => setMenuOpen(!menuOpen)} className='svg menu'>
+        <button onClick={() => setMenuOpen(!menuOpen)} className='svg menu' aria-label='Menu öffnen'>
           <h2>Menu</h2>
           <svg className='svgMenu' width='225' height='50' viewBox='0 0 208 76' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <path
@@ -49,13 +49,13 @@ function Navbar() {
               strokeWidth='2'
             />
           </svg>
-        </a>
+        </button>
         {menuOpen && (
           <div>
             <div className='circle' />
             <ul className='navList'>
               <li className='navItem'>
-                <a onClick={() => setMenuOpen(!menuOpen)} href='/#top' className='svg linkItem'>
+                <a onClick={() => setMenuOpen(!menuOpen)} href='#top' className='svg linkItem' aria-label='Zurück zum Start'>
                   <h1>Home /</h1>
                   <h3>(00)</h3>
                   <svg className='svgNav' width='550' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -68,7 +68,7 @@ function Navbar() {
                 </a>
               </li>
               <li className='navItem'>
-                <a onClick={() => setMenuOpen(!menuOpen)} href='/#processSection' className='svg linkItem'>
+                <a onClick={() => setMenuOpen(!menuOpen)} href='#processSection' className='svg linkItem' aria-label='Zu Prozess Section'>
                   <h1>Prozess /</h1>
                   <h3>(01)</h3>
                   <svg className='svgNav' width='550' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -81,7 +81,7 @@ function Navbar() {
                 </a>
               </li>
               <li className='navItem'>
-                <a onClick={() => setMenuOpen(!menuOpen)} href='/#footer' className='svg linkItem'>
+                <a onClick={() => setMenuOpen(!menuOpen)} href='#footer' className='svg linkItem' aria-label='Zu den Kontaktinfos'>
                   <h1>Kontakt /</h1>
                   <h3>(02)</h3>
                   <svg className='svgNav' width='650' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -97,8 +97,8 @@ function Navbar() {
           </div>
         )}
         {number != '00' && !menuOpen && (
-          <a className='svg backtotop' href='/#top'>
-            <svg className='svgTop' width='100' height='100' viewBox='0 0 412 353' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <a className='svg backtotop' href='#top'>
+            <svg className='svgTop' width='100' height='100' viewBox='0 0 412 353' fill='none' xmlns='http://www.w3.org/2000/svg' aria-label='Zurück zum Anfang'>
               <path
                 d='M125.797 31.9289C276.796 -44.571 430.296 36.9289 408.797 204.929C379.792 431.57 -33.1897 388.529 3.8549 126.929C34.7963 -91.5707 297.296 24.9292 350.296 106.929'
                 stroke='black'
