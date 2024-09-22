@@ -33,7 +33,6 @@
 
 .heroTitle
   display: inline-block // This line is added
-  width: auto
   height: auto
   transition: .4s, background-position 0s
   z-index: 0
@@ -89,3 +88,17 @@
   100%
     width: 205px
     opacity: 1
+
+@media only screen and (max-width: 800px)
+  .content
+    margin: 0 $margin3
+  .descText
+    width: auto
+    display: flex
+    flex-direction: column
+    &:hover
+      .descSometimes
+        display: none
+        animation: sometimes 0.4s ease
+      .descDesigner
+        width: 0px

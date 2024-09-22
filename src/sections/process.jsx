@@ -4,28 +4,28 @@ function Process() {
     <>
       {/* new section */}
       <section id='processSection' className='ProcessSection'>
-        <h1 className='processTitle'>Process</h1>
+        <h1 className='processTitle'>Prozess</h1>
         <div className='processSteps'>
           <div className='step'>
-            <h2>planning & strategy</h2>
-            <h3>We create a plan that covers the project’s scope, strategy, goals, deliverables, timeline and resources.</h3>
+            <h2>planung & strategie</h2>
+            <h3>Ich erstelle einen Plan, der Umfang, Strategie, Ziele, Ergebnisse, Zeitplan und Ressourcen des Projekts abdecken.</h3>
           </div>
-
           <div className='step'>
             <h2>design</h2>
-            <h3>We design your website with the user and your ultra unique info you gave us in mind. We help you stand out</h3>
+            <h3>Ich entwerfe die Website mit den Informationen, die du mir gegeben hast. An erster Stelle steht das Erlebnis des Endnutzers.</h3>
           </div>
-
           <div className='step'>
             <h2>development</h2>
-            <h3>We develop your website with the latest technologies and make sure it is responsive and fast. Our main focus is being able to adjust content by yourself without needing our help.</h3>
+            <h3>
+              Ich entwickle deine Website mit den neuesten Technologien und sorge dafür, dass sie responsiv und schnell ist. Mein Hauptfokus liegt darauf, dass du den Inhalt selbst anpassen kannst,
+              ohne meine Hilfe zu benötigen.
+            </h3>
           </div>
-
           <div className='step'>
             <h2>testing & launch</h2>
             <h3>
-              Together we polish the site to your perfect endresult. Fully equipped with tracking and data gathering. Additionally, we ensure that your site garners favor with Google, optimizing its
-              potential for improved rankings.
+              Gemeinsam testen wir die Seite zum perfekten Endergebnis. Zusätzlich sorgen wir dafür, dass die Seite für Google optimiert wird. Voll ausgestattet mit Tracking und Datensammlung werden
+              wir die Seite dann zusammen veröffentlichen.
             </h3>
           </div>
         </div>

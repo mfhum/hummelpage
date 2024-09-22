@@ -20,7 +20,7 @@
   display: flex
   justify-content: center
   flex-direction: column
-  left: calc(50% - 155px)
+  left: calc(50% - 180px)
   &:hover
     transform: scale(1.1)
 
@@ -31,7 +31,7 @@
 .svgFooter
   position: absolute
   height: auto
-  width: 500px
+  width: 550px
   margin-left: -$margin3 - $margin2
 
 .footerBase
@@ -40,3 +40,69 @@
   align-items: center
   justify-content: space-between
   margin: 0 $margin3
+
+.linked
+  &:hover
+    transform: scale(1.1)
+    .svgLinked
+      display: flex
+.svgLinked
+  position: absolute
+  display: none
+  margin-top: -$margin3
+  margin-left: -$margin3
+
+.impress
+  &:hover
+    transform: scale(1.1)
+    .svgImpress
+      display: flex
+.svgImpress
+  position: absolute
+  display: none
+  margin-top: -$margin3
+  margin-left: -$margin2
+
+.github
+  &:hover
+    transform: scale(1.1)
+    .svgGithub
+      display: flex
+  &:hover
+    transform: scale(1.1)
+    .svgLinked
+      display: flex
+.svgGithub
+  position: absolute
+  display: none
+  margin-top: -$margin3
+  margin-left: -$margin3
+
+@media only screen and (max-width: 900px)
+  .footer
+    width: calc(100dvw - 2*$margin2)
+    height: calc(100dvh - $margin2)
+    background-color: rgba($secondary-color, 0.6)
+    padding: $margin2
+    padding-bottom: $margin1
+  .footerContactSvg
+    margin-left: $margin3
+  .svgFooter
+    width: 400px
+    margin-left: -$margin3 - $margin2
+  .footerBase
+    height: 8%
+    margin-left: $margin1
+  .footerTitle
+    height: auto
+    margin-top: $margin3
+  .svgLinked,
+  .svgGithub
+    width: 100px
+    margin-left: -$margin1
+    margin-top: -$margin2 - $margin1
+  .svgImpress
+    width: 125px
+    margin-left: -$margin1
+    margin-top: -$margin2 - $margin1
+

@@ -17,7 +17,6 @@
   position: absolute
   margin-top: $margin2
   margin-left: $margin4
-
 .navLogo
   animation: fadeIn 1.5s
 
@@ -134,3 +133,33 @@
     opacity: 0
   100%
     opacity: 1
+
+@media only screen and (max-width: 800px)
+  .pageNumber
+    margin-left: $margin2
+    margin-top: $margin2
+  .menu
+    margin-right: $margin2
+  .logo
+    margin-left: calc(50% - 60px)
+  .svgHero
+    margin-left: -$margin2
+  .svgMenu
+    width: 100px
+    margin-left: -16px
+    margin-top: -8px
+  .svgLogo
+    width: 150px
+    margin-left: -16px
+  .backtotop
+    margin-right: $margin1 + $margin2
+    margin-bottom: $margin3 + $margin2
+  .navList
+    align-items: flex-start
+    margin-left: $margin2
+  .navItem
+    width: auto
+    margin-right: 0
+  .navItem:first-child,
+  .navItem:last-child
+    margin-left: 0

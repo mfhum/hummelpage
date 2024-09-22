@@ -26,6 +26,8 @@
 
 .uniqueQuestion
   z-index: 3
+  h2
+    margin-bottom: $margin1
 
 .uniqueDesc
   display: flex
@@ -33,7 +35,8 @@
 .svgUnique
   transition: all .4s ease
   position: absolute
-  margin-left: -$margin2 -$margin1
+  margin-left: -$margin1
+  margin-top: -$margin1 - $margin1 / 2
 
 .uniqueHover
   transition: all .4s ease
@@ -94,3 +97,21 @@
     opacity: 0
   100%
     opacity: 1
+
+@media only screen and (max-width: 800px)
+  .uniqueContent,
+  .uniqueQuestion
+    margin: 0 $margin3
+  .svgUnique
+    width: 175px
+    margin-top: -$margin2
+  .uniqueHover
+    margin-left: $margin1
+  .findOutMore
+    margin-left: $margin2
+    width: 60dvw
+  .uniqueDesc
+    flex-direction: column
+  .uniqueCirlce,
+  .heroCircle
+    display: none

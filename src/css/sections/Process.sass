@@ -49,3 +49,33 @@
     width: 3px
     background-color: $secondary-color
     transform: translate(-50%, 0)
+
+@media only screen and (max-width: 900px)
+  .processTitle
+    margin-left: $margin2
+    padding-top: $margin3 + $margin2
+
+  .processSteps
+    margin-left: $margin1
+    width: 90dvw
+  .step
+    flex-direction: column
+    align-items: flex-start
+    h2
+      width: 75dvw
+      word-wrap: break-word
+      margin-right: $margin2
+      margin-bottom: $margin1
+    &:hover
+      transform: scale(1.1)
+      cursor: pointer
+      background: rgba($secondary-color, 0.2)
+    &:not(:last-child)::after
+      content: ''
+      position: absolute
+      top: 100%
+      left: 50%
+      height: 64px
+      width: 3px
+      background-color: $secondary-color
+      transform: translate(-50%, 0)
