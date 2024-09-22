@@ -1,5 +1,4 @@
-# Marius.li - Search Page
-
+# Marius.li - A Portfolio
 Welcome to the Portfolio of Marius.li also known as Hummelpage! 
 This readme is for you to scower through my code.
 
