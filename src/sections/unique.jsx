@@ -43,7 +43,7 @@ function Unique() {
           <h2>Du brauchst eine neue Webseite?</h2>
           <div className='uniqueDesc'>
             <h2>Wie wär's mit&nbsp;&nbsp;&nbsp;</h2>
-            <a onClick={() => setUnique(!unique)} className='svg uniqueHover'>
+            <button onClick={() => setUnique(!unique)} className='svg uniqueHover'>
               <svg className='svgUnique' width='225' height='100' viewBox='0 0 208 76' fill='none' xmlns='http://www.w3.org/2000/svg'>
                 <path
                   d='M76.745 9.45193C134.666 -19.6104 257.173 42.7656 183.502 65.0947C91.4141 93.0061 -63.1681 51.7313 30.4697 10.9644C71.1818 -6.76029 135.209 11.0767 154.288 19.5854'
@@ -52,7 +52,7 @@ function Unique() {
                 />
               </svg>
               <h2>einzigartig</h2>
-            </a>
+            </button>
           </div>
         </div>
         <h2 className={unique ? 'findOutMore' : 'findOutMore closed'}>Finde mit einem Scroll mehr heraus!</h2>

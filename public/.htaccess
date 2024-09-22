@@ -1,0 +1,11 @@
+RewriteEngine on
+
+# Existing redirect rules
+RewriteCond %{HTTP_HOST} ^kovuzyba\.cyon\.site$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.kovuzyba\.cyon\.site$
+RewriteRule ^(.*)$ "https\:\/\/marius\.li\/$1" [R=301,L]
+
+# Rewrite rules for React Router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /index.html [L]

@@ -282,6 +282,8 @@ a:focus-visible {
 }
 
 .menu {
+  background: none;
+  border: none;
   display: flex;
   float: right;
   margin-right: 144px;
@@ -617,11 +619,13 @@ a:focus-visible {
 .svgUnique {
   transition: all 0.4s ease;
   position: absolute;
-  margin-left: -16px;
+  margin-left: -88px;
   margin-top: -24px;
 }
 
 .uniqueHover {
+  background: none;
+  border: none;
   transition: all 0.4s ease;
 }
 .uniqueHover:hover {
@@ -814,6 +818,10 @@ a:focus-visible {
     transform: translate(-50%, 0);
   }
 }
+.impressumNavbar {
+  margin: 32px;
+}
+
 .impressumSection {
   width: 100dvw;
   height: auto;
