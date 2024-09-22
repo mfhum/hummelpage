@@ -23,24 +23,36 @@ function Footer() {
         </a>
       </div>
       <div className='footerBase'>
-        <h3>Impressum</h3>
+        <a href='/impressum' className='svg impress'>
+          <h3>Impressum</h3>
+          <svg className='svgImpress' width='225' height='70' viewBox='0 0 208 76' fill='none'
+               xmlns='http://www.w3.org/2000/svg'>
+            <path
+                d='M76.745 9.45193C134.666 -19.6104 257.173 42.7656 183.502 65.0947C91.4141 93.0061 -63.1681 51.7313 30.4697 10.9644C71.1818 -6.76029 135.209 11.0767 154.288 19.5854'
+                stroke='black'
+                strokeWidth='2'
+            />
+          </svg>
+        </a>
         <a href='https://www.linkedin.com/in/marius-hummel-471078187/' target='_blank' className='svg linked'>
           <h3>LinkedIn</h3>
-          <svg className='svgLinked' width='225' height='70' viewBox='0 0 208 76' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <svg className='svgLinked' width='225' height='70' viewBox='0 0 208 76' fill='none'
+               xmlns='http://www.w3.org/2000/svg'>
             <path
-              d='M76.745 9.45193C134.666 -19.6104 257.173 42.7656 183.502 65.0947C91.4141 93.0061 -63.1681 51.7313 30.4697 10.9644C71.1818 -6.76029 135.209 11.0767 154.288 19.5854'
-              stroke='black'
-              strokeWidth='2'
+                d='M76.745 9.45193C134.666 -19.6104 257.173 42.7656 183.502 65.0947C91.4141 93.0061 -63.1681 51.7313 30.4697 10.9644C71.1818 -6.76029 135.209 11.0767 154.288 19.5854'
+                stroke='black'
+                strokeWidth='2'
             />
           </svg>
         </a>
         <a href='https://github.com/mfhum' target='_blank' className='svg github'>
           <h3>Github</h3>
-          <svg className='svgGithub' width='225' height='70' viewBox='0 0 208 76' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <svg className='svgGithub' width='225' height='70' viewBox='0 0 208 76' fill='none'
+               xmlns='http://www.w3.org/2000/svg'>
             <path
-              d='M76.745 9.45193C134.666 -19.6104 257.173 42.7656 183.502 65.0947C91.4141 93.0061 -63.1681 51.7313 30.4697 10.9644C71.1818 -6.76029 135.209 11.0767 154.288 19.5854'
-              stroke='black'
-              strokeWidth='2'
+                d='M76.745 9.45193C134.666 -19.6104 257.173 42.7656 183.502 65.0947C91.4141 93.0061 -63.1681 51.7313 30.4697 10.9644C71.1818 -6.76029 135.209 11.0767 154.288 19.5854'
+                stroke='black'
+                strokeWidth='2'
             />
           </svg>
         </a>

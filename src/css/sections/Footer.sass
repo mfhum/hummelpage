@@ -52,6 +52,17 @@
   margin-top: -$margin3
   margin-left: -$margin3
 
+.impress
+  &:hover
+    transform: scale(1.1)
+    .svgImpress
+      display: flex
+.svgImpress
+  position: absolute
+  display: none
+  margin-top: -$margin3
+  margin-left: -$margin2
+
 .github
   &:hover
     transform: scale(1.1)
@@ -90,3 +101,8 @@
     width: 100px
     margin-left: -$margin1
     margin-top: -$margin2 - $margin1
+  .svgImpress
+    width: 125px
+    margin-left: -$margin1
+    margin-top: -$margin2 - $margin1
+

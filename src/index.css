@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 html,
+body {
+  overflow-x: hidden !important;
+}
+
+html,
 body,
 div,
 span,
@@ -809,6 +814,32 @@ a:focus-visible {
     transform: translate(-50%, 0);
   }
 }
+.impressumSection {
+  width: 100dvw;
+  height: auto;
+}
+
+.impressumTitle {
+  padding-top: 144px;
+  margin-left: 144px;
+}
+
+.impressumContent {
+  width: 60%;
+  margin-left: 144px;
+  margin-top: 32px;
+}
+
+@media only screen and (max-width: 900px) {
+  .impressumTitle {
+    margin-left: 32px;
+    padding-top: 86px;
+  }
+  .impressumContent {
+    width: 80%;
+    margin-left: 32px;
+  }
+}
 .footer {
   width: calc(100dvw - 288px);
   height: calc(100dvh - 16px - 144px);
@@ -876,6 +907,20 @@ a:focus-visible {
   margin-left: -54px;
 }
 
+.impress:hover {
+  transform: scale(1.1);
+}
+.impress:hover .svgImpress {
+  display: flex;
+}
+
+.svgImpress {
+  position: absolute;
+  display: none;
+  margin-top: -54px;
+  margin-left: -32px;
+}
+
 .github:hover {
   transform: scale(1.1);
 }
@@ -922,6 +967,11 @@ a:focus-visible {
   .svgLinked,
   .svgGithub {
     width: 100px;
+    margin-left: -16px;
+    margin-top: -48px;
+  }
+  .svgImpress {
+    width: 125px;
     margin-left: -16px;
     margin-top: -48px;
   }
