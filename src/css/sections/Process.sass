@@ -50,6 +50,20 @@
     background-color: $secondary-color
     transform: translate(-50%, 0)
 
+.projects
+  margin-left: $margin4
+  width: clamp(700px, 70dvw, 1250px)
+
+.projectTitle
+  margin-bottom: $margin2
+
+.projectText
+  margin-top: $margin1
+  padding-bottom: $margin2
+
+.last
+  padding-bottom: $margin4
+
 @media only screen and (max-width: 900px)
   .processTitle
     margin-left: $margin2
@@ -79,3 +93,7 @@
       width: 3px
       background-color: $secondary-color
       transform: translate(-50%, 0)
+
+  .projects
+    margin-left: $margin2
+    width: calc(90dvw - $margin2)
