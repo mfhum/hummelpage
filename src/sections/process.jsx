@@ -45,10 +45,16 @@ function Process() {
               <a href='https://takiwatanga-thun.ch' target='_blank' aria-label='Mein letztes Projekt (Takiwatanga Thun)'>
                 <h3>Takiwatanga in Thun</h3>
               </a>
-              <h3 className='projectText last'>
-                Mithilfe meiner Auszubildenden in meinem aktuellen Job, haben wir die Website für das Takiwatanga in Thun erstellt. Ein modernes, verspieltes Design und eine einfache Barrierefreie
+              <h3 className='projectText'>
+                Mithilfe meiner Auszubildenden in meinem aktuellen Job, haben wir die Website für das Takiwatanga in Thun erstellt. Ein modernes, verspieltes Design und eine einfache, barrierefreie
                 Benutzeroberfläche, die es den Nutzern ermöglicht, sich schnell zurechtzufinden und Infos zu den neusten Veranstaltungen zu finden.
               </h3>
+            </div>
+            <div className='projectCard'>
+              <a href='https://github.com/mfhum/hummelpage' target='_blank' aria-label='Portfolio Code'>
+                <h3>Portfolio</h3>
+              </a>
+              <h3 className='projectText last'>Den Code zu diesem Portfolio findest du übrigens hier!</h3>
             </div>
           </div>
         </div>
