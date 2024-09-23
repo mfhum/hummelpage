@@ -22,7 +22,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
+        
+      - name: Install Sass globally
+        run: npm install -g sass
+        
       - name: Compile Sass files
         run: sass ./src/css/style.sass:./src/index.css
 
