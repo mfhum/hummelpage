@@ -1,118 +1,21 @@
 .UniqueSection
+  height: 100dvh
+  width: 100dvw
+  background-color: rgba($secondary-color, .6)
+
+
+.uniqueTextContainer
+  position: absolute
   display: flex
   justify-content: center
   align-items: center
-  height: 100dvh
-  overflow-y: hidden
-.heroCircle
-  position: absolute
-  display: none
-  background-color: black
-  width: 200px
-  height: 200px
-  margin-left: -80px
-  margin-top: -80px
-  border-radius: 50%
-  z-index: 1
-  overflow-x: hidden
+  height: 60dvh
+  width: 100dvw
 
-.uniqueCircle
-  display: block
-  animation: uniqueCircle 0.7s ease
 
-.unique
-  background-color: rgba($secondary-color, .6)
-  z-index: 0
+.uniqueText
+  width: 50dvw
 
-.uniqueQuestion
-  z-index: 3
-  h2
-    margin-bottom: $margin1
-
-.uniqueDesc
-  display: flex
-
-.svgUnique
-  transition: all .4s ease
-  position: absolute
-  margin-left: -($margin3 + $margin2)
-  margin-top: -$margin2
-
-.uniqueHover
-  background: none
-  border: none
-  transition: all .4s ease
-  &:hover
-    transform: scale(1.1)
-    cursor: pointer
-
-.uniqueContent
-  position: absolute
-  height: 100dvh
-  margin-bottom: $margin3
-  h3
-    animation: fadeIn 6s ease
-    color: #7297D2
-    width: 175px
-    z-index: 2
-.findOutMore
-  position: absolute
-  bottom: -200dvh
-  left: 0
-  margin-bottom: $margin3
+.uniqueTitle
+  padding-top: $margin4
   margin-left: $margin4
-  width: auto
-  color: $primary-white
-  z-index: 3
-
-.closed
-  color: $primary-black
-
-.discoverText
-  display: flex
-  text-align: center
-  justify-content: space-between
-  width: 90dvw
-  height: 100px
-  margin-top: 140px
-@keyframes background
-  0%
-    background-color: rgba($secondary-color, 0)
-  100%
-    background-color: rgba($secondary-color, .6)
-
-@keyframes uniqueCircle
-  0%
-    width: 5000px
-    height: 5000px
-    margin-left: -2250px
-    margin-top: -2250px
-  100%
-    width: 200px
-    height: 200px
-    margin-left: -90px
-    margin-top: -90px
-
-@keyframes fadeIn
-  0%
-    opacity: 0
-  100%
-    opacity: 1
-
-@media only screen and (max-width: 800px)
-  .uniqueContent,
-  .uniqueQuestion
-    margin: 0 $margin3
-  .svgUnique
-    width: 175px
-    margin-top: -$margin2
-  .uniqueHover
-    margin-left: $margin1
-  .findOutMore
-    margin-left: $margin2
-    width: 60dvw
-  .uniqueDesc
-    flex-direction: column
-  .uniqueCirlce,
-  .heroCircle
-    display: none

@@ -603,7 +603,6 @@ a:focus-visible {
 .slider-item {
   flex: 1;
   text-align: center;
-  z-index: 1;
   background: none;
   border: none;
   font-size: 1.2rem;
@@ -653,9 +652,8 @@ a:focus-visible {
 }
 
 .skill-item {
-  background: radial-gradient(circle, #ffffff, #538be7);
+  position: relative;
   border-radius: 50%;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   padding: 10px;
   width: 150px;
   height: 150px;
@@ -665,10 +663,39 @@ a:focus-visible {
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   animation: move1 10s infinite linear;
   text-align: center;
+  background: rgba(26, 87, 186, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.2);
+}
+.skill-item::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: radial-gradient(circle, #80aaed, transparent);
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: -1;
+}
+.skill-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  backdrop-filter: blur(30px);
+  border-radius: 50%;
+}
+.skill-item h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
 }
 .skill-item:hover {
-  transform: scale(1.1);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.5);
 }
 
 @keyframes fadeIn {
@@ -833,154 +860,29 @@ a:focus-visible {
   }
 }
 .UniqueSection {
+  height: 100dvh;
+  width: 100dvw;
+  background-color: rgba(26, 87, 186, 0.6);
+}
+
+.uniqueTextContainer {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100dvh;
-  overflow-y: hidden;
+  height: 60dvh;
+  width: 100dvw;
 }
 
-.heroCircle {
-  position: absolute;
-  display: none;
-  background-color: black;
-  width: 200px;
-  height: 200px;
-  margin-left: -80px;
-  margin-top: -80px;
-  border-radius: 50%;
-  z-index: 1;
-  overflow-x: hidden;
+.uniqueText {
+  width: 50dvw;
 }
 
-.uniqueCircle {
-  display: block;
-  animation: uniqueCircle 0.7s ease;
-}
-
-.unique {
-  background-color: rgba(26, 87, 186, 0.6);
-  z-index: 0;
-}
-
-.uniqueQuestion {
-  z-index: 3;
-}
-.uniqueQuestion h2 {
-  margin-bottom: 16px;
-}
-
-.uniqueDesc {
-  display: flex;
-}
-
-.svgUnique {
-  transition: all 0.4s ease;
-  position: absolute;
-  margin-left: -86px;
-  margin-top: -32px;
-}
-
-.uniqueHover {
-  background: none;
-  border: none;
-  transition: all 0.4s ease;
-}
-.uniqueHover:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-.uniqueContent {
-  position: absolute;
-  height: 100dvh;
-  margin-bottom: 54px;
-}
-.uniqueContent h3 {
-  animation: fadeIn 6s ease;
-  color: #7297D2;
-  width: 175px;
-  z-index: 2;
-}
-
-.findOutMore {
-  position: absolute;
-  bottom: -200dvh;
-  left: 0;
-  margin-bottom: 54px;
+.uniqueTitle {
+  padding-top: 144px;
   margin-left: 144px;
-  width: auto;
-  color: #f6f6f6;
-  z-index: 3;
 }
 
-.closed {
-  color: #111;
-}
-
-.discoverText {
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
-  width: 90dvw;
-  height: 100px;
-  margin-top: 140px;
-}
-
-@keyframes background {
-  0% {
-    background-color: rgba(26, 87, 186, 0);
-  }
-  100% {
-    background-color: rgba(26, 87, 186, 0.6);
-  }
-}
-@keyframes uniqueCircle {
-  0% {
-    width: 5000px;
-    height: 5000px;
-    margin-left: -2250px;
-    margin-top: -2250px;
-  }
-  100% {
-    width: 200px;
-    height: 200px;
-    margin-left: -90px;
-    margin-top: -90px;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@media only screen and (max-width: 800px) {
-  .uniqueContent,
-  .uniqueQuestion {
-    margin: 0 54px;
-  }
-  .svgUnique {
-    width: 175px;
-    margin-top: -32px;
-  }
-  .uniqueHover {
-    margin-left: 16px;
-  }
-  .findOutMore {
-    margin-left: 32px;
-    width: 60dvw;
-  }
-  .uniqueDesc {
-    flex-direction: column;
-  }
-  .uniqueCirlce,
-  .heroCircle {
-    display: none;
-  }
-}
 /* Process Section */
 .ProcessSection {
   box-shadow: inset 0 200px 100px -200px #cccccc, inset 0 -200px 50px -200px rgba(26, 87, 186, 0.6);

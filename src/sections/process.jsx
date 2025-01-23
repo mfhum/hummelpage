@@ -39,6 +39,8 @@ function Process() {
               <h3 className='projectText'>
                 Die Website für dieses charmante Bed & Breakfast bringt den Webauftritt auf das professionelle Niveau, welches es verdient. Mit einem modernen Design und einer einfachen
                 Benutzeroberfläche.
+                <br/>
+                "Ich kriege immer wieder Lob für meine Website und bin sehr zufrieden mit dem Resultat!" - Roger Rieder
               </h3>
             </div>
             <div className='projectCard'>
@@ -48,6 +50,8 @@ function Process() {
               <h3 className='projectText'>
                 Mithilfe meiner Auszubildenden in meinem aktuellen Job, haben wir die Website für das Takiwatanga in Thun erstellt. Ein modernes, verspieltes Design und eine einfache, barrierefreie
                 Benutzeroberfläche, die es den Nutzern ermöglicht, sich schnell zurechtzufinden und Infos zu den neusten Veranstaltungen zu finden.
+                <br/>
+                "Das kreative Design wieder spiegelt genau das wieder, was wir sind und was wir machen!" - Takiwatanga Thun
               </h3>
             </div>
             <div className='projectCard'>

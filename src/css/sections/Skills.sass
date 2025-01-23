@@ -36,7 +36,6 @@
 .slider-item
   flex: 1
   text-align: center
-  z-index: 1 // Ensure buttons are above the sliding background
   background: none
   border: none
   font-size: 1.2rem
@@ -86,9 +85,8 @@
   animation: fadeIn 1.5s ease-in-out
 
 .skill-item
-  background: radial-gradient(circle, #ffffff, lighten($secondary-color, 20))
+  position: relative
   border-radius: 50%
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2)
   padding: 10px
   width: 150px
   height: 150px
@@ -98,10 +96,45 @@
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out
   animation: move1 10s infinite linear
   text-align: center
+  background: transparentize($secondary-color, 0.9) // Blue inside
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(0, 0, 0, 0.2), 0 0 40px rgba(0, 0, 0, 0.2)
+
+  &::before
+    content: ''
+    position: absolute
+    top: -20px
+    left: -20px
+    right: -20px
+    bottom: -20px
+    background: radial-gradient(circle, lighten($secondary-color, 30%), transparent)
+    border-radius: 50%
+    filter: blur(10px)
+    z-index: -1
+
+  &::after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: inherit
+    backdrop-filter: blur(30px) // Applies blur to the entire item except text
+    border-radius: 50%
+
+  h3
+    position: relative
+    z-index: 1 // Ensure text stays above all blur effects
+    margin: 0 // Keeps text centered without extra spacing
 
   &:hover
-    transform: scale(1.1)
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3)
+    transform: scale(1.5)
+
+
+
+
+
+
 
 @keyframes fadeIn
   0%
