@@ -1,0 +1,54 @@
+.projectsSection
+  height: auto
+  width: 100dvw
+
+.projectsTitle
+  padding-top: $margin4
+  margin-left: $margin4
+
+.projectsDisplay
+  margin-left: $margin4
+.project
+  margin-top: $margin4
+  margin-bottom: $margin4 + $margin3
+  height: auto
+
+.projectTitle
+  display: flex
+  align-items: flex-end
+  h2
+    font-weight: bold
+  h3
+    margin-left: 8px
+
+.projectDesc
+  width: 50dvw
+
+.projectMessage
+  float: right
+  margin-top: $margin3
+  width: 50dvw
+  margin-right: $margin4
+  margin-bottom: $margin2
+  h3
+    margin-top: $margin2
+
+.projectCircle
+  z-index: -1
+  margin-top: -$margin3
+  position: relative
+  padding: $margin1
+  width: auto
+  height: auto
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out
+  background: radial-gradient($primary-white 30%, $secondary-color)
+  filter: blur(30px) // Stronger glow effect around the circle
+
+.projectDescLink
+  margin-top: $margin1
+  text-decoration: underline
+  &:hover
+    transform: scale(1.01)
+
+
+

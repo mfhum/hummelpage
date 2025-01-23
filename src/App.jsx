@@ -6,6 +6,7 @@ import Footer from './sections/footer';
 import Unique from './sections/unique';
 import Impressum from './sections/impressum.jsx';
 import Skills from "./sections/skills.jsx";
+import Projects from "./sections/projects.jsx";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
               <Hero />
               <Skills />
               <Unique />
-              <Process />
+              <Projects />
               <Footer />
             </>
           }

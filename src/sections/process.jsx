@@ -3,7 +3,7 @@ function Process() {
   return (
     <>
       {/* new section */}
-      <section id='processSection' className='ProcessSection'>
+      <section id='process' className='ProcessSection'>
         <h1 className='processTitle'>Prozess</h1>
         <div className='processSteps'>
           <div className='step'>

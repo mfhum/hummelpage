@@ -6,10 +6,7 @@ function Unique() {
 
   return (
     <>
-
-      <section id='process' className='UniqueSection unique'>
-
-
+      <section id='unique' className='UniqueSection'>
         <h1 className="uniqueTitle">&#34;Unique&#34;</h1>
         <div className={'uniqueTextContainer'}>
           <div
@@ -17,7 +14,7 @@ function Unique() {
               ref={containerRef}
           >
             <VariableProximity
-                label={'Einzigartig, individuell und perfektionistisch – höchste Ansprüche, für ausergewöhnliche Ergebnisse.'}
+                label={'Ich lege Wert auf Einzigartigkeit und Perfektionismus – \nBedeutet auch: \nHöchste Ansprüche, für aussergewöhnliche Ergebnisse.'}
                 className={'variable-proximity-demo'}
                 fromFontVariationSettings="'wght' 400, 'opsz' 9"
                 toFontVariationSettings="'wght' 1000, 'opsz' 40"

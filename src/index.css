@@ -364,11 +364,9 @@ a:focus-visible {
 }
 
 .navItem {
-  margin-left: 10dvw;
-  width: clamp(300px, 35dvw, 1200px);
-  margin-top: 10dvh;
-  height: 20dvh;
-  margin-bottom: 10dvh;
+  width: clamp(300px, 50dvw, 1200px);
+  height: 8dvh;
+  margin-bottom: 5dvh;
 }
 
 @keyframes openMenu {
@@ -1004,6 +1002,72 @@ a:focus-visible {
     width: calc(90dvw - 32px);
   }
 }
+.projectsSection {
+  height: auto;
+  width: 100dvw;
+}
+
+.projectsTitle {
+  padding-top: 144px;
+  margin-left: 144px;
+}
+
+.projectsDisplay {
+  margin-left: 144px;
+}
+
+.project {
+  margin-top: 144px;
+  margin-bottom: 198px;
+  height: auto;
+}
+
+.projectTitle {
+  display: flex;
+  align-items: flex-end;
+}
+.projectTitle h2 {
+  font-weight: bold;
+}
+.projectTitle h3 {
+  margin-left: 8px;
+}
+
+.projectDesc {
+  width: 50dvw;
+}
+
+.projectMessage {
+  float: right;
+  margin-top: 54px;
+  width: 50dvw;
+  margin-right: 144px;
+  margin-bottom: 32px;
+}
+.projectMessage h3 {
+  margin-top: 32px;
+}
+
+.projectCircle {
+  z-index: -1;
+  margin-top: -54px;
+  position: relative;
+  padding: 16px;
+  width: auto;
+  height: auto;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background: radial-gradient(#f6f6f6 30%, #1a57ba);
+  filter: blur(30px);
+}
+
+.projectDescLink {
+  margin-top: 16px;
+  text-decoration: underline;
+}
+.projectDescLink:hover {
+  transform: scale(1.01);
+}
+
 .impressumNavbar {
   margin: 32px;
 }

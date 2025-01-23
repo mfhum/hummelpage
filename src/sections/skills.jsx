@@ -15,7 +15,7 @@ function Skills() {
 
 	return (
 			<>
-				<section id="skillsSection" className="skillsSection">
+				<section id="skills" className="skillsSection">
 					<h1 className="skillsTitle">Skills</h1>
 					<div className="sliderContainer">
 						<div className="slider">
