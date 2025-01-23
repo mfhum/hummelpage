@@ -1,12 +1,11 @@
 import React from 'react';
 function Unique() {
   const [unique, setUnique] = React.useState(false);
-  const [mouseX, setMouseX] = React.useState(0);
-  const [mouseY, setMouseY] = React.useState(0);
+  const [mouseX, setMouseX] = React.useState(1000);
+  const [mouseY, setMouseY] = React.useState(2150);
   const [xp, setXp] = React.useState(0);
   const [yp, setYp] = React.useState(0);
-  const [viewPort, setViewPort] = React.useState(1000);
-  const [currentStep, setCurrentStep] = React.useState(0);
+  const [viewPort, setViewPort] = React.useState(55000);
 
   React.useEffect(() => {
     const handleMouseMove = (e) => {
@@ -19,7 +18,7 @@ function Unique() {
 
     const interval = setInterval(() => {
       if (unique) {
-        if (mouseY <= viewPort + 175) {
+        if (mouseY <= viewPort + 400) {
           setYp((prevYp) => viewPort + 175);
         } else if (mouseY >= viewPort * 2 - 250) {
           setYp((prevYp) => viewPort * 2 - 250);

@@ -5,18 +5,22 @@ function Navbar() {
 
   React.useEffect(() => {
     const handleScroll = () => {
+      const skills = document.getElementById('skillsSection');
+      const skillsPosition = skills.getBoundingClientRect();
       const process = document.getElementById('process');
       const processPosition = process.getBoundingClientRect();
       const footer = document.getElementById('footer');
       const footerPosition = footer.getBoundingClientRect();
 
       // Check if the unique section is in view
-      if (processPosition.top >= 200) {
+      if (skillsPosition.top >= 200) {
         setNumber('00');
-      } else if (footerPosition.top >= 25) {
+      } else if (processPosition.top >= 25) {
         setNumber('01');
-      } else {
+      } else if (footerPosition.top >= 25) {
         setNumber('02');
+      } else {
+        setNumber('03');
       }
     };
 
@@ -68,9 +72,22 @@ function Navbar() {
                 </a>
               </li>
               <li className='navItem'>
+                <a onClick={() => setMenuOpen(!menuOpen)} href='#skillsSection' className='svg linkItem' aria-label='Zu Skills Section'>
+                  <h1>Skills /</h1>
+                  <h3>(01)</h3>
+                  <svg className='svgNav' width='550' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <path
+                        d='M224.284 23.5458C395.589 -62.4085 757.913 122.074 540.027 188.114C267.669 270.664 -189.52 148.591 87.4209 28.0192C207.83 -24.4031 397.197 28.3511 453.625 53.5164'
+                        stroke='black'
+                        strokeWidth='2'
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li className='navItem'>
                 <a onClick={() => setMenuOpen(!menuOpen)} href='#processSection' className='svg linkItem' aria-label='Zu Prozess Section'>
                   <h1>Prozess /</h1>
-                  <h3>(01)</h3>
+                  <h3>(02)</h3>
                   <svg className='svgNav' width='550' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path
                       d='M224.284 23.5458C395.589 -62.4085 757.913 122.074 540.027 188.114C267.669 270.664 -189.52 148.591 87.4209 28.0192C207.83 -24.4031 397.197 28.3511 453.625 53.5164'
@@ -83,7 +100,7 @@ function Navbar() {
               <li className='navItem'>
                 <a onClick={() => setMenuOpen(!menuOpen)} href='#footer' className='svg linkItem' aria-label='Zu den Kontaktinfos'>
                   <h1>Kontakt /</h1>
-                  <h3>(02)</h3>
+                  <h3>(03)</h3>
                   <svg className='svgNav' width='650' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path
                       d='M224.284 23.5458C395.589 -62.4085 757.913 122.074 540.027 188.114C267.669 270.664 -189.52 148.591 87.4209 28.0192C207.83 -24.4031 397.197 28.3511 453.625 53.5164'

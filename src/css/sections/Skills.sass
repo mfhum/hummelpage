@@ -1,0 +1,217 @@
+// Parent slider container
+.slider
+  margin-top: 10dvh
+  margin-bottom: 10dvh
+  display: flex
+  justify-content: space-between
+  position: relative
+  width: 100%
+  max-width: 600px
+  border: 2px solid black
+  border-radius: 30px
+  padding: 5px
+  background: none
+  overflow: hidden // Prevent overflow
+
+  --active-index: 0 // Initial state
+
+  &::before
+    content: ''
+    position: absolute
+    top: 5px
+    bottom: 5px
+    left: 0
+    margin-left: 15px
+    width: calc(33.33% - 10px) // Adjust width for three buttons
+    background-color: transparentize($secondary-color,0.3)
+    border-radius: 25px
+    z-index: 0
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s ease-in-out
+    transform: translateX(calc(var(--active-index) * 100%))
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2)
+
+
+
+// Individual buttons
+.slider-item
+  flex: 1
+  text-align: center
+  z-index: 1 // Ensure buttons are above the sliding background
+  background: none
+  border: none
+  font-size: 1.2rem
+  font-weight: bold
+  padding: 10px
+  position: relative
+  cursor: pointer
+
+  &:hover
+    transform: scale(1.1) rotate(1deg)
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55)
+
+
+  &.active
+    color: $primary-white // Ensure text contrast with sliding background
+    transition: color 0.5s ease-in-out // Add transition for color change
+
+
+.sliderContainer
+  width: 100%
+  display: flex
+  justify-content: center
+
+// Skills section styling
+.skillsSection
+  height: 100dvh
+
+
+.skillsTitle
+  padding-top: $margin4
+  margin-left: $margin4
+
+
+
+.skills-grid
+  display: flex
+  flex-wrap: wrap
+  gap: 30px
+  padding: 10px
+  justify-content: center
+
+.skill-category
+  display: flex
+  flex-wrap: wrap
+  gap: 10px
+  justify-content: center
+  animation: fadeIn 1.5s ease-in-out
+
+.skill-item
+  background: radial-gradient(circle, #ffffff, lighten($secondary-color, 20))
+  border-radius: 50%
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2)
+  padding: 10px
+  width: 150px
+  height: 150px
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out
+  animation: move1 10s infinite linear
+  text-align: center
+
+  &:hover
+    transform: scale(1.1)
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3)
+
+@keyframes fadeIn
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes fadeOut
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+
+@keyframes move1
+  0%
+    transform: translate(0, 0)
+  12%
+    transform: translate(7.5px, 10px)
+  25%
+    transform: translate(15px, 15px)
+  37%
+    transform: translate(7.5px, 22.5px)
+  50%
+    transform: translate(0, 30px)
+  62%
+    transform: translate(-7.5px, 22.5px)
+  75%
+    transform: translate(-15px, 15px)
+  87%
+    transform: translate(-7.5px, 7.5px)
+  100%
+    transform: translate(0, 0)
+
+@keyframes move2
+  0%
+    transform: translate(0, 0)
+  12%
+    transform: translate(-7.5px, 10px)
+  25%
+    transform: translate(-15px, 15px)
+  37%
+    transform: translate(-7.5px, 22.5px)
+  50%
+    transform: translate(0, -30px)
+  62%
+    transform: translate(7.5px, -22.5px)
+  75%
+    transform: translate(15px, -15px)
+  87%
+    transform: translate(7.5px, -7.5px)
+  100%
+    transform: translate(0, 0)
+
+@keyframes move3
+  0%
+    transform: translate(0, 0)
+  12%
+    transform: translate(7.5px, -10px)
+  25%
+    transform: translate(15px, -15px)
+  37%
+    transform: translate(7.5px, -22.5px)
+  50%
+    transform: translate(0, 30px)
+  62%
+    transform: translate(-7.5px, 22.5px)
+  75%
+    transform: translate(-15px, -15px)
+  87%
+    transform: translate(-7.5px, -7.5px)
+  100%
+    transform: translate(0, 0)
+
+@keyframes move4
+  0%
+    transform: translate(0, 0)
+  12%
+    transform: translate(-7.5px, -10px)
+  25%
+    transform: translate(-15px, -15px)
+  37%
+    transform: translate(-7.5px, -22.5px)
+  50%
+    transform: translate(0, 30px)
+  62%
+    transform: translate(7.5px, 22.5px)
+  75%
+    transform: translate(15px, 15px)
+  87%
+    transform: translate(7.5px, 7.5px)
+  100%
+    transform: translate(0, 0)
+
+@keyframes move5
+  0%
+    transform: translate(0, 0)
+  12%
+    transform: translate(7.5px, 10px)
+  25%
+    transform: translate(15px, 15px)
+  37%
+    transform: translate(7.5px, 22.5px)
+  50%
+    transform: translate(0, -30px)
+  62%
+    transform: translate(-7.5px, -22.5px)
+  75%
+    transform: translate(-15px, -15px)
+  87%
+    transform: translate(-7.5px, -7.5px)
+  100%
+    transform: translate(0, 0)

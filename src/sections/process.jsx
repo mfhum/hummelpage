@@ -34,7 +34,7 @@ function Process() {
           <div className='projectCards'>
             <div className='projectCard'>
               <a href='https://ustreia-orta.ch' target='_blank' aria-label='Mein letztes Projekt (Ustreia Orta)'>
-                <h3>Ustreia Orta in Lohn</h3>
+                <h3 className="clickable">Ustreia Orta in Lohn</h3>
               </a>
               <h3 className='projectText'>
                 Die Website für dieses charmante Bed & Breakfast bringt den Webauftritt auf das professionelle Niveau, welches es verdient. Mit einem modernen Design und einer einfachen
@@ -43,7 +43,7 @@ function Process() {
             </div>
             <div className='projectCard'>
               <a href='https://takiwatanga-thun.ch' target='_blank' aria-label='Mein letztes Projekt (Takiwatanga Thun)'>
-                <h3>Takiwatanga in Thun</h3>
+                <h3 className="clickable">Takiwatanga in Thun</h3>
               </a>
               <h3 className='projectText'>
                 Mithilfe meiner Auszubildenden in meinem aktuellen Job, haben wir die Website für das Takiwatanga in Thun erstellt. Ein modernes, verspieltes Design und eine einfache, barrierefreie
@@ -52,9 +52,11 @@ function Process() {
             </div>
             <div className='projectCard'>
               <a href='https://github.com/mfhum/hummelpage' target='_blank' aria-label='Portfolio Code'>
-                <h3>Portfolio</h3>
+                <h3 className="clickable">Portfolio</h3>
               </a>
-              <h3 className='projectText last'>Den Code zu diesem Portfolio findest du übrigens hier!</h3>
+              <h3 className='projectText last'>Den Code zu diesem Portfolio findest du übrigens&nbsp;<a href='https://github.com/mfhum/hummelpage' target='_blank' aria-label='Portfolio Code'>
+                <h3 className="clickable">hier!</h3>
+              </a></h3>
             </div>
           </div>
         </div>

@@ -174,8 +174,8 @@ img {
 }
 
 h1 {
-  font-size: clamp(6.25rem, 10dvw, 12.5rem);
-  line-height: clamp(6.875rem, 10dvw, 13.75rem);
+  font-size: clamp(6.25rem, 7dvw, 12.5rem);
+  line-height: clamp(6.875rem, 7dvw, 13.75rem);
   font-family: "Outfit", sans-serif;
   font-weight: 400;
 }
@@ -327,7 +327,7 @@ a:focus-visible {
 .svgNav {
   position: absolute;
   display: none;
-  width: clamp(275px, 30dvw, 550px);
+  width: clamp(275px, 25dvw, 550px);
   height: auto;
 }
 
@@ -353,23 +353,22 @@ a:focus-visible {
 .navList {
   position: absolute;
   z-index: -1;
-  height: 100dvh;
-  width: 100dvw;
+  width: 80dvw;
+  height: 90dvh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
   animation: openMenuNavbar 1.5s;
 }
 
 .navItem {
-  width: clamp(350px, 80dvw, 1000px);
-  margin-right: -432px;
-}
-
-.navItem:first-child,
-.navItem:last-child {
-  margin-left: -432px;
+  margin-left: 10dvw;
+  width: clamp(300px, 35dvw, 1200px);
+  margin-top: 10dvh;
+  height: 20dvh;
+  margin-bottom: 10dvh;
 }
 
 @keyframes openMenu {
@@ -435,15 +434,17 @@ a:focus-visible {
     margin-bottom: 86px;
   }
   .navList {
+    margin-top: 5dvh;
+    flex-direction: column;
     align-items: flex-start;
     margin-left: 32px;
   }
   .navItem {
-    margin-right: 0;
+    margin: 0;
+    width: 100px;
   }
-  .navItem:first-child,
-  .navItem:last-child {
-    margin-left: 0;
+  .linkItem {
+    width: 2000px;
   }
 }
 .circle {
@@ -568,6 +569,269 @@ a:focus-visible {
     width: 0px;
   }
 }
+.slider {
+  margin-top: 10dvh;
+  margin-bottom: 10dvh;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 5px;
+  background: none;
+  overflow: hidden;
+  --active-index: 0 // Initial state;
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 0;
+  margin-left: 15px;
+  width: calc(33.33% - 10px);
+  background-color: rgba(26, 87, 186, 0.7);
+  border-radius: 25px;
+  z-index: 0;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s ease-in-out;
+  transform: translateX(calc(var(--active-index) * 100%));
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.slider-item {
+  flex: 1;
+  text-align: center;
+  z-index: 1;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.slider-item:hover {
+  transform: scale(1.1) rotate(1deg);
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.slider-item.active {
+  color: #f6f6f6;
+  transition: color 0.5s ease-in-out;
+}
+
+.sliderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.skillsSection {
+  height: 100dvh;
+}
+
+.skillsTitle {
+  padding-top: 144px;
+  margin-left: 144px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.skill-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.skill-item {
+  background: radial-gradient(circle, #ffffff, #538be7);
+  border-radius: 50%;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: move1 10s infinite linear;
+  text-align: center;
+}
+.skill-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes move1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  12% {
+    transform: translate(7.5px, 10px);
+  }
+  25% {
+    transform: translate(15px, 15px);
+  }
+  37% {
+    transform: translate(7.5px, 22.5px);
+  }
+  50% {
+    transform: translate(0, 30px);
+  }
+  62% {
+    transform: translate(-7.5px, 22.5px);
+  }
+  75% {
+    transform: translate(-15px, 15px);
+  }
+  87% {
+    transform: translate(-7.5px, 7.5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes move2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  12% {
+    transform: translate(-7.5px, 10px);
+  }
+  25% {
+    transform: translate(-15px, 15px);
+  }
+  37% {
+    transform: translate(-7.5px, 22.5px);
+  }
+  50% {
+    transform: translate(0, -30px);
+  }
+  62% {
+    transform: translate(7.5px, -22.5px);
+  }
+  75% {
+    transform: translate(15px, -15px);
+  }
+  87% {
+    transform: translate(7.5px, -7.5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes move3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  12% {
+    transform: translate(7.5px, -10px);
+  }
+  25% {
+    transform: translate(15px, -15px);
+  }
+  37% {
+    transform: translate(7.5px, -22.5px);
+  }
+  50% {
+    transform: translate(0, 30px);
+  }
+  62% {
+    transform: translate(-7.5px, 22.5px);
+  }
+  75% {
+    transform: translate(-15px, -15px);
+  }
+  87% {
+    transform: translate(-7.5px, -7.5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes move4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  12% {
+    transform: translate(-7.5px, -10px);
+  }
+  25% {
+    transform: translate(-15px, -15px);
+  }
+  37% {
+    transform: translate(-7.5px, -22.5px);
+  }
+  50% {
+    transform: translate(0, 30px);
+  }
+  62% {
+    transform: translate(7.5px, 22.5px);
+  }
+  75% {
+    transform: translate(15px, 15px);
+  }
+  87% {
+    transform: translate(7.5px, 7.5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes move5 {
+  0% {
+    transform: translate(0, 0);
+  }
+  12% {
+    transform: translate(7.5px, 10px);
+  }
+  25% {
+    transform: translate(15px, 15px);
+  }
+  37% {
+    transform: translate(7.5px, 22.5px);
+  }
+  50% {
+    transform: translate(0, -30px);
+  }
+  62% {
+    transform: translate(-7.5px, -22.5px);
+  }
+  75% {
+    transform: translate(-15px, -15px);
+  }
+  87% {
+    transform: translate(-7.5px, -7.5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
 .UniqueSection {
   display: flex;
   justify-content: center;
@@ -579,7 +843,7 @@ a:focus-visible {
 .heroCircle {
   position: absolute;
   display: none;
-  background-color: #f6f6f6;
+  background-color: black;
   width: 200px;
   height: 200px;
   margin-left: -80px;
@@ -613,8 +877,8 @@ a:focus-visible {
 .svgUnique {
   transition: all 0.4s ease;
   position: absolute;
-  margin-left: -88px;
-  margin-top: -24px;
+  margin-left: -86px;
+  margin-top: -32px;
 }
 
 .uniqueHover {
@@ -641,7 +905,7 @@ a:focus-visible {
 
 .findOutMore {
   position: absolute;
-  bottom: -100dvh;
+  bottom: -200dvh;
   left: 0;
   margin-bottom: 54px;
   margin-left: 144px;
@@ -658,7 +922,6 @@ a:focus-visible {
   display: flex;
   text-align: center;
   justify-content: space-between;
-  align-items: 200px;
   width: 90dvw;
   height: 100px;
   margin-top: 140px;
@@ -740,6 +1003,10 @@ a:focus-visible {
   padding-bottom: 144px;
 }
 
+.clickable {
+  text-decoration: underline;
+}
+
 .step {
   display: flex;
   align-items: flex-end;
@@ -789,6 +1056,7 @@ a:focus-visible {
 .projectText {
   margin-top: 16px;
   padding-bottom: 32px;
+  display: flex;
 }
 
 .last {
