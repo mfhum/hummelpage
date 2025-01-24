@@ -26,7 +26,7 @@ function Footer() {
             </a>
           </div>
           <div className='footerContentImage'>
-            <img className='footerContentImageSrc' src='../src/assets/marius.png' alt='Marius Hummel' />
+            <img className='footerContentImageSrc' src='/images/marius.png' alt='Marius Hummel' />
           </div>
         </div>
         <div className='footerContentRight'>
