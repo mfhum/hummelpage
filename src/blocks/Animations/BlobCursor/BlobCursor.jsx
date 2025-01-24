@@ -63,7 +63,7 @@ export default function BlobCursor({
       </svg>
       <div
         ref={ref}
-        className="main"
+        className="blob-cursor-container"
         onMouseMove={handleMove}
         onTouchMove={handleMove}
       >

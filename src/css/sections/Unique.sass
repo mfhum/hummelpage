@@ -1,5 +1,5 @@
 .UniqueSection
-  height: 100dvh
+  height: 110dvh
   width: 100dvw
   background-color: rgba($secondary-color, .6)
 
@@ -9,7 +9,7 @@
   display: flex
   justify-content: center
   align-items: center
-  height: 60dvh
+  height: 70dvh
   width: 100dvw
 
 
@@ -17,5 +17,18 @@
   width: 50dvw
 
 .uniqueTitle
-  padding-top: $margin4
+  padding-top: $margin3 + $margin3
   margin-left: $margin4
+
+@media only screen and (max-width: 900px)
+  .uniqueTitle
+    margin-left: $margin2
+    padding-top: $margin3 + $margin2
+  .uniqueText
+    width: 80dvw
+    margin-left: $margin2
+    margin-top: $margin2
+  .uniqueTextContainer
+    height: 60dvh
+  .UniqueSection
+    height: 100dvh

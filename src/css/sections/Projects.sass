@@ -1,6 +1,7 @@
-.projectsSection
+.ProjectsSection
   height: auto
   width: 100dvw
+
 
 .projectsTitle
   padding-top: $margin4
@@ -10,8 +11,7 @@
   margin-left: $margin4
 .project
   margin-top: $margin4
-  margin-bottom: $margin4 + $margin3
-  height: auto
+  padding-bottom: $margin4 + $margin3
 
 .projectTitle
   display: flex
@@ -52,3 +52,26 @@
 
 
 
+@media only screen and (max-width: 900px)
+  .projectsTitle
+    margin-left: $margin2
+    padding-top: $margin3 + $margin2
+
+  .projectsDisplay
+    margin-left: $margin2
+
+  .project
+    margin-top: $margin2
+    padding-bottom: $margin2
+
+  .projectDesc
+    width: 85dvw
+    h2
+      font-size: 1.3rem
+
+  .projectMessage
+    float: none
+    width: 85dvw
+
+    h2
+      font-size: 1.2rem

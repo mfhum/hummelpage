@@ -15,7 +15,7 @@ function Unique() {
           >
             <VariableProximity
                 label={'Ich lege Wert auf Einzigartigkeit und Perfektionismus – \nBedeutet auch: \nHöchste Ansprüche, für aussergewöhnliche Ergebnisse.'}
-                className={'variable-proximity-demo'}
+                className={'variable-proximity'}
                 fromFontVariationSettings="'wght' 400, 'opsz' 9"
                 toFontVariationSettings="'wght' 1000, 'opsz' 40"
                 containerRef={containerRef}

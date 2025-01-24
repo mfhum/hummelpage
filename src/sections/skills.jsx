@@ -8,11 +8,6 @@ function Skills() {
 		setActiveSkill(["Frontend", "Backend", "Tools"][index]);
 	};
 
-	const getRandomAnimation = () => {
-		const animations = ["move1", "move2", "move3", "move4", "move5"];
-		return animations[Math.floor(Math.random() * animations.length)];
-	};
-
 	return (
 			<>
 				<section id="skills" className="skillsSection">
@@ -42,22 +37,31 @@ function Skills() {
 					<div className="skills-grid">
 						{activeSkill === 'Frontend' && (
 								<div className="skill-category">
-									{["React.js", "Angular", "Next.js", "HTML", "SCSS/SASS", "JavaScript", "TypeScript", "Vite", "Design"].map((skill, index) => (
-											<a key={index} href="https://github.com/mfhum" target="_blank"><div className="skill-item" style={{ animationName: getRandomAnimation() }} ><h3>{skill}</h3></div></a>
+									{["React.js", "Angular", "Next.js", "HTML", "SCSS/SASS", "JavaScript", "TypeScript", "Vite", "UX / UI Design"].map((skill, index) => (
+											<a className="skill-link" key={index} href="https://github.com/mfhum" target="_blank">
+												<div className="skill-item"/>
+												<div className="skill-item-alt" ><h3>{skill}</h3></div>
+											</a>
 									))}
 								</div>
 						)}
 						{activeSkill === 'Backend' && (
 								<div className="skill-category">
-									{[".NET Web API", "C#", "EF Core", "Oracle DB", "SQL Server", "Django","API Engineering", "Auth"].map((skill, index) => (
-											<a key={index} href="https://github.com/mfhum" target="_blank"><div className="skill-item" style={{ animationName: getRandomAnimation() }}><h3>{skill}</h3></div></a>
+									{[".NET Web API", "C#", "EF Core", "Oracle DB", "SQL Server", "Django","API Engineering", "Auth", "LINQ"].map((skill, index) => (
+											<a className="skill-link" key={index} href="https://github.com/mfhum" target="_blank">
+												<div className="skill-item"/>
+												<div className="skill-item-alt" ><h3>{skill}</h3></div>
+											</a>
 									))}
 								</div>
 						)}
 						{activeSkill === 'Tools' && (
 								<div className="skill-category">
-									{["Git", "GitHub Projects & Actions", "Atlassian Suite", "Docker", "JetBrains", "VPS", "Postman", "Figma"].map((skill, index) => (
-											<a key={index} href="https://github.com/mfhum" target="_blank"><div className="skill-item" style={{ animationName: getRandomAnimation() }}><h3>{skill}</h3></div></a>
+									{["Git", "GitHub Projects & Actions", "Atlassian Suite", "Docker", "JetBrains", "VPS", "nginx", "Postman", "Figma", "GCP", "Adobe Products"].map((skill, index) => (
+											<a className="skill-link" key={index} href="https://github.com/mfhum" target="_blank">
+												<div className="skill-item"/>
+												<div className="skill-item-alt" ><h3>{skill}</h3></div>
+											</a>
 									))}
 								</div>
 						)}

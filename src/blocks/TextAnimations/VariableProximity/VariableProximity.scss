@@ -9,6 +9,8 @@
 .variable-proximity {
   font-family: "Roboto Flex", sans-serif;
   font-size: 50px;
+  line-height: 70px;
+  letter-spacing: 0.2px;
   z-index: 1;
 }
 
@@ -23,4 +25,11 @@
   white-space: nowrap;
   border: 0;
   z-index: 1;
+}
+
+@media only screen and (max-width: 900px) {
+  .variable-proximity {
+    font-size: 20px;
+    line-height: 30px;
+  }
 }
