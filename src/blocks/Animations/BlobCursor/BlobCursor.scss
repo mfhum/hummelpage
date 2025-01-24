@@ -1,15 +1,9 @@
-/*
-	jsrepo 1.28.2
-	Installed from https://reactbits.dev/default/
-	1-23-2025
-*/
-
-.bubble-container {
+.bubbleContainer {
   width: 100%;
   z-index: 1;
 }
 
-.blob-cursor-container > div {
+.blobCursorContainer > div {
   position: absolute;
   will-change: transform;
   border-radius: 50%;
@@ -18,12 +12,12 @@
   opacity: 0.6;
 }
 
-.blob-cursor-container > div:nth-child(1) {
+.blobCursorContainer > div:nth-child(1) {
   width: 60px;
   height: 60px;
 }
 
-.blob-cursor-container > div:nth-child(2) {
+.blobCursorContainer > div:nth-child(2) {
   width: 125px;
   height: 125px;
 }
@@ -33,7 +27,7 @@
   height: 75px;
 }
 
-.blob-cursor-container > div::after {
+.blobCursorContainer > div::after {
   content: "";
   position: absolute;
   top: 20px;
@@ -44,21 +38,21 @@
   background: rgba(255, 255, 255, 0.8);
 }
 
-.blob-cursor-container > div:nth-child(2)::after {
+.blobCursorContainer > div:nth-child(2)::after {
   top: 35px;
   left: 35px;
   width: 35px;
   height: 35px;
 }
 
-.blob-cursor-container > div:nth-child(3)::after {
+.blobCursorContainer > div:nth-child(3)::after {
   top: 25px;
   left: 25px;
   width: 25px;
   height: 25px;
 }
 
-.blob-cursor-container {
+.blobCursorContainer {
   position: absolute;
   width: 100dvw;
   height: 80dvh;

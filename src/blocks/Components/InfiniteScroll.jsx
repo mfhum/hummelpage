@@ -139,24 +139,24 @@ export default function InfiniteScroll({
 			<>
 				<style>
 					{`
-        .infinite-scroll-wrapper {
+        .infiniteScrollWrapper {
           max-height: ${maxHeight};
         }
 
-        .infinite-scroll-container {
+        .infiniteScrollContainer {
           width: ${width};
         }
 
-        .infinite-scroll-item {
+        .infiniteScrollItem {
           height: ${itemMinHeight}px;
           margin-top: ${negativeMargin};
         }
         `}
 				</style>
 
-				<div className="infinite-scroll-wrapper" ref={wrapperRef}>
+				<div className="infiniteScrollWrapper" ref={wrapperRef}>
 					<div
-							className="infinite-scroll-container"
+							className="infiniteScrollContainer"
 							ref={containerRef}
 							style={{
 								transform: getTiltTransform(),
@@ -164,7 +164,7 @@ export default function InfiniteScroll({
 					>
 						{items.map((item, i) => (
 								<div
-										className='infinite-scroll-item'
+										className='infiniteScrollItem'
 										key={i}
 								>
 									{item.content}

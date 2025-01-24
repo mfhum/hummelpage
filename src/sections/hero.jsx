@@ -15,7 +15,7 @@ function Hero() {
           <h1 className='heroTitle'>Marius</h1>
           <div className='titleWrapper'></div>
         </div>
-        <div className='Description'>
+        <div className='description'>
           <div className='descText'>
             <h2>Web Developer & </h2> <h2 className='descSometimes'>&nbsp;sometimes</h2> <h2 className='descDesigner'>&nbsp;Designer</h2>
           </div>

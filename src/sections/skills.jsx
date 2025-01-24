@@ -16,51 +16,51 @@ function Skills() {
 						<div className="slider">
 							<button
 									onClick={() => handleClick(0)}
-									className={`slider-item ${activeSkill === "Frontend" ? "active" : ""}`}
+									className={`sliderItem ${activeSkill === "Frontend" ? "active" : ""}`}
 							>
 								<h3>Frontend</h3>
 							</button>
 							<button
 									onClick={() => handleClick(1)}
-									className={`slider-item ${activeSkill === "Backend" ? "active" : ""}`}
+									className={`sliderItem ${activeSkill === "Backend" ? "active" : ""}`}
 							>
 								<h3>Backend</h3>
 							</button>
 							<button
 									onClick={() => handleClick(2)}
-									className={`slider-item ${activeSkill === "Tools" ? "active" : ""}`}
+									className={`sliderItem ${activeSkill === "Tools" ? "active" : ""}`}
 							>
 								<h3>Tools</h3>
 							</button>
 						</div>
 					</div>
-					<div className="skills-grid">
+					<div className="skillsGrid">
 						{activeSkill === 'Frontend' && (
-								<div className="skill-category">
+								<div className="skillCategory">
 									{["React.js", "Angular", "Next.js", "HTML", "SCSS/SASS", "JavaScript", "TypeScript", "Vite", "UX / UI Design"].map((skill, index) => (
-											<a className="skill-link" key={index} href="https://github.com/mfhum" target="_blank">
-												<div className="skill-item"/>
-												<div className="skill-item-alt" ><h3>{skill}</h3></div>
+											<a className="skillLink" key={index} href="https://github.com/mfhum" target="_blank">
+												<div className="skillItem"/>
+												<div className="skillItemAlt" ><h3>{skill}</h3></div>
 											</a>
 									))}
 								</div>
 						)}
 						{activeSkill === 'Backend' && (
-								<div className="skill-category">
+								<div className="skillCategory">
 									{[".NET Web API", "C#", "EF Core", "Oracle DB", "SQL Server", "Django","API Engineering", "Auth", "LINQ"].map((skill, index) => (
-											<a className="skill-link" key={index} href="https://github.com/mfhum" target="_blank">
-												<div className="skill-item"/>
-												<div className="skill-item-alt" ><h3>{skill}</h3></div>
+											<a className="skillLink" key={index} href="https://github.com/mfhum" target="_blank">
+												<div className="skillItem"/>
+												<div className="skillItemAlt" ><h3>{skill}</h3></div>
 											</a>
 									))}
 								</div>
 						)}
 						{activeSkill === 'Tools' && (
-								<div className="skill-category">
+								<div className="skillCategory">
 									{["Git", "GitHub Projects & Actions", "Atlassian Suite", "Docker", "JetBrains", "VPS", "nginx", "Postman", "Figma", "GCP", "Adobe Products"].map((skill, index) => (
-											<a className="skill-link" key={index} href="https://github.com/mfhum" target="_blank">
-												<div className="skill-item"/>
-												<div className="skill-item-alt" ><h3>{skill}</h3></div>
+											<a className="skillLink" key={index} href="https://github.com/mfhum" target="_blank">
+												<div className="skillItem"/>
+												<div className="skillItemAlt" ><h3>{skill}</h3></div>
 											</a>
 									))}
 								</div>

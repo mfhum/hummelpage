@@ -494,7 +494,7 @@ a:focus-visible {
   z-index: 0;
 }
 
-.Description {
+.description {
   height: 40dvh;
 }
 
@@ -600,7 +600,7 @@ a:focus-visible {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.slider-item {
+.sliderItem {
   flex: 1;
   text-align: center;
   background: none;
@@ -611,11 +611,11 @@ a:focus-visible {
   position: relative;
   cursor: pointer;
 }
-.slider-item:hover {
+.sliderItem:hover {
   transform: scale(1.1) rotate(1deg);
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-.slider-item.active {
+.sliderItem.active {
   color: #f6f6f6;
   transition: color 0.5s ease-in-out;
 }
@@ -635,7 +635,7 @@ a:focus-visible {
   margin-left: 144px;
 }
 
-.skills-grid {
+.skillsGrid {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -643,7 +643,7 @@ a:focus-visible {
   justify-content: center;
 }
 
-.skill-category {
+.skillCategory {
   display: flex;
   width: 80dvw;
   flex-wrap: wrap;
@@ -653,7 +653,7 @@ a:focus-visible {
   margin-bottom: 20dvh;
 }
 
-.skill-item-alt {
+.skillItemAlt {
   margin-top: -170px;
   position: relative;
   border-radius: 50%;
@@ -668,7 +668,7 @@ a:focus-visible {
   text-align: center;
 }
 
-.skill-item {
+.skillItem {
   position: relative;
   border-radius: 50%;
   padding: 10px;
@@ -685,13 +685,13 @@ a:focus-visible {
   filter: blur(15px);
 }
 
-.skill-link:hover {
+.skillLink:hover {
   transition: scale 1s ease-in-out;
   transform: scale(1.1);
   cursor: pointer;
   rotate: 2deg;
 }
-.skill-link:hover .skill-item {
+.skillLink:hover .skillItem {
   background: rgba(25, 85, 182, 0.8);
   transition: background 0.5s ease-in-out;
 }
@@ -750,8 +750,8 @@ a:focus-visible {
     margin: 32px;
     width: calc(100% - 2 * 32px);
   }
-  .skill-item-alt,
-  .skill-item {
+  .skillItemAlt,
+  .skillItem {
     position: relative;
     border-radius: 50%;
     padding: 10px;
@@ -764,7 +764,7 @@ a:focus-visible {
     animation: move1 10s infinite linear;
     text-align: center;
   }
-  .skill-item-alt {
+  .skillItemAlt {
     margin-top: -95px;
   }
 }

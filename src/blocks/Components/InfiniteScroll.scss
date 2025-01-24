@@ -1,4 +1,4 @@
-.infinite-scroll-wrapper {
+.infiniteScrollWrapper {
   position: relative;
   display: flex;
   align-items: center;
@@ -9,8 +9,8 @@
   overscroll-behavior: none;
   border-block: 2px dotted transparent;
 }
-.infinite-scroll-wrapper::before,
-.infinite-scroll-wrapper::after {
+.infiniteScrollWrapper::before,
+.infiniteScrollWrapper::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -18,16 +18,16 @@
   pointer-events: none;
 }
 
-.infinite-scroll-wrapper::before {
+.infiniteScrollWrapper::before {
   top: 0;
 }
 
-.infinite-scroll-wrapper::after {
+.infiniteScrollWrapper::after {
   --dir: to top;
   bottom: 0;
 }
 
-.infinite-scroll-container {
+.infiniteScrollContainer {
   display: flex;
   flex-direction: column;
   overscroll-behavior: contain;
@@ -36,7 +36,7 @@
   transform-origin: center center;
 }
 
-.infinite-scroll-item {
+.infiniteScrollItem {
   --accent-color: #ffffff;
   border-radius: 15px;
   display: flex;
@@ -54,7 +54,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .infinite-scroll-wrapper {
+  .infiniteScrollWrapper {
     width: 100dvw;
     height: 55dvh;
   }

@@ -1,12 +1,6 @@
-/*
-	jsrepo 1.28.2
-	Installed from https://reactbits.dev/default/
-	1-23-2025
-*/
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap");
 
-.variable-proximity {
+.variableProximity {
   font-family: "Roboto Flex", sans-serif;
   font-size: 50px;
   line-height: 70px;
@@ -14,7 +8,7 @@
   z-index: 1;
 }
 
-.sr-only {
+.srOnly {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -28,7 +22,7 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .variable-proximity {
+  .variableProximity {
     font-size: 20px;
     line-height: 30px;
   }

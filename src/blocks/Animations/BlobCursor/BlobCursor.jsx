@@ -51,7 +51,7 @@ export default function BlobCursor({
   }, [updatePosition]);
 
   return (
-    <div className="bubble-container">
+    <div className="bubbleContainer">
       <svg style={{ position: "absolute", width: 0, height: 0 }}>
         <filter id="blob">
           <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
@@ -63,7 +63,7 @@ export default function BlobCursor({
       </svg>
       <div
         ref={ref}
-        className="blob-cursor-container"
+        className="blobCursorContainer"
         onMouseMove={handleMove}
         onTouchMove={handleMove}
       >

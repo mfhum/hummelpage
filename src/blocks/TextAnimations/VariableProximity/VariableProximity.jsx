@@ -183,7 +183,7 @@ const VariableProximity = forwardRef((props, ref) => {
           )}
         </span>
       ))}
-      <span className="sr-only">{label}</span>
+      <span className="srOnly">{label}</span>
     </span>
   );
 });
