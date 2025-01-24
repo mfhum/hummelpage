@@ -330,6 +330,7 @@ a:focus-visible {
   display: none;
   width: clamp(275px, 25dvw, 550px);
   height: auto;
+  margin-top: -16px;
 }
 
 .svgMenu {
