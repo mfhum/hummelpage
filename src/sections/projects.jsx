@@ -13,8 +13,7 @@ function Projects() {
 								<h3>Lohn GR</h3>
 							</div>
 							<div className='projectDesc'>
-								<h2>Die Website für dieses charmante Bed & Breakfast bringt den Webauftritt auf das professionelle Niveau, welches es verdient. Mit einem modernen Design und einer einfachen
-									Benutzeroberfläche.</h2>
+								<h2>Die Website dieses charmanten Bed & Breakfasts hebt den Webauftritt auf das professionelle Niveau, das es verdient. Sie überzeugt durch ein modernes Design und eine benutzerfreundliche Oberfläche.</h2>
 								<a href='https://ustreia-orta.ch' target='_blank' aria-label='Projekt (Ustreia Orta)'><h3 className='projectDescLink'>Zur Website &rarr;</h3></a>
 
 							</div>
@@ -30,8 +29,7 @@ function Projects() {
 								<h3>Thun BE</h3>
 							</div>
 							<div className='projectDesc'>
-								<h2>Mithilfe meiner Auszubildenden in meinem aktuellen Job, haben wir die Website für das Takiwatanga in Thun erstellt. Ein modernes, verspieltes Design und eine einfache, barrierefreie
-									Benutzeroberfläche, die es den Nutzern ermöglicht, sich schnell zurechtzufinden und Infos zu den neusten Veranstaltungen zu finden.</h2>
+								<h2>Gemeinsam mit meinen Auszubildenden in meinem aktuellen Job haben wir die Website für das Takiwatanga in Thun erstellt. Das Ergebnis ist ein modernes, verspieltes Design mit einer einfachen, barrierefreien Benutzeroberfläche, die es den Nutzern ermöglicht, sich schnell zurechtzufinden und Informationen zu den neuesten Veranstaltungen zu finden.</h2>
 								<a href='https://takiwatanga-thun.ch' target='_blank' aria-label='Projekte (Takiwatanga)'><h3 className='projectDescLink'>Zur Website &rarr;</h3></a>
 							</div>
 							<div className='projectMessage'>

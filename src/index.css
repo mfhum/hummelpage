@@ -512,7 +512,7 @@ a:focus-visible {
 
 .descSometimes {
   display: none;
-  width: 205px;
+  width: 165px;
 }
 
 @keyframes circle {
@@ -548,7 +548,7 @@ a:focus-visible {
     opacity: 0;
   }
   100% {
-    width: 205px;
+    width: 165px;
     opacity: 1;
   }
 }
