@@ -15,11 +15,11 @@ function Navbar() {
       const footerPosition = footer.getBoundingClientRect();
 
       // Check if the unique section is in view
-      if (skillsPosition.top >= 200) {
+      if (projectsPosition.top >= 200) {
         setNumber('00');
       } else if (uniquePosition.top >= 25) {
         setNumber('01');
-      } else if (projectsPosition.top >= 25) {
+      } else if (skillsPosition.top >= 25) {
         setNumber('02');
       } else if (footerPosition.top >= 25) {
         setNumber('03');
@@ -76,8 +76,8 @@ function Navbar() {
                 </a>
               </li>
               <li className='navItem'>
-                <a onClick={() => setMenuOpen(!menuOpen)} href='#skills' className='svg linkItem' aria-label='Zu Skills Section'>
-                  <h1>Skills /</h1>
+                <a onClick={() => setMenuOpen(!menuOpen)} href='#projects' className='svg linkItem' aria-label='Zu Prozess Section'>
+                  <h1>Projekte /</h1>
                   <h3>(01)</h3>
                   <svg className='svgNav' width='550' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path
@@ -102,8 +102,8 @@ function Navbar() {
                 </a>
               </li>
               <li className='navItem'>
-                <a onClick={() => setMenuOpen(!menuOpen)} href='#projects' className='svg linkItem' aria-label='Zu Prozess Section'>
-                  <h1>Projekte /</h1>
+                <a onClick={() => setMenuOpen(!menuOpen)} href='#skills' className='svg linkItem' aria-label='Zu Skills Section'>
+                  <h1>Skills /</h1>
                   <h3>(03)</h3>
                   <svg className='svgNav' width='550' height='225' viewBox='0 0 609 217' fill='none' xmlns='http://www.w3.org/2000/svg'>
                     <path

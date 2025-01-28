@@ -18,9 +18,10 @@ function Projects() {
 
 							</div>
 							<div className='projectMessage'>
-								<h2>&#34;Ich kriege immer wieder Lob für meine Website und bin sehr zufrieden mit dem Resultat!&#34;</h2>
+								<h2>&#34;Die Rückmeldungen unserer Gäste sind durchweg positiv.
+									Die Zusammenarbeit ist sehr angenehm und unsere Ideen und Wünsche werden stets ernst genommen und kreativ umgesetzt.&#34;</h2>
 								<div className='projectCircle'/>
-								<h3>Roger Rieder, Inhaber Ustreia Orta</h3>
+								<h3>Roger und Annatina Rieder, Inhaber Ustreia Orta</h3>
 							</div>
 						</div>
 						<div className='project'>
