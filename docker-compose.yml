@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: .
+    restart: always
+    container_name: hummelpage-frontend
+    networks:
+      - shared-network
+
+  nginx-proxy:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80' # Public Web Port
+      - '443:443' # Public SSL Port
+      - '81:81' # Admin Panel Port
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    depends_on:
+      - frontend
+      # - cms # Uncomment if you have a CMS service
+    networks:
+      - shared-network
+
+networks:
+  shared-network:
+    driver: bridge
