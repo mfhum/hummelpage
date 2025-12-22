@@ -27,8 +27,8 @@ services:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
-      - '8080:80' # Public Web Port
-      - '4443:443' # Public SSL Port
+      - '80:80' # Public Web Port
+      - '443:443' # Public SSL Port
       - '81:81' # Admin Panel Port
     volumes:
       - ./data:/data
