@@ -14,7 +14,7 @@ services:
 
   zoebun:
     build:
-      context: ../../zoebun
+      context: ../../zoe
       dockerfile: Dockerfile
     restart: always
     container_name: zoebun-hummelpage
