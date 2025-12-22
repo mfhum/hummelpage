@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  frontend:
+  mariusli:
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,18 +12,30 @@ services:
     networks:
       - shared-network
 
+  zoebun:
+    build:
+      context: ../../zoebun
+      dockerfile: Dockerfile
+    restart: always
+    container_name: zoebun-hummelpage
+    ports:
+      - '3001:3000'
+    networks:
+      - shared-network
+
   nginx-proxy:
     image: 'jc21/nginx-proxy-manager:latest'
     restart: unless-stopped
     ports:
-      - '80:80' # Public Web Port
-      - '443:443' # Public SSL Port
+      - '8080:80' # Public Web Port
+      - '4443:443' # Public SSL Port
       - '81:81' # Admin Panel Port
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     depends_on:
-      - frontend
+      - mariusli
+      - zoebun
     networks:
       - shared-network
 
