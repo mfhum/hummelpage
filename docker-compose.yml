@@ -2,9 +2,13 @@ version: '3.8'
 
 services:
   frontend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: always
     container_name: hummelpage-frontend
+    ports:
+      - '3000:3000'
     networks:
       - shared-network
 
@@ -20,7 +24,6 @@ services:
       - ./letsencrypt:/etc/letsencrypt
     depends_on:
       - frontend
-      # - cms # Uncomment if you have a CMS service
     networks:
       - shared-network
 
