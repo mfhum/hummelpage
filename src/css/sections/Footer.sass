@@ -1,57 +1,156 @@
 .footer
-  position: absolute
-  width: 100dvw
-  height: 100dvh
-  background-color: rgba($secondary-color, 0.6)
+  position: relative
+  width: 100%
+  max-width: 100dvw
+  padding: 5dvh 2dvw
+  padding-bottom: 2dvh
   display: flex
+  justify-content: center
   flex-direction: column
-  justify-content: space-between
-
-.footerContent
-  margin-left: $margin4
-  display: flex
-  height: 100%
-  justify-content: space-between
-
-.footerContentTitle
-  margin-top: $margin4
-.footerContentImageSrc
-  width: 23dvw
-  transform: scaleX(-1)
-
-.footerBase
-  height: 15%
-  display: flex
   align-items: center
-  justify-content: flex-end
-  margin-right: $margin4 + $margin2
-  margin-bottom: $margin2
+  background: transparent
+  overflow-x: hidden
+  box-sizing: border-box
 
-
-.footerContentLeft
+.footerCard
+  width: 100%
+  max-width: 1600px
+  background-color: rgba($secondary-color, 0.6)
+  border-radius: 40px
+  padding: 6rem 5rem
+  position: relative
+  overflow: hidden
+  color: #fff
   display: flex
   flex-direction: column
   justify-content: space-between
-.footerContentRight
-  position: sticky
-  right: 0
-  bottom: 0
-  width: 50dvw
-  overflow: hidden
+  min-height: 80dvh
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1)
+  box-sizing: border-box
+
+.footerHeader
+  position: relative
+  z-index: 2
+
+  h1
+    font-size: 9rem
+    font-weight: 700
+    line-height: 0.85
+    letter-spacing: -4px
+    margin: 0 0 4rem 0
+    color: #fff
+
+  .emailWrapper
+    display: inline-block
+
+.emailButton
+  border: 1px solid rgba(255, 255, 255, 0.2)
+  padding: 1.5rem 3rem
+  border-radius: 100px
+  background: rgba(255, 255, 255, 0.05)
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1)
+  cursor: pointer
+
+  h2
+    font-size: 1.8rem
+    font-weight: 400
+    margin: 0
+    color: #fff
+    transition: color 0.3s ease
+
+  &:hover
+    background: #fff
+    border-color: #fff
+    transform: scale(1.02)
+
+    h2
+      color: #000
+
+.footerImageContainer
+  position: absolute
+  bottom: -20px
+  right: -50px
+  width: 45dvw
+  max-width: 700px
+  z-index: 1
+  pointer-events: none
+
+  img
+    width: 100%
+    height: auto
+    display: block
+    transform: scaleX(-1)
+
+.footerBottom
+  position: relative
+  z-index: 2
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  margin-top: auto
+
+.socials
+  display: flex
+  gap: 2rem
+
+.footerLink
+  font-size: 1.2rem
+  font-weight: 500
+  color: rgba(255, 255, 255, 0.6)
+  text-decoration: none
+  transition: color 0.3s ease
+
+  &:hover
+    color: #fff
+
+.copyright
+  width: 100%
+  text-align: center
+  margin-top: $margin4
+  padding-bottom: $margin2
+  font-size: 1rem
+  color: rgba(255, 255, 255, 0.3)
+  align-self: center
 
 @media only screen and (max-width: 900px)
-  .footerContent
-    margin-left: 0
-    flex-direction: column
-    align-items: center
-  .footerContentImageSrc
+  .footer
+    padding-right: 0
+    padding-left: 0
+    align-items: center // Re-center the container
+    overflow: hidden
+
+  .footerCard
+    padding: 3rem 2rem
+    min-height: 60dvh
+    border-radius: 30px 0 0 30px
+    box-shadow: -10px 10px 30px rgba(0,0,0,0.1)
+    width: calc(100% - 10dvw)
+    margin-left: 10dvw
+    align-self: flex-end
+
+  .footerHeader
+    h1
+      font-size: 3rem
+      margin-bottom: 2rem
+      letter-spacing: -2px
+      word-break: break-word
+
+  .emailButton
+    padding: 1rem 1.5rem
+    h2
+      font-size: 1rem
+
+  .footerImageContainer
     width: 80dvw
-    transform: scaleX(-1)
-  .footerContentTitle
-    margin-top: $margin4
-  .footerBase
-    margin-right: $margin2
-    margin-bottom: $margin2
-  .footerContentRight
-    position: relative
-    width: 100dvw
+    right: -10dvw
+    bottom: -2dvh
+    opacity: 0.6
+
+  .footerBottom
+    flex-direction: column
+    align-items: flex-start
+    gap: 2rem
+
+  .socials
+    flex-wrap: wrap
+    gap: 1rem

@@ -42,7 +42,7 @@
   font-weight: bold
   padding: 10px
   position: relative
-  cursor: pointer
+  cursor: none
 
   &:hover
     transform: scale(1.1) rotate(1deg)
@@ -81,49 +81,37 @@
   flex-wrap: wrap
   gap: 10px
   justify-content: center
-  animation: fadeIn 1.5s ease-in-out
-  margin-bottom: 20dvh
+  margin-bottom: 40dvh
 
-.skillItemAlt
-  margin-top: -170px
-  position: relative
-  border-radius: 50%
-  padding: 10px
-  width: 150px
-  height: 150px
+.skillLink
+  text-decoration: none // Reset default link underline
+
+.skillCard
   display: flex
   align-items: center
   justify-content: center
-  transition: transform 0.3s ease-in-out
-  animation: move1 10s infinite linear
-  text-align: center
+  padding: 12px 24px
+  background-color: transparent
+  border: 1px solid rgba(0, 0, 0, 0.1)
+  border-radius: 100px // Pill shape
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease
+  
+  h3
+    margin: 0
+    font-size: 1.1rem
+    font-weight: 500
+    color: #111
+    transition: color 0.3s ease
 
-
-.skillItem
-  position: relative
-  border-radius: 50%
-  padding: 10px
-  width: 150px
-  height: 150px
-  display: flex
-  align-items: center
-  justify-content: center
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out
-  animation: move1 10s infinite linear
-  text-align: center
-  background: radial-gradient($primary-white 30%, $secondary-color)
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
-  filter: blur(15px)
-
-.skillLink:hover
-  transition: scale 1s ease-in-out
-  transform: scale(1.1)
-  cursor: pointer
-  rotate: 2deg
-  .skillItem
-    background: transparentize(darken($secondary-color, 1),0.2)
-    transition: background 0.5s ease-in-out
-
+.skillLink:hover 
+  cursor: none
+  .skillCard
+    background-color: #111
+    border-color: #111
+    box-shadow: 6px 6px 0px #1a57ba
+    
+    h3
+      color: #fff
 
 @keyframes fadeIn
   0%
@@ -137,26 +125,6 @@
   100%
     opacity: 0
 
-@keyframes move1
-  0%
-    transform: translate(0, 0)
-  12%
-    transform: translate(7.5px, 10px)
-  25%
-    transform: translate(15px, 15px)
-  37%
-    transform: translate(7.5px, 22.5px)
-  50%
-    transform: translate(0, 30px)
-  62%
-    transform: translate(-7.5px, 22.5px)
-  75%
-    transform: translate(-15px, 15px)
-  87%
-    transform: translate(-7.5px, 7.5px)
-  100%
-    transform: translate(0, 0)
-
 @media only screen and (max-width: 900px)
   .skillsTitle
     margin-left: $margin2
@@ -165,20 +133,9 @@
   .slider
     margin: $margin2
     width: calc(100% - 2 * #{$margin2})
-
-  .skillItemAlt,
-  .skillItem
-    position: relative
-    border-radius: 50%
-    padding: 10px
-    width: 75px
-    height: 75px
-    display: flex
-    align-items: center
-    justify-content: center
-    transition: transform 0.3s ease-in-out
-    animation: move1 10s infinite linear
-    text-align: center
-
-  .skillItemAlt
-    margin-top: -95px
+    
+  .skillCard
+    padding: 10px 20px
+    
+    h3
+      font-size: 1rem

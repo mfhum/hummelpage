@@ -6,30 +6,26 @@ import './InfiniteScroll.scss';
 gsap.registerPlugin(Observer);
 
 export default function InfiniteScroll({
-																				 // ----- Layout / Style Props -----
-																				 width = "30rem",             // Width of the outer .wrapper
-																				 maxHeight = "100%",          // Max-height of the outer .wrapper
-																				 negativeMargin = "-0.5em",   // Negative margin to reduce spacing between items
-																				 // ----- Items Prop -----
-																				 items = [],                  // Array of items with { content: ... }
-																				 itemMinHeight = 150,         // Fixed height for each item
-																				 // ----- Tilt Props -----
-																				 isTilted = false,            // Whether the container is in "skewed" perspective
-																				 tiltDirection = "left",      // tiltDirection: "left" or "right"
-																				 // ----- Autoplay Props -----
-																				 autoplay = false,            // Whether it should automatically scroll
-																				 autoplaySpeed = 0.5,          // Speed (pixels/frame approx.)
-																				 autoplayDirection = "down",  // "down" or "up"
-																				 pauseOnHover = false,        // Pause autoplay on hover
-																			 }) {
+	width = "30rem",
+	maxHeight = "100%",
+	negativeMargin = "-0.5em",
+	items = [],
+	itemMinHeight = 150,
+	isTilted = false,
+	tiltDirection = "left",
+	autoplay = false,
+	autoplaySpeed = 0.5,
+	autoplayDirection = "down",
+	pauseOnHover = false,
+}) {
 	const wrapperRef = useRef(null);
 	const containerRef = useRef(null);
 
 	const getTiltTransform = () => {
 		if (!isTilted) return "none";
 		return tiltDirection === "left"
-				? "rotateX(10deg) rotateZ(-10deg) skewX(10deg)"
-				: "rotateX(10deg) rotateZ(10deg) skewX(-10deg)";
+			? "rotateX(10deg) rotateZ(-10deg) skewX(10deg)"
+			: "rotateX(10deg) rotateZ(10deg) skewX(-10deg)";
 	};
 
 	useEffect(() => {
@@ -136,9 +132,9 @@ export default function InfiniteScroll({
 	]);
 
 	return (
-			<>
-				<style>
-					{`
+		<>
+			<style>
+				{`
         .infiniteScrollWrapper {
           max-height: ${maxHeight};
         }
@@ -152,26 +148,26 @@ export default function InfiniteScroll({
           margin-top: ${negativeMargin};
         }
         `}
-				</style>
+			</style>
 
-				<div className="infiniteScrollWrapper" ref={wrapperRef}>
-					<div
-							className="infiniteScrollContainer"
-							ref={containerRef}
-							style={{
-								transform: getTiltTransform(),
-							}}
-					>
-						{items.map((item, i) => (
-								<div
-										className='infiniteScrollItem'
-										key={i}
-								>
-									{item.content}
-								</div>
-						))}
-					</div>
+			<div className="infiniteScrollWrapper" ref={wrapperRef}>
+				<div
+					className="infiniteScrollContainer"
+					ref={containerRef}
+					style={{
+						transform: getTiltTransform(),
+					}}
+				>
+					{items.map((item, i) => (
+						<div
+							className='infiniteScrollItem'
+							key={i}
+						>
+							{item.content}
+						</div>
+					))}
 				</div>
-			</>
+			</div>
+		</>
 	);
 }

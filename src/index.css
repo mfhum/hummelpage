@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 div,
@@ -104,6 +108,7 @@ section {
 
 body {
   line-height: 1;
+  overflow-x: hidden;
 }
 
 ol,
@@ -236,7 +241,7 @@ a:focus-visible {
   }
 }
 .nav {
-  width: 100dvw;
+  width: 100%;
   height: 125px;
   position: fixed;
   z-index: 5;
@@ -246,7 +251,7 @@ a:focus-visible {
   position: fixed;
   background-color: #f6f6f6;
   height: 100dvh;
-  width: 100dvw;
+  width: 100%;
   z-index: 5;
   animation: openMenu 1.5s;
 }
@@ -285,7 +290,7 @@ a:focus-visible {
   margin-top: 32px;
 }
 .menu:hover {
-  cursor: pointer;
+  cursor: none;
   transform: scale(1.1);
 }
 .menu:hover .svgMenu {
@@ -308,7 +313,7 @@ a:focus-visible {
   text-align: center;
 }
 .backtotop:hover {
-  cursor: pointer;
+  cursor: none;
   transform: scale(1.1);
 }
 
@@ -350,7 +355,7 @@ a:focus-visible {
   position: absolute;
   margin-top: -16px;
   margin-left: -24px;
-  cursor: pointer;
+  cursor: none;
 }
 
 .navList {
@@ -444,9 +449,6 @@ a:focus-visible {
     margin: 0;
     width: 100px;
   }
-  .linkItem {
-    width: 2000px;
-  }
 }
 .circle {
   position: absolute;
@@ -468,6 +470,9 @@ a:focus-visible {
 
 .Hero {
   box-shadow: inset 0 -200px 100px -200px #cccccc;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .content {
@@ -610,7 +615,7 @@ a:focus-visible {
   font-weight: bold;
   padding: 10px;
   position: relative;
-  cursor: pointer;
+  cursor: none;
 }
 .sliderItem:hover {
   transform: scale(1.1) rotate(1deg);
@@ -650,51 +655,41 @@ a:focus-visible {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  animation: fadeIn 1.5s ease-in-out;
-  margin-bottom: 20dvh;
+  margin-bottom: 40dvh;
 }
 
-.skillItemAlt {
-  margin-top: -170px;
-  position: relative;
-  border-radius: 50%;
-  padding: 10px;
-  width: 150px;
-  height: 150px;
+.skillLink {
+  text-decoration: none;
+}
+
+.skillCard {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease-in-out;
-  animation: move1 10s infinite linear;
-  text-align: center;
+  padding: 12px 24px;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
-
-.skillItem {
-  position: relative;
-  border-radius: 50%;
-  padding: 10px;
-  width: 150px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  animation: move1 10s infinite linear;
-  text-align: center;
-  background: radial-gradient(#f6f6f6 30%, #1a57ba);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  filter: blur(15px);
+.skillCard h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #111;
+  transition: color 0.3s ease;
 }
 
 .skillLink:hover {
-  transition: scale 1s ease-in-out;
-  transform: scale(1.1);
-  cursor: pointer;
-  rotate: 2deg;
+  cursor: none;
 }
-.skillLink:hover .skillItem {
-  background: rgba(25.3745283019, 84.9070754717, 181.5254716981, 0.8);
-  transition: background 0.5s ease-in-out;
+.skillLink:hover .skillCard {
+  background-color: #111;
+  border-color: #111;
+  box-shadow: 6px 6px 0px #1a57ba;
+}
+.skillLink:hover .skillCard h3 {
+  color: #fff;
 }
 
 @keyframes fadeIn {
@@ -713,35 +708,6 @@ a:focus-visible {
     opacity: 0;
   }
 }
-@keyframes move1 {
-  0% {
-    transform: translate(0, 0);
-  }
-  12% {
-    transform: translate(7.5px, 10px);
-  }
-  25% {
-    transform: translate(15px, 15px);
-  }
-  37% {
-    transform: translate(7.5px, 22.5px);
-  }
-  50% {
-    transform: translate(0, 30px);
-  }
-  62% {
-    transform: translate(-7.5px, 22.5px);
-  }
-  75% {
-    transform: translate(-15px, 15px);
-  }
-  87% {
-    transform: translate(-7.5px, 7.5px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
 @media only screen and (max-width: 900px) {
   .skillsTitle {
     margin-left: 32px;
@@ -751,27 +717,16 @@ a:focus-visible {
     margin: 32px;
     width: calc(100% - 2 * 32px);
   }
-  .skillItemAlt,
-  .skillItem {
-    position: relative;
-    border-radius: 50%;
-    padding: 10px;
-    width: 75px;
-    height: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.3s ease-in-out;
-    animation: move1 10s infinite linear;
-    text-align: center;
+  .skillCard {
+    padding: 10px 20px;
   }
-  .skillItemAlt {
-    margin-top: -95px;
+  .skillCard h3 {
+    font-size: 1rem;
   }
 }
 .UniqueSection {
   height: 110dvh;
-  width: 100dvw;
+  width: 100%;
   background-color: rgba(26, 87, 186, 0.6);
 }
 
@@ -781,7 +736,7 @@ a:focus-visible {
   justify-content: center;
   align-items: center;
   height: 70dvh;
-  width: 100dvw;
+  width: 100%;
 }
 
 .uniqueText {
@@ -813,7 +768,7 @@ a:focus-visible {
 /* Process Section */
 .ProcessSection {
   box-shadow: inset 0 200px 100px -200px #cccccc, inset 0 -200px 50px -200px rgba(26, 87, 186, 0.6);
-  width: 100dvw;
+  width: 100%;
   height: auto;
 }
 
@@ -859,7 +814,7 @@ a:focus-visible {
 }
 .step:hover {
   transform: scale(1.1);
-  cursor: pointer;
+  cursor: none;
   background: rgba(26, 87, 186, 0.2);
 }
 .step:not(:last-child)::after {
@@ -913,7 +868,7 @@ a:focus-visible {
   }
   .step:hover {
     transform: scale(1.1);
-    cursor: pointer;
+    cursor: none;
     background: rgba(26, 87, 186, 0.2);
   }
   .step:not(:last-child)::after {
@@ -1022,105 +977,279 @@ a:focus-visible {
     font-size: 1.2rem;
   }
 }
-.impressumNavbar {
-  margin: 32px;
-}
-
-.impressumSection {
-  width: 100dvw;
-  height: auto;
-}
-
-.impressumTitle {
-  padding-top: 144px;
-  margin-left: 144px;
-}
-
-.impressumContent {
-  width: 60%;
-  margin-left: 144px;
-  margin-top: 32px;
-}
-
-@media only screen and (max-width: 900px) {
-  .impressumTitle {
-    margin-left: 32px;
-    padding-top: 86px;
-  }
-  .impressumContent {
-    width: 80%;
-    margin-left: 32px;
-  }
-}
-.footer {
-  position: absolute;
-  width: 100dvw;
-  height: 100dvh;
-  background-color: rgba(26, 87, 186, 0.6);
+.impressumPage {
+  min-height: 100dvh;
+  padding: 10dvh 5dvw;
+  background-color: #f6f6f6;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 }
 
-.footerContent {
-  margin-left: 144px;
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
+.impressumNavbar {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 4rem;
 }
 
-.footerContentTitle {
-  margin-top: 144px;
-}
-
-.footerContentImageSrc {
-  width: 23dvw;
-  transform: scaleX(-1);
-}
-
-.footerBase {
-  height: 15%;
+.backButton {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-right: 176px;
-  margin-bottom: 32px;
+  gap: 0.8rem;
+  text-decoration: none;
+  color: #111;
+  opacity: 0.6;
+  transition: all 0.3s ease;
 }
-
-.footerContentLeft {
+.backButton .backIcon {
+  width: 40px;
+  height: 40px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+.backButton h3 {
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+.backButton:hover {
+  opacity: 1;
+  transform: translateX(-5px);
+}
+.backButton:hover .backIcon {
+  background: #111;
+  color: #fff;
 }
 
-.footerContentRight {
-  position: sticky;
-  right: 0;
-  bottom: 0;
-  width: 50dvw;
+.impressumCard {
+  width: 100%;
+  max-width: 1200px;
+  background: #fff;
+  border-radius: 40px;
+  padding: 6rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+  position: relative;
   overflow: hidden;
 }
 
+.impressumTitle {
+  font-size: clamp(3rem, 6dvw, 5rem);
+  line-height: 1;
+  margin-bottom: 5rem;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #111;
+}
+
+.impressumContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.legalBlock h2 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1a57ba;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+.legalBlock p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #444;
+  font-weight: 400;
+  max-width: 900px;
+}
+
 @media only screen and (max-width: 900px) {
-  .footerContent {
-    margin-left: 0;
-    flex-direction: column;
+  .impressumPage {
+    padding: 5dvh 3dvw;
+  }
+  .impressumCard {
+    padding: 3rem 2rem;
+    border-radius: 30px;
+  }
+  .impressumTitle {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+  .legalBlock p {
+    font-size: 1rem;
+  }
+}
+.footer {
+  position: relative;
+  width: 100%;
+  max-width: 100dvw;
+  padding: 5dvh 2dvw;
+  padding-bottom: 2dvh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.footerCard {
+  width: 100%;
+  max-width: 1600px;
+  background-color: rgba(26, 87, 186, 0.6);
+  border-radius: 40px;
+  padding: 6rem 5rem;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 80dvh;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.footerHeader {
+  position: relative;
+  z-index: 2;
+}
+.footerHeader h1 {
+  font-size: 9rem;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -4px;
+  margin: 0 0 4rem 0;
+  color: #fff;
+}
+.footerHeader .emailWrapper {
+  display: inline-block;
+}
+
+.emailButton {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem 3rem;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+}
+.emailButton h2 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.emailButton:hover {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.02);
+}
+.emailButton:hover h2 {
+  color: #000;
+}
+
+.footerImageContainer {
+  position: absolute;
+  bottom: -20px;
+  right: -50px;
+  width: 45dvw;
+  max-width: 700px;
+  z-index: 1;
+  pointer-events: none;
+}
+.footerImageContainer img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: scaleX(-1);
+}
+
+.footerBottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.socials {
+  display: flex;
+  gap: 2rem;
+}
+
+.footerLink {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footerLink:hover {
+  color: #fff;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  margin-top: 144px;
+  padding-bottom: 32px;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.3);
+  align-self: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
     align-items: center;
+    overflow: hidden;
   }
-  .footerContentImageSrc {
+  .footerCard {
+    padding: 3rem 2rem;
+    min-height: 60dvh;
+    border-radius: 30px 0 0 30px;
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 10dvw);
+    margin-left: 10dvw;
+    align-self: flex-end;
+  }
+  .footerHeader h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    letter-spacing: -2px;
+    word-break: break-word;
+  }
+  .emailButton {
+    padding: 1rem 1.5rem;
+  }
+  .emailButton h2 {
+    font-size: 1rem;
+  }
+  .footerImageContainer {
     width: 80dvw;
-    transform: scaleX(-1);
+    right: -10dvw;
+    bottom: -2dvh;
+    opacity: 0.6;
   }
-  .footerContentTitle {
-    margin-top: 144px;
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
   }
-  .footerBase {
-    margin-right: 32px;
-    margin-bottom: 32px;
-  }
-  .footerContentRight {
-    position: relative;
-    width: 100dvw;
+  .socials {
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 }
 

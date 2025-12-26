@@ -1,22 +1,100 @@
-.impressumNavbar
-  margin: $margin2
+.impressumPage
+  min-height: 100dvh
+  padding: 10dvh 5dvw
+  background-color: #f6f6f6
+  display: flex
+  flex-direction: column
+  align-items: center
 
-.impressumSection
-  width: 100dvw
-  height: auto
+.impressumNavbar
+  width: 100%
+  max-width: 1200px
+  margin-bottom: 4rem
+
+.backButton
+  display: flex
+  align-items: center
+  gap: 0.8rem
+  text-decoration: none
+  color: #111
+  opacity: 0.6
+  transition: all 0.3s ease
+
+  .backIcon
+    width: 40px
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+    background: #fff
+    border: 1px solid rgba(0,0,0,0.05)
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05)
+
+  h3
+    font-size: 0.9rem
+    margin: 0
+    font-weight: 500
+    letter-spacing: 0.5px
+
+  &:hover
+    opacity: 1
+    transform: translateX(-5px)
+    .backIcon
+      background: #111
+      color: #fff
+
+.impressumCard
+  width: 100%
+  max-width: 1200px
+  background: #fff
+  border-radius: 40px
+  padding: 6rem
+  box-shadow: 0 30px 60px rgba(0,0,0,0.05)
+  position: relative
+  overflow: hidden
+
 .impressumTitle
-  padding-top: $margin4
-  margin-left: $margin4
+  font-size: clamp(3rem, 6dvw, 5rem)
+  line-height: 1
+  margin-bottom: 5rem
+  font-weight: 700
+  letter-spacing: -2px
+  color: #111
 
 .impressumContent
-  width: 60%
-  margin-left: $margin4
-  margin-top: $margin2
+  display: flex
+  flex-direction: column
+  gap: 4rem
+
+.legalBlock
+  h2
+    font-size: 0.8rem
+    font-weight: 700
+    margin-bottom: 1.5rem
+    color: #1a57ba
+    text-transform: uppercase
+    letter-spacing: 1.5px
+
+  p
+    font-size: 1.15rem
+    line-height: 1.7
+    color: #444
+    font-weight: 400
+    max-width: 900px
 
 @media only screen and (max-width: 900px)
+  .impressumPage
+    padding: 5dvh 3dvw
+
+  .impressumCard
+    padding: 3rem 2rem
+    border-radius: 30px
+
   .impressumTitle
-    margin-left: $margin2
-    padding-top: $margin3 + $margin2
-  .impressumContent
-    width: 80%
-    margin-left: $margin2
+    font-size: 3rem
+    margin-bottom: 3rem
+
+  .legalBlock
+    p
+      font-size: 1rem
