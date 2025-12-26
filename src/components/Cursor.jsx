@@ -67,9 +67,9 @@ const Cursor = () => {
       animate={cursorVariant}
       transition={{
         type: "spring",
-        stiffness: 500,
-        damping: 28,
-        mass: 0.5,
+        stiffness: 2000,
+        damping: 10,
+        mass: 0.1,
       }}
       style={{
         position: 'fixed',
