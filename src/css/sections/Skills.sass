@@ -30,8 +30,6 @@
     transform: translateX(calc(var(--active-index) * 100%))
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2)
 
-
-
 // Individual buttons
 .sliderItem
   flex: 1
@@ -48,11 +46,9 @@
     transform: scale(1.1) rotate(1deg)
     transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55)
 
-
   &.active
     color: $primary-white // Ensure text contrast with sliding background
     transition: color 0.5s ease-in-out // Add transition for color change
-
 
 .sliderContainer
   width: 100%
@@ -62,7 +58,6 @@
 // Skills section styling
 .skillsSection
   height: auto
-
 
 .skillsTitle
   padding-top: $margin4
@@ -95,7 +90,7 @@
   border: 1px solid rgba(0, 0, 0, 0.1)
   border-radius: 100px // Pill shape
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease
-  
+
   h3
     margin: 0
     font-size: 1.1rem
@@ -103,13 +98,13 @@
     color: #111
     transition: color 0.3s ease
 
-.skillLink:hover 
+.skillLink:hover
   cursor: none
   .skillCard
     background-color: #111
     border-color: #111
     box-shadow: 6px 6px 0px #1a57ba
-    
+
     h3
       color: #fff
 
@@ -133,9 +128,9 @@
   .slider
     margin: $margin2
     width: calc(100% - 2 * #{$margin2})
-    
+
   .skillCard
     padding: 10px 20px
-    
+
     h3
       font-size: 1rem

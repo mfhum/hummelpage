@@ -7,6 +7,7 @@ import Impressum from './sections/impressum.jsx';
 import Skills from "./sections/skills.jsx";
 import Projects from "./sections/projects.jsx";
 import Cursor from './components/Cursor';
+import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           element={
             <>
               <Cursor />
+              <ScrollProgress />
               <Navbar />
               <Hero />
               <Projects />

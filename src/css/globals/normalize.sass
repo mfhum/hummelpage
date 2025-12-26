@@ -1,5 +1,12 @@
 *, *::before, *::after
   box-sizing: border-box
+/* Apply to everything to ensure it doesn't reappear on buttons/links */
+*, *::after, *::before
+  cursor: none !important
+
+/* Fallback: Ensure the body handles it if the wildcard misses something */
+body, html
+  cursor: none
 
 html,
 body,
@@ -105,6 +112,16 @@ section
 body
   line-height: 1
   overflow-x: hidden
+
+::-webkit-scrollbar
+  width: 0
+  height: 0
+
+::-webkit-scrollbar-track
+  background: transparent
+
+::-webkit-scrollbar-thumb
+  background: transparent
 ol,
 ul
   list-style: none

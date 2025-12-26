@@ -5,6 +5,10 @@
   display: flex
   flex-direction: column
   align-items: center
+  cursor: auto !important
+
+.impressumPage *
+  cursor: auto !important
 
 .impressumNavbar
   width: 100%
@@ -19,6 +23,7 @@
   color: #111
   opacity: 0.6
   transition: all 0.3s ease
+  cursor: pointer !important
 
   .backIcon
     width: 40px
@@ -53,6 +58,7 @@
   box-shadow: 0 30px 60px rgba(0,0,0,0.05)
   position: relative
   overflow: hidden
+  /* Card itself isn't clickable, so standard cursor is fine */
 
 .impressumTitle
   font-size: clamp(3rem, 6dvw, 5rem)
@@ -82,6 +88,7 @@
     color: #444
     font-weight: 400
     max-width: 900px
+    cursor: auto !important
 
 @media only screen and (max-width: 900px)
   .impressumPage

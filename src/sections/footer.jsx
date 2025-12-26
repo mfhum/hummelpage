@@ -88,21 +88,24 @@ function Footer() {
             Let's work<br />together.
           </motion.h1>
 
-          <motion.div
-            className="emailWrapper"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            <MagneticLink
-              className="emailButton"
-              href='mailto:contact@marius.li'
-              mouseX={mouseX}
-              mouseY={mouseY}
+          <a href="mailto:contact@marius.li" target="_blank" rel="noopener noreferrer">
+            <motion.div
+              className="emailWrapper"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <h2>contact@marius.li</h2>
-            </MagneticLink>
-          </motion.div>
+              <MagneticLink
+                className="emailButton"
+                href='mailto:contact@marius.li'
+                mouseX={mouseX}
+                mouseY={mouseY}
+              >
+                <h2>contact@marius.li</h2>
+              </MagneticLink>
+            </motion.div>
+          </a>
+
         </div>
 
         <div className="footerBottom">
