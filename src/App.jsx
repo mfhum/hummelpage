@@ -6,6 +6,7 @@ import Unique from './sections/unique';
 import Impressum from './sections/impressum.jsx';
 import Skills from "./sections/skills.jsx";
 import Projects from "./sections/projects.jsx";
+import Cursor from './components/Cursor';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           path='/'
           element={
             <>
+              <Cursor />
               <Navbar />
               <Hero />
               <Projects />

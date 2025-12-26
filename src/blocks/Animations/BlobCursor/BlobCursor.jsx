@@ -1,7 +1,7 @@
 /*
-	jsrepo 1.28.2
-	Installed from https://reactbits.dev/default/
-	1-23-2025
+  jsrepo 1.28.2
+  Installed from https://reactbits.dev/default/
+  1-23-2025
 */
 
 import { useTrail, animated } from "@react-spring/web";
@@ -15,8 +15,7 @@ const trans = (x, y) => `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`;
 
 export default function BlobCursor({
   blobType = "circle",
-  fillColor = "rgba(255, 255, 255, 0.3)",})
-{
+  fillColor = "rgba(255, 255, 255, 0.7)", }) {
   const [trail, api] = useTrail(3, (i) => ({
     xy: [0, 0],
     config: i === 0 ? fast : slow,

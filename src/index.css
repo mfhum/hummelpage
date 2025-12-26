@@ -350,6 +350,7 @@ a:focus-visible {
   position: absolute;
   margin-top: -16px;
   margin-left: -24px;
+  cursor: pointer;
 }
 
 .navList {
@@ -592,7 +593,7 @@ a:focus-visible {
   left: 0;
   margin-left: 15px;
   width: calc(33.33% - 10px);
-  background-color: #538be7;
+  background-color: rgb(83.0377358491, 139.4339622642, 230.9622641509);
   border-radius: 25px;
   z-index: 0;
   transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s ease-in-out;
@@ -692,7 +693,7 @@ a:focus-visible {
   rotate: 2deg;
 }
 .skillLink:hover .skillItem {
-  background: rgba(25, 85, 182, 0.8);
+  background: rgba(25.3745283019, 84.9070754717, 181.5254716981, 0.8);
   transition: background 0.5s ease-in-out;
 }
 
