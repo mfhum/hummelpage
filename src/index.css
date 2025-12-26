@@ -4,15 +4,15 @@
 }
 
 /* Apply to everything to ensure it doesn't reappear on buttons/links */
-*, *::after, *::before {
-  cursor: none !important;
+@media (hover: hover) and (pointer: fine) {
+  *, *::after, *::before {
+    cursor: none !important;
+  }
+  /* Fallback: Ensure the body handles it if the wildcard misses something */
+  body, html {
+    cursor: none;
+  }
 }
-
-/* Fallback: Ensure the body handles it if the wildcard misses something */
-body, html {
-  cursor: none;
-}
-
 html,
 body,
 div,
@@ -377,8 +377,13 @@ a:focus-visible {
   margin-top: 32px;
 }
 .menu:hover {
-  cursor: none;
-  transform: scale(1.1);
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .menu:hover {
+    cursor: none;
+    transform: scale(1.1);
+  }
 }
 .menu:hover .svgMenu {
   display: flex;
@@ -400,8 +405,13 @@ a:focus-visible {
   text-align: center;
 }
 .backtotop:hover {
-  cursor: none;
-  transform: scale(1.1);
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .backtotop:hover {
+    cursor: none;
+    transform: scale(1.1);
+  }
 }
 
 .linkItem {
@@ -442,7 +452,12 @@ a:focus-visible {
   position: absolute;
   margin-top: -16px;
   margin-left: -24px;
-  cursor: none;
+  cursor: auto;
+}
+@media (hover: hover) and (pointer: fine) {
+  .svgTop {
+    cursor: none;
+  }
 }
 
 .navList {
@@ -702,7 +717,12 @@ a:focus-visible {
   font-weight: bold;
   padding: 10px;
   position: relative;
-  cursor: none;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .sliderItem {
+    cursor: none;
+  }
 }
 .sliderItem:hover {
   transform: scale(1.1) rotate(1deg);
@@ -768,7 +788,12 @@ a:focus-visible {
 }
 
 .skillLink:hover {
-  cursor: none;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .skillLink:hover {
+    cursor: none;
+  }
 }
 .skillLink:hover .skillCard {
   background-color: #111;
@@ -901,8 +926,13 @@ a:focus-visible {
 }
 .step:hover {
   transform: scale(1.1);
-  cursor: none;
-  background: rgba(26, 87, 186, 0.2);
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .step:hover {
+    cursor: none;
+    background: rgba(26, 87, 186, 0.2);
+  }
 }
 .step:not(:last-child)::after {
   content: "";
@@ -955,9 +985,16 @@ a:focus-visible {
   }
   .step:hover {
     transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 900px) and (hover: hover) and (pointer: fine) {
+  .step:hover {
     cursor: none;
     background: rgba(26, 87, 186, 0.2);
   }
+}
+@media only screen and (max-width: 900px) {
   .step:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -1234,7 +1271,12 @@ a:focus-visible {
   border-radius: 100px;
   background: rgba(255, 255, 255, 0.05);
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  cursor: none;
+  cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+  .emailButton {
+    cursor: none;
+  }
 }
 .emailButton h2 {
   font-size: 1.8rem;

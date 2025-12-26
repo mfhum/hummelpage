@@ -5,8 +5,15 @@ import '../index.css';
 const Cursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [cursorVariant, setCursorVariant] = useState('default');
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 900);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
     const mouseMove = (e) => {
       setMousePosition({
         x: e.clientX,
@@ -22,8 +29,11 @@ const Cursor = () => {
 
     return () => {
       window.removeEventListener('mousemove', mouseMove);
+      window.removeEventListener('resize', checkMobile);
     };
   }, []);
+
+  if (isMobile) return null;
 
   const variants = {
     default: {

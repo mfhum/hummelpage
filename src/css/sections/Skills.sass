@@ -40,7 +40,9 @@
   font-weight: bold
   padding: 10px
   position: relative
-  cursor: none
+  cursor: pointer
+  @media (hover: hover) and (pointer: fine)
+    cursor: none
 
   &:hover
     transform: scale(1.1) rotate(1deg)
@@ -99,7 +101,9 @@
     transition: color 0.3s ease
 
 .skillLink:hover
-  cursor: none
+  cursor: pointer
+  @media (hover: hover) and (pointer: fine)
+    cursor: none
   .skillCard
     background-color: #111
     border-color: #111

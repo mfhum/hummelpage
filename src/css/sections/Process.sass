@@ -40,8 +40,10 @@
     margin-right: $margin2
   &:hover
     transform: scale(1.1)
-    cursor: none
-    background: rgba($secondary-color, 0.2)
+    cursor: pointer
+    @media (hover: hover) and (pointer: fine)
+      cursor: none
+      background: rgba($secondary-color, 0.2)
   &:not(:last-child)::after
     content: ''
     position: absolute
@@ -85,8 +87,10 @@
       margin-bottom: $margin1
     &:hover
       transform: scale(1.1)
-      cursor: none
-      background: rgba($secondary-color, 0.2)
+      cursor: pointer
+      @media (hover: hover) and (pointer: fine)
+        cursor: none
+        background: rgba($secondary-color, 0.2)
     &:not(:last-child)::after
       content: ''
       position: absolute

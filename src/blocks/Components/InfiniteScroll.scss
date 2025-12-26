@@ -33,8 +33,12 @@
   flex-direction: column;
   overscroll-behavior: contain;
   padding-inline: 1rem;
-  cursor: none;
+  cursor: grab;
   transform-origin: center center;
+
+  @media (hover: hover) and (pointer: fine) {
+    cursor: none;
+  }
 }
 
 .infiniteScrollItem {

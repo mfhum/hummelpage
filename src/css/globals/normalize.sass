@@ -1,12 +1,13 @@
 *, *::before, *::after
   box-sizing: border-box
 /* Apply to everything to ensure it doesn't reappear on buttons/links */
-*, *::after, *::before
-  cursor: none !important
+@media (hover: hover) and (pointer: fine)
+  *, *::after, *::before
+    cursor: none !important
 
-/* Fallback: Ensure the body handles it if the wildcard misses something */
-body, html
-  cursor: none
+  /* Fallback: Ensure the body handles it if the wildcard misses something */
+  body, html
+    cursor: none
 
 html,
 body,
