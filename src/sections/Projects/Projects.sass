@@ -20,13 +20,9 @@
 .projectsTitle
   position: absolute
   top: $margin4
-  left: 4dvw
+  left: $margin4
   margin: 0
-  font-size: clamp(2rem, 8dvw, 5rem)
-  line-height: 0.9
-  letter-spacing: -0.04em
-  z-index: 10
-  color: rgba(0, 0, 0, 0.8)
+  z-index: 3
 
 .sliderWrapper
   position: relative
@@ -163,7 +159,7 @@
   margin-top: $margin4
   position: relative
   width: 100%
-  z-index: 30
+  z-index: 4
 
 .navHint
   font-family: $body_font
@@ -186,7 +182,7 @@
   position: absolute
   top: 50%
   transform: translateY(-50%)
-  z-index: 40
+  z-index: 4
   outline: none
 
   &.left
@@ -226,7 +222,7 @@
   .sliderMode
     height: auto
   .sliderWrapper
-    height: 400px
+    height: 450px
   .description
     height: auto
   .projectItem.sliderItem
@@ -240,34 +236,39 @@
 
 @media only screen and (max-width: 900px)
   .ProjectsSection
-    height: 400px
+    height: auto
     min-height: 100dvh
     padding-top: $margin4
-    padding-bottom: 150px
+    padding-bottom: 180px
     overflow-x: hidden
 
   .container.sliderMode
     justify-content: flex-start
+    padding: 0 $margin2
 
   .projectsTitle
-    position: relative
-    top: 0
-    left: 0
-    font-size: 3rem
-    margin-bottom: $margin3
+    left: $margin2
+    top: calc(#{$margin3} + #{$margin2})
+    padding: 0
+    margin: 0
 
   .sliderWrapper
-    height: 550px
+    height: auto
+    min-height: 500px
     display: flex
     flex-direction: column
     position: relative
     margin-top: $margin4
+    padding-bottom: $margin3
 
   .projectItem.sliderItem
     position: absolute
     top: 0
     left: 0
     width: 100%
+    cursor: grab
+    &:active
+      cursor: grabbing
 
   .projectBackgroundNumber
     font-size: 50dvw
@@ -278,22 +279,34 @@
     .titleWrapper
       flex-direction: column
       gap: 0.5rem
+      align-items: flex-start
 
       .title
-        font-size: 2.2rem
+        font-size: 2rem
+        line-height: 1.1
       .divider
         display: none
 
   .descriptionSide .description
-    font-size: 1.1rem
+    font-size: 1rem
+    line-height: 1.5
     margin-bottom: $margin2
 
+  .projectLink
+    font-size: 1rem
+    padding: 0.8rem 1.5rem
+    background: rgba($secondary-color, 0.05)
+    border-radius: 50px
+    border: 1px solid rgba($secondary-color, 0.2)
+
   .sliderControls
-    margin-top: $margin2
+    margin-top: $margin3
     width: 100%
     justify-content: center
     flex-wrap: wrap
     gap: 1.5rem
+    position: relative
+    z-index: 4
 
     .sliderProgress
       width: 100%
@@ -301,22 +314,4 @@
       margin-bottom: 0.5rem
 
   .navHint
-    position: absolute
-    top: auto
-    bottom: 50px
-    padding: 0.8rem 1.2rem
-    font-size: 0.7rem
-    opacity: 1
-    background: rgba($secondary-color, 0.05)
-    transform: none
-
-    &.left
-      left: 10dvw
-      right: auto
-    &.right
-      right: 10dvw
-      left: auto
-
-    &:hover
-      transform: scale(1.05)
-      background: $secondary-color
+    display: none

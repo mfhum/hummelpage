@@ -540,114 +540,221 @@ a:focus-visible {
     width: 100px;
   }
 }
-.circle {
-  position: absolute;
-  margin-top: -10dvh;
-  top: -10dvh;
-  margin-right: -10dvw;
-  right: -10dvw;
-  background: radial-gradient(#f6f6f6 30%, #1a57ba);
-  width: 500px;
-  height: 500px;
-  filter: blur(25px);
-  opacity: 75%;
-  z-index: -1;
-  animation: circle 15s infinite;
-}
-.circle:hover {
-  animation-play-state: paused;
-}
-
 .Hero {
-  box-shadow: inset 0 -200px 100px -200px #cccccc;
   width: 100%;
+  height: 100dvh;
   overflow: hidden;
   position: relative;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 -200px 100px -200px rgba(0, 0, 0, 0.05);
 }
 
+.grain-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  filter: contrast(150%) brightness(100%);
+}
+
+.mouse-glow {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(26, 87, 186, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+}
+
+.dust-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.dust-particle {
+  position: absolute;
+  background: #1a57ba;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(1px);
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.parallaxCircle {
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+.legacy-circle {
+  position: absolute;
+  top: -10dvh;
+  right: -10dvw;
+  background: radial-gradient(#f6f6f6 10%, #1a57ba);
+  width: 600px;
+  height: 600px;
+  filter: blur(40px);
+  opacity: 0.85;
+  z-index: 1;
+  animation: circle-legacy 15s infinite;
+  pointer-events: none;
+}
+
+@keyframes circle-legacy {
+  0% {
+    transform: scale(1) translate(0, 15dvh);
+    border-radius: 40%;
+  }
+  50% {
+    transform: scale(1.1) translate(-2dvw, 20dvh);
+    border-radius: 60%;
+  }
+  100% {
+    transform: scale(1) translate(0, 15dvh);
+    border-radius: 40%;
+  }
+}
 .content {
   margin: 0 144px;
-  height: 100dvh;
+  width: 100%;
+  position: relative;
+  z-index: 3;
 }
 
 .name {
-  height: calc(60dvh - 54px);
+  height: auto;
   display: flex;
   flex-direction: column-reverse;
-  padding-bottom: 54px;
+  gap: 0.5rem;
 }
 
 .svgHero {
   position: absolute;
   width: clamp(350px, 35dvw, 750px);
   height: auto;
+  z-index: -1;
+  opacity: 0.8;
 }
 
 .heroTitle {
-  display: inline-block;
+  display: block;
   height: auto;
-  transition: 0.4s, background-position 0s;
-  z-index: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0.9;
+  z-index: 5;
+}
+.heroTitle span {
+  user-select: none;
 }
 
 .description {
-  height: 40dvh;
+  margin-top: 32px;
+  max-width: 800px;
 }
 
 .descText {
   display: flex;
-  width: 700px;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 100px;
+  width: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+.descText h2 {
+  white-space: nowrap;
+  margin: 0;
 }
 .descText:hover .descSometimes {
-  display: block;
-  animation: sometimes 0.4s ease;
+  width: 175px;
+  opacity: 1;
+  margin-left: 0rem;
 }
 .descText:hover .descDesigner {
-  width: 185px;
+  margin-left: -0.8rem;
+  color: #1a57ba;
 }
 
 .descSometimes {
-  display: none;
-  width: 165px;
+  width: 0px;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes circle {
-  0% {
-    transform: scale(1);
-    position: absolute;
-    top: 20dvh;
-    right: 20dvw;
-    border-radius: 0px;
-  }
-  50% {
-    transform: scale(1.2);
-    position: absolute;
-    top: 25dvh;
-    right: 25dvw;
-    border-radius: 1000px;
-  }
-  100% {
-    transform: scale(1);
-    position: absolute;
-    top: 20dvh;
-    right: 20dvw;
-    border-radius: 0px;
-  }
+.descDesigner {
+  transition: color 0.4s ease;
 }
-@keyframes sometimes {
-  0% {
-    width: 0px;
-    opacity: 0;
-  }
-  50% {
-    width: 0px;
-    opacity: 0;
-  }
-  100% {
-    width: 165px;
-    opacity: 1;
-  }
+
+/* Vertical scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: 3rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  z-index: 4;
 }
+
+.scroll-line {
+  width: 1px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.scroll-fill {
+  width: 100%;
+  height: 100%;
+  background: #1a57ba;
+  position: absolute;
+}
+
+.scroll-text {
+  font-family: "Outfit", sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.6);
+  writing-mode: vertical-lr;
+}
+
 @media only screen and (max-width: 800px) {
   .content {
     margin: 0 54px;
@@ -656,13 +763,18 @@ a:focus-visible {
     width: auto;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    border-radius: 20px;
+    padding: 1rem;
   }
   .descText:hover .descSometimes {
     display: none;
-    animation: sometimes 0.4s ease;
   }
-  .descText:hover .descDesigner {
-    width: 0px;
+  .heroTitle {
+    line-height: 1.1;
+  }
+  .scroll-indicator {
+    display: none;
   }
 }
 .slider {
@@ -678,7 +790,7 @@ a:focus-visible {
   padding: 5px;
   background: none;
   overflow: hidden;
-  --active-index: 0 // Initial state;
+  --active-index: 0;
 }
 .slider::before {
   content: "";
@@ -841,10 +953,18 @@ a:focus-visible {
 
 .uniqueText {
   width: 50dvw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.uniqueTextLine {
+  display: block;
+  width: 100%;
 }
 
 .uniqueTitle {
-  padding-top: 108px;
+  padding-top: 144px;
   margin-left: 144px;
 }
 
@@ -1022,13 +1142,9 @@ a:focus-visible {
 .projectsTitle {
   position: absolute;
   top: 144px;
-  left: 4dvw;
+  left: 144px;
   margin: 0;
-  font-size: clamp(2rem, 8dvw, 5rem);
-  line-height: 0.9;
-  letter-spacing: -0.04em;
-  z-index: 10;
-  color: rgba(0, 0, 0, 0.8);
+  z-index: 3;
 }
 
 .sliderWrapper {
@@ -1173,7 +1289,7 @@ a:focus-visible {
   margin-top: 144px;
   position: relative;
   width: 100%;
-  z-index: 30;
+  z-index: 4;
 }
 
 .navHint {
@@ -1197,7 +1313,7 @@ a:focus-visible {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 40;
+  z-index: 4;
   outline: none;
 }
 .navHint.left {
@@ -1242,7 +1358,7 @@ a:focus-visible {
     height: auto;
   }
   .sliderWrapper {
-    height: 400px;
+    height: 450px;
   }
   .description {
     height: auto;
@@ -1260,34 +1376,40 @@ a:focus-visible {
 }
 @media only screen and (max-width: 900px) {
   .ProjectsSection {
-    height: 400px;
+    height: auto;
     min-height: 100dvh;
     padding-top: 144px;
-    padding-bottom: 150px;
+    padding-bottom: 180px;
     overflow-x: hidden;
   }
   .container.sliderMode {
     justify-content: flex-start;
+    padding: 0 32px;
   }
   .projectsTitle {
-    position: relative;
-    top: 0;
-    left: 0;
-    font-size: 3rem;
-    margin-bottom: 54px;
+    left: 32px;
+    top: calc(54px + 32px);
+    padding: 0;
+    margin: 0;
   }
   .sliderWrapper {
-    height: 550px;
+    height: auto;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     position: relative;
     margin-top: 144px;
+    padding-bottom: 54px;
   }
   .projectItem.sliderItem {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    cursor: grab;
+  }
+  .projectItem.sliderItem:active {
+    cursor: grabbing;
   }
   .projectBackgroundNumber {
     font-size: 50dvw;
@@ -1297,23 +1419,35 @@ a:focus-visible {
   .projectHeader .titleWrapper {
     flex-direction: column;
     gap: 0.5rem;
+    align-items: flex-start;
   }
   .projectHeader .titleWrapper .title {
-    font-size: 2.2rem;
+    font-size: 2rem;
+    line-height: 1.1;
   }
   .projectHeader .titleWrapper .divider {
     display: none;
   }
   .descriptionSide .description {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.5;
     margin-bottom: 32px;
   }
+  .projectLink {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(26, 87, 186, 0.05);
+    border-radius: 50px;
+    border: 1px solid rgba(26, 87, 186, 0.2);
+  }
   .sliderControls {
-    margin-top: 32px;
+    margin-top: 54px;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
+    position: relative;
+    z-index: 4;
   }
   .sliderControls .sliderProgress {
     width: 100%;
@@ -1321,26 +1455,7 @@ a:focus-visible {
     margin-bottom: 0.5rem;
   }
   .navHint {
-    position: absolute;
-    top: auto;
-    bottom: 50px;
-    padding: 0.8rem 1.2rem;
-    font-size: 0.7rem;
-    opacity: 1;
-    background: rgba(26, 87, 186, 0.05);
-    transform: none;
-  }
-  .navHint.left {
-    left: 10dvw;
-    right: auto;
-  }
-  .navHint.right {
-    right: 10dvw;
-    left: auto;
-  }
-  .navHint:hover {
-    transform: scale(1.05);
-    background: #1a57ba;
+    display: none;
   }
 }
 .impressumPage {

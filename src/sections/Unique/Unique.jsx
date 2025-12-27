@@ -13,15 +13,39 @@ function Unique() {
             className={'uniqueText'}
             ref={containerRef}
           >
-            <VariableProximity
-              label={'Ich lege Wert auf Einzigartigkeit und Exzellenz – \nBedeutet auch: \nHöchste Ansprüche für aussergewöhnliche Ergebnisse.'}
-              className={'variableProximity'}
-              fromFontVariationSettings="'wght' 400, 'opsz' 9"
-              toFontVariationSettings="'wght' 1000, 'opsz' 40"
-              containerRef={containerRef}
-              radius={100}
-              falloff='linear'
-            />
+            <div className="uniqueTextLine">
+              <VariableProximity
+                label={'Ich lege Wert auf Einzigartigkeit und Exzellenz –'}
+                className={'variableProximity'}
+                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                containerRef={containerRef}
+                radius={100}
+                falloff='linear'
+              />
+            </div>
+            <div className="uniqueTextLine">
+              <VariableProximity
+                label={'Bedeutet auch:'}
+                className={'variableProximity'}
+                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                containerRef={containerRef}
+                radius={100}
+                falloff='linear'
+              />
+            </div>
+            <div className="uniqueTextLine">
+              <VariableProximity
+                label={'Höchste Ansprüche für aussergewöhnliche Ergebnisse.'}
+                className={'variableProximity'}
+                fromFontVariationSettings="'wght' 400, 'opsz' 9"
+                toFontVariationSettings="'wght' 1000, 'opsz' 40"
+                containerRef={containerRef}
+                radius={100}
+                falloff='linear'
+              />
+            </div>
           </div>
         </div>
 
