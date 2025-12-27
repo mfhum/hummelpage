@@ -37,26 +37,24 @@ const Cursor = () => {
 
   const variants = {
     default: {
-      x: mousePosition.x - 16,
-      y: mousePosition.y - 16,
+      x: mousePosition.x,
+      y: mousePosition.y,
+      translateX: "-50%",
+      translateY: "-50%",
       height: 32,
       width: 32,
       backgroundColor: "rgba(255, 255, 255, 1)",
       mixBlendMode: "difference",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center"
     },
     text: {
-      x: mousePosition.x - 75,
-      y: mousePosition.y - 75,
+      x: mousePosition.x,
+      y: mousePosition.y,
+      translateX: "-50%",
+      translateY: "-50%",
       height: 150,
       width: 150,
       backgroundColor: "rgba(255, 255, 255, 1)",
       mixBlendMode: "difference",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center"
     }
   };
 
@@ -66,10 +64,9 @@ const Cursor = () => {
       variants={variants}
       animate={cursorVariant}
       transition={{
-        type: "spring",
-        stiffness: 2000,
-        damping: 10,
-        mass: 0.1,
+        x: { type: "spring", stiffness: 2500, damping: 40, mass: 0.1 },
+        y: { type: "spring", stiffness: 2500, damping: 40, mass: 0.1 },
+        default: { type: "spring", stiffness: 750, damping: 20, mass: 1 },
       }}
       style={{
         position: 'fixed',
@@ -77,13 +74,16 @@ const Cursor = () => {
         left: 0,
         borderRadius: '50%',
         pointerEvents: 'none',
-        zIndex: 9999
+        zIndex: 9999,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center"
       }}
     >
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: cursorVariant === 'text' ? 1 : 0 }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.5 }}
         style={{
           position: 'absolute',
           top: '50%',

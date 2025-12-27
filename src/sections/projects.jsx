@@ -146,12 +146,12 @@ function Projects() {
 			</div>
 
 			{/* Direct Navigation - Now outside the container */}
-			<div className="navHint left" onClick={prevProject}>
+			<button className="navHint left" onClick={prevProject}>
 				&larr; Previous
-			</div>
-			<div className="navHint right" onClick={nextProject}>
+			</button>
+			<button className="navHint right" onClick={nextProject}>
 				Next &rarr;
-			</div>
+			</button>
 		</section>
 	);
 }
