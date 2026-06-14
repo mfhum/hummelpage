@@ -14,16 +14,26 @@ const projectsData = [
 	},
 	{
 		number: "02",
-		title: "Takiwatanga",
+		title: "Thunklusiv",
 		location: "Thun BE",
-		description: "Gemeinsam mit meinen Auszubildenden haben wir die Website für das Takiwatanga erarbeitet. Das Ergebnis ist ein modernes, verspieltes Design mit einer einfachen, barrierefreien Benutzeroberfläche.",
-		link: "https://takiwatanga-thun.ch",
+		description: "Gemeinsam mit meinen Auszubildenden haben wir die Website für thunklusiv erarbeitet. Das Ergebnis ist ein modernes, verspieltes Design mit einer einfachen, barrierefreien Benutzeroberfläche.",
+		link: "https://thunklusiv.ch",
 		buttonText: "Website besuchen",
 		testimonial: "Das kreative Design widerspiegelt genau das wieder, was wir sind und was wir machen!",
-		author: "Takiwatanga Thun, Verein"
+		author: "Thunklusiv, Verein"
 	},
 	{
 		number: "03",
+		title: "BookingHive",
+		location: "CH",
+		description: "BookingHive macht Online-Reservierungen für Restaurants einfach. Jedes Lokal bekommt seinen eigenen Buchungsauftritt – mit Tischverwaltung, Grundrisseditor und automatischen Gästebestätigungen per E-Mail.",
+		link: "https://bookinghive.ch",
+		buttonText: "Website besuchen",
+		testimonial: "Eigenes Buchungssystem, eigene Domain, volle Kontrolle – ohne Abo bei Drittanbietern.",
+		author: "Marius Hummel, Entwickler"
+	},
+	{
+		number: "04",
 		title: "Portfolio",
 		location: "Open Source",
 		description: "Das Projekt, auf dem du dich gerade befindest. Der Code ist öffentlich zugänglich und dient als Showcase für moderne Web-Technologien und Animationen.",

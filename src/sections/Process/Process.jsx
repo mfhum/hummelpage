@@ -44,14 +44,14 @@ function Process() {
               </h3>
             </div>
             <div className='projectCard'>
-              <a href='https://takiwatanga-thun.ch' target='_blank' aria-label='Mein letztes Projekt (Takiwatanga Thun)'>
-                <h3 className="clickable">Takiwatanga in Thun</h3>
+              <a href='https://thunklusiv.ch' target='_blank' aria-label='Mein letztes Projekt (Thunklusiv)'>
+                <h3 className="clickable">Thunklusiv</h3>
               </a>
               <h3 className='projectText'>
-                Mithilfe meiner Auszubildenden in meinem aktuellen Job, haben wir die Website für das Takiwatanga in Thun erstellt. Ein modernes, verspieltes Design und eine einfache, barrierefreie
+                Mithilfe meiner Auszubildenden in meinem aktuellen Job, haben wir die Website für thunklusiv erstellt. Ein modernes, verspieltes Design und eine einfache, barrierefreie
                 Benutzeroberfläche, die es den Nutzern ermöglicht, sich schnell zurechtzufinden und Infos zu den neusten Veranstaltungen zu finden.
                 <br/>
-                "Das kreative Design wieder spiegelt genau das wieder, was wir sind und was wir machen!" - Takiwatanga Thun
+                "Das kreative Design wieder spiegelt genau das wieder, was wir sind und was wir machen!" - Thunklusiv
               </h3>
             </div>
             <div className='projectCard'>
