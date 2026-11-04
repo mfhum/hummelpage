@@ -1,0 +1,9 @@
+# Local preview of the production build: docker compose -f docker-compose.local.yml up --build
+services:
+  mariusli:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hummelpage-frontend-local
+    ports:
+      - '8080:80'
