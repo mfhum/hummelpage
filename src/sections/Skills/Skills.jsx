@@ -57,6 +57,7 @@ const MagneticPill = ({ children, href, mouseX, mouseY }) => {
 				<motion.a
 					href={href}
 					target="_blank"
+					rel="noopener noreferrer"
 					className="skillLink"
 					whileHover={{ x: -4, y: -4 }}
 					style={{ display: 'block' }}

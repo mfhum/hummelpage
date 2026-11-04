@@ -1,6 +1,6 @@
 .Hero
   width: 100%
-  height: 100dvh
+  height: 100vh
   overflow: hidden
   position: relative
   background-color: $primary-white
@@ -17,7 +17,7 @@
   z-index: 2
   pointer-events: none
   opacity: 0.04
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg")
+  background-image: url("/noise.svg")
   filter: contrast(150%) brightness(100%)
 
 .mouse-glow
@@ -28,7 +28,9 @@
   border-radius: 50%
   pointer-events: none
   z-index: 1
-  transform: translate(-50%, -50%)
+  top: 0
+  left: 0
+  will-change: transform
   mix-blend-mode: multiply
 
 .dust-container
@@ -44,8 +46,17 @@
   position: absolute
   background: $secondary-color
   border-radius: 50%
-  opacity: 0.2
+  top: 0
+  left: 0
   filter: blur(1px)
+  animation: dust-drift linear infinite
+  will-change: transform
+
+@keyframes dust-drift
+  from
+    transform: translate(var(--from-x), var(--from-y))
+  to
+    transform: translate(var(--to-x), var(--to-y))
 
 .heroBackground
   position: absolute
@@ -62,30 +73,30 @@
   border-radius: 50%
   filter: blur(80px)
   opacity: 0.6
+  will-change: transform
 
 .legacy-circle
   position: absolute
-  top: -10dvh
-  right: -10dvw
+  top: -10vh
+  right: -10vw
   background: radial-gradient($primary-white 10%, $secondary-color)
   width: 600px
   height: 600px
   filter: blur(40px)
   opacity: 0.85
   z-index: 1
+  border-radius: 50%
   animation: circle-legacy 15s infinite
+  will-change: transform
   pointer-events: none
 
 @keyframes circle-legacy
   0%
-    transform: scale(1) translate(0, 15dvh)
-    border-radius: 40%
+    transform: scale(1) translate(0, 15vh)
   50%
-    transform: scale(1.1) translate(-2dvw, 20dvh)
-    border-radius: 60%
+    transform: scale(1.1) translate(-2vw, 20vh)
   100%
-    transform: scale(1) translate(0, 15dvh)
-    border-radius: 40%
+    transform: scale(1) translate(0, 15vh)
 
 .content
   margin: 0 $margin4
@@ -101,7 +112,7 @@
 
 .svgHero
   position: absolute
-  width: clamp(350px, 35dvw, 750px)
+  width: clamp(350px, 35vw, 750px)
   height: auto
   z-index: -1
   opacity: 0.8
@@ -151,6 +162,13 @@
   overflow: hidden
   white-space: nowrap
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1)
+  animation: sometimes-pulse 4s infinite
+
+@keyframes sometimes-pulse
+  0%, 100%
+    color: #888
+  50%
+    color: $secondary-color
 
 .descDesigner
   transition: color 0.4s ease
@@ -179,6 +197,18 @@
   height: 100%
   background: $secondary-color
   position: absolute
+  top: 0
+  transform-origin: top
+  animation: scroll-fill 2.5s cubic-bezier(0.76, 0, 0.24, 1) infinite
+
+// Grows from the top, then drains out the bottom — transform-only so it stays off the layout path
+@keyframes scroll-fill
+  0%
+    transform: translateY(0) scaleY(0)
+  50%
+    transform: translateY(0) scaleY(1)
+  100%
+    transform: translateY(100%) scaleY(0)
 
 .scroll-text
   font-family: "Outfit", sans-serif
@@ -199,6 +229,9 @@
     align-items: flex-start
     border-radius: 20px
     padding: 1rem
+    // The collapsed "sometimes" still takes a row in the column layout and leaves a gap
+    .descSometimes
+      display: none
     &:hover
       .descSometimes
         display: none

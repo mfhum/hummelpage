@@ -122,7 +122,7 @@ function Footer() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <img src="/images/marius.png" alt="Marius Hummel" className="footerImage" />
+          <img src="/images/marius.webp" alt="Marius Hummel" className="footerImage" width="469" height="469" loading="lazy" decoding="async" />
         </motion.div>
       </div>
       <div className="copyright">

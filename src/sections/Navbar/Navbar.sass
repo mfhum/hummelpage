@@ -9,7 +9,7 @@
 .navActive
   position: fixed
   background-color: $primary-white
-  height: 100dvh
+  height: 100vh
   width: 100%
   z-index: 5
   animation: openMenu 1.5s
@@ -75,7 +75,7 @@
 .svgNav
   position: absolute
   display: none
-  width: clamp(275px, 25dvw,550px)
+  width: clamp(275px, 25vw,550px)
   height: auto
   margin-top: -$margin1
 .svgMenu
@@ -99,8 +99,8 @@
 .navList
   position: absolute
   z-index: -1
-  width: 80dvw
-  height: 90dvh
+  width: 80vw
+  height: 90vh
   display: flex
   justify-content: center
   align-items: center
@@ -109,19 +109,19 @@
   animation: openMenuNavbar 1.5s
 
 .navItem
-  width: clamp(300px, 50dvw,1200px)
-  height: 8dvh
-  margin-bottom: 5dvh
+  width: clamp(300px, 50vw,1200px)
+  height: 8vh
+  margin-bottom: 5vh
 
 @keyframes openMenu
   0%
     height: 125px
     opacity: 0%
   70%
-    height: 70dvh
+    height: 70vh
     opacity: 100%
   100%
-    height: 100dvh
+    height: 100vh
 
 @keyframes openMenuNavbar
   0%
@@ -157,11 +157,11 @@
   .svgLogo
     width: 150px
     margin-left: -16px
+  // Fixed in the corner it covers slider arrows and footer links; the "Hummel." logo already links to the top
   .backtotop
-    margin-right: $margin2
-    margin-bottom: $margin3 + $margin2
+    display: none
   .navList
-    margin-top: 5dvh
+    margin-top: 5vh
     flex-direction: column
     align-items: flex-start
     margin-left: $margin2

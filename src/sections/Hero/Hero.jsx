@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
 import { motion, useSpring, useMotionValue, useTransform } from 'framer-motion';
 
 const InteractiveChar = ({ char, delay, mouseX, mouseY }) => {
@@ -29,9 +29,9 @@ const InteractiveChar = ({ char, delay, mouseX, mouseY }) => {
     });
   }, [mouseX, mouseY, x, y]);
 
+  // Entry animation and magnet offset need separate elements: sharing one `y` leaves the entry stuck on touch devices
   return (
     <motion.span
-      ref={ref}
       initial={{ y: "100%", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{
@@ -42,10 +42,11 @@ const InteractiveChar = ({ char, delay, mouseX, mouseY }) => {
       style={{
         display: 'inline-block',
         whiteSpace: char === ' ' ? 'pre' : 'normal',
-        x, y
       }}
     >
-      {char}
+      <motion.span ref={ref} style={{ display: 'inline-block', x, y }}>
+        {char}
+      </motion.span>
     </motion.span>
   );
 };
@@ -67,33 +68,26 @@ const SplitText = ({ children, delay = 0, mouseX, mouseY }) => {
   );
 };
 
+// Pure CSS keyframes (driven by per-particle custom properties) so the drift runs on the compositor, not in JS
 const Dust = () => {
-  const particles = Array.from({ length: 20 });
+  const particles = useMemo(() => Array.from({ length: 20 }, () => {
+    const size = Math.random() * 3 + 1;
+    return {
+      '--from-x': `${Math.random() * 100}vw`,
+      '--from-y': `${Math.random() * 100}vh`,
+      '--to-x': `${Math.random() * 100}vw`,
+      '--to-y': `${Math.random() * 100}vh`,
+      animationDuration: `${20 + Math.random() * 20}s`,
+      opacity: Math.random() * 0.5,
+      width: `${size}px`,
+      height: `${size}px`,
+    };
+  }), []);
+
   return (
     <div className="dust-container">
-      {particles.map((_, i) => (
-        <motion.div
-          key={i}
-          className="dust-particle"
-          initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            opacity: Math.random() * 0.5
-          }}
-          animate={{
-            x: [null, Math.random() * window.innerWidth],
-            y: [null, Math.random() * window.innerHeight],
-          }}
-          transition={{
-            duration: 20 + Math.random() * 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          style={{
-            width: Math.random() * 3 + 1 + 'px',
-            height: Math.random() * 3 + 1 + 'px',
-          }}
-        />
+      {particles.map((style, i) => (
+        <div key={i} className="dust-particle" style={style} />
       ))}
     </div>
   );
@@ -163,8 +157,10 @@ function Hero() {
       <motion.div
         className="mouse-glow"
         style={{
-          left: mouseX,
-          top: mouseY,
+          x: mouseX,
+          y: mouseY,
+          translateX: '-50%',
+          translateY: '-50%',
         }}
       />
 
@@ -214,15 +210,7 @@ function Hero() {
             transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
           >
             <h2>Web Developer & </h2>
-            <motion.h2
-              className='descSometimes'
-              animate={{
-                color: ["#888", "#1a57ba", "#888"],
-              }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              &nbsp;sometimes
-            </motion.h2>
+            <h2 className='descSometimes'>&nbsp;sometimes</h2>
             <h2 className='descDesigner'>&nbsp;Designer</h2>
           </motion.div>
         </div>
@@ -235,18 +223,7 @@ function Hero() {
         transition={{ delay: 2.5, duration: 1 }}
       >
         <div className="scroll-line">
-          <motion.div
-            className="scroll-fill"
-            animate={{
-              height: ["0%", "100%", "0%"],
-              top: ["0%", "0%", "100%"]
-            }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: [0.76, 0, 0.24, 1]
-            }}
-          />
+          <div className="scroll-fill" />
         </div>
         <motion.span
           className="scroll-text"
