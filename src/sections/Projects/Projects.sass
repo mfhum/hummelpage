@@ -1,6 +1,6 @@
 .ProjectsSection
-  width: 100dvw
-  height: 100dvh
+  width: 100vw
+  height: 100vh
   position: relative
   background-color: transparent
   display: flex
@@ -11,7 +11,7 @@
   width: 100%
   max-width: 1800px
   margin: 0 auto
-  padding: 0 4dvw
+  padding: 0 4vw
   height: 100%
   display: flex
   flex-direction: column
@@ -42,8 +42,8 @@
 .projectBackgroundNumber
   position: absolute
   top: -10vh
-  left: -2dvw
-  font-size: 35dvw
+  left: -2vw
+  font-size: 35vw
   font-weight: 900
   color: rgba(0, 0, 0, 0.03)
   pointer-events: none
@@ -63,7 +63,7 @@
     gap: 1.5rem
 
     .title
-      font-size: clamp(2.5rem, 6dvw, 5.5rem)
+      font-size: clamp(2.5rem, 6vw, 5.5rem)
       font-weight: 800
       letter-spacing: -0.02em
       margin: 0
@@ -89,7 +89,7 @@
 
 .descriptionSide
   .description
-    font-size: clamp(1.1rem, 1.8dvw, 1.6rem)
+    font-size: clamp(1.1rem, 1.8vw, 1.6rem)
     line-height: 1.6
     color: rgba(0, 0, 0, 0.8)
     margin-bottom: $margin3
@@ -183,12 +183,11 @@
   top: 50%
   transform: translateY(-50%)
   z-index: 4
-  outline: none
 
   &.left
-    left: 2dvw
+    left: 2vw
   &.right
-    right: 2dvw
+    right: 2vw
 
   &:hover
     opacity: 1
@@ -196,6 +195,9 @@
     color: #fff
     border-color: $secondary-color
     transform: translateY(-50%) scale(1.05)
+
+.sliderArrow
+  display: none
 
 .sliderProgress
   display: flex
@@ -205,10 +207,19 @@
 .progressDot
   width: 8px
   height: 8px
+  padding: 0
+  border: none
   border-radius: 50%
   background: rgba(0, 0, 0, 0.1)
   cursor: pointer
   transition: all 0.6s ease
+  position: relative
+
+  // Enlarges the hit area to a comfortable touch target without changing the dot's look
+  &::before
+    content: ''
+    position: absolute
+    inset: -12px -6px
 
   &:hover
     background: rgba(0, 0, 0, 0.2)
@@ -237,7 +248,7 @@
 @media only screen and (max-width: 900px)
   .ProjectsSection
     height: auto
-    min-height: 100dvh
+    min-height: 100vh
     padding-top: $margin4
     padding-bottom: 180px
     overflow-x: hidden
@@ -271,9 +282,9 @@
       cursor: grabbing
 
   .projectBackgroundNumber
-    font-size: 50dvw
-    top: -5dvh
-    left: -10dvw
+    font-size: 50vw
+    top: -5vh
+    left: -10vw
 
   .projectHeader
     .titleWrapper
@@ -308,10 +319,31 @@
     position: relative
     z-index: 4
 
+    flex-wrap: nowrap
+    justify-content: space-between
+
     .sliderProgress
-      width: 100%
       justify-content: center
-      margin-bottom: 0.5rem
+
+  .sliderArrow
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 44px
+    height: 44px
+    flex-shrink: 0
+    padding: 0
+    border: 1px solid rgba($secondary-color, 0.2)
+    border-radius: 50%
+    background: rgba($secondary-color, 0.05)
+    color: $secondary-color
+    font-size: 1.2rem
+    cursor: pointer
+    transition: background 0.3s ease, color 0.3s ease
+
+    &:active
+      background: $secondary-color
+      color: #fff
 
   .navHint
     display: none

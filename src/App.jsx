@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import Hero from './sections/Hero/Hero';
 import Navbar from './sections/Navbar/Navbar';
 import Footer from './sections/Footer/Footer';
@@ -35,9 +36,11 @@ function App() {
 }
 function AppWrapper() {
   return (
-    <Router>
-      <App />
-    </Router>
+    <MotionConfig reducedMotion="user">
+      <Router>
+        <App />
+      </Router>
+    </MotionConfig>
   );
 }
 

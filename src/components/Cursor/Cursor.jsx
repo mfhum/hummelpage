@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
-import '../../index.css';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
+
+const positionSpring = { stiffness: 2500, damping: 40, mass: 0.1 };
 
 const Cursor = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const x = useSpring(mouseX, positionSpring);
+  const y = useSpring(mouseY, positionSpring);
   const [cursorVariant, setCursorVariant] = useState('default');
   const [isMobile, setIsMobile] = useState(false);
 
@@ -14,31 +18,27 @@ const Cursor = () => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
+    // Position goes through motion values so mousemove doesn't re-render; state only changes on hover toggle
     const mouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      });
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
 
-      const target = e.target;
-      const isHoverable = target.closest('a, button, .linkItem, .skillItem');
+      const isHoverable = e.target.closest('a, button, .linkItem, .skillItem');
       setCursorVariant(isHoverable ? 'text' : 'default');
     };
 
-    window.addEventListener('mousemove', mouseMove);
+    window.addEventListener('mousemove', mouseMove, { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', mouseMove);
       window.removeEventListener('resize', checkMobile);
     };
-  }, []);
+  }, [mouseX, mouseY]);
 
   if (isMobile) return null;
 
   const variants = {
     default: {
-      x: mousePosition.x,
-      y: mousePosition.y,
       translateX: "-50%",
       translateY: "-50%",
       height: 32,
@@ -47,8 +47,6 @@ const Cursor = () => {
       mixBlendMode: "difference",
     },
     text: {
-      x: mousePosition.x,
-      y: mousePosition.y,
       translateX: "-50%",
       translateY: "-50%",
       height: 150,
@@ -64,11 +62,11 @@ const Cursor = () => {
       variants={variants}
       animate={cursorVariant}
       transition={{
-        x: { type: "spring", stiffness: 2500, damping: 40, mass: 0.1 },
-        y: { type: "spring", stiffness: 2500, damping: 40, mass: 0.1 },
         default: { type: "spring", stiffness: 750, damping: 20, mass: 1 },
       }}
       style={{
+        x,
+        y,
         position: 'fixed',
         top: 0,
         left: 0,

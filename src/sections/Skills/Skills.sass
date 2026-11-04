@@ -1,7 +1,7 @@
 // Parent slider container
 .slider
-  margin-top: 10dvh
-  margin-bottom: 10dvh
+  margin-top: 10vh
+  margin-bottom: 10vh
   display: flex
   justify-content: space-between
   position: relative
@@ -23,15 +23,15 @@
     left: 0
     margin-left: 15px
     width: calc(33.33% - 10px) // Adjust width for three buttons
-    background-color: lighten($secondary-color, 20)
+    background-color: $secondary-color
     border-radius: 25px
     z-index: 0
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s ease-in-out
     transform: translateX(calc(var(--active-index) * 100%))
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2)
 
-// Individual buttons
-.sliderItem
+// Individual buttons — scoped to .slider so it doesn't leak into the Projects slider
+.slider .sliderItem
   flex: 1
   text-align: center
   background: none
@@ -71,14 +71,17 @@
   gap: 30px
   padding: 10px
   justify-content: center
+  align-items: flex-start
+  // Reserves room for the tallest category so switching tabs doesn't make the page jump
+  min-height: 220px
+  margin-bottom: $margin4
 
 .skillCategory
   display: flex
-  width: 80dvw
+  width: 80vw
   flex-wrap: wrap
   gap: 10px
   justify-content: center
-  margin-bottom: 40dvh
 
 .skillLink
   text-decoration: none // Reset default link underline
@@ -132,6 +135,10 @@
   .slider
     margin: $margin2
     width: calc(100% - 2 * #{$margin2})
+
+  .skillsGrid
+    min-height: 540px
+    margin-bottom: $margin3
 
   .skillCard
     padding: 10px 20px

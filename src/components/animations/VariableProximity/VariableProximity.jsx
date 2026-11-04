@@ -21,15 +21,15 @@ function useAnimationFrame(callback) {
 }
 
 function useMousePositionRef(containerRef) {
-  const positionRef = useRef({ x: 0, y: 0 });
+  const positionRef = useRef({ x: 0, y: 0, dirty: false });
 
   useEffect(() => {
     const updatePosition = (x, y) => {
       if (containerRef?.current) {
         const rect = containerRef.current.getBoundingClientRect();
-        positionRef.current = { x: x - rect.left, y: y - rect.top };
+        positionRef.current = { x: x - rect.left, y: y - rect.top, dirty: true };
       } else {
-        positionRef.current = { x, y };
+        positionRef.current = { x, y, dirty: true };
       }
     };
 
@@ -39,8 +39,8 @@ function useMousePositionRef(containerRef) {
       updatePosition(touch.clientX, touch.clientY);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: true });
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchmove", handleTouchMove);
@@ -106,14 +106,31 @@ const VariableProximity = forwardRef((props, ref) => {
     }
   };
 
+  const isVisibleRef = useRef(false);
+
+  useEffect(() => {
+    const container = containerRef?.current;
+    if (!container) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      isVisibleRef.current = entry.isIntersecting;
+    });
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [containerRef]);
+
+  // Measuring every letter forces layout, so only do it when the pointer moved while the text is on screen
   useAnimationFrame(() => {
-    if (!containerRef?.current) return;
+    if (!containerRef?.current || !isVisibleRef.current || !mousePositionRef.current.dirty) return;
+    mousePositionRef.current.dirty = false;
     const containerRect = containerRef.current.getBoundingClientRect();
 
-    letterRefs.current.forEach((letterRef, index) => {
-      if (!letterRef) return;
+    // Read all rects before writing styles to avoid layout thrashing
+    const rects = letterRefs.current.map((letterRef) => letterRef?.getBoundingClientRect());
 
-      const rect = letterRef.getBoundingClientRect();
+    letterRefs.current.forEach((letterRef, index) => {
+      const rect = rects[index];
+      if (!letterRef || !rect) return;
+
       const letterCenterX = rect.left + rect.width / 2 - containerRect.left;
       const letterCenterY = rect.top + rect.height / 2 - containerRect.top;
 
@@ -125,7 +142,10 @@ const VariableProximity = forwardRef((props, ref) => {
       );
 
       if (distance >= radius) {
-        letterRef.style.fontVariationSettings = fromFontVariationSettings;
+        if (interpolatedSettingsRef.current[index] !== fromFontVariationSettings) {
+          interpolatedSettingsRef.current[index] = fromFontVariationSettings;
+          letterRef.style.fontVariationSettings = fromFontVariationSettings;
+        }
         return;
       }
 

@@ -4,36 +4,65 @@ function Navbar() {
   const [number, setNumber] = React.useState('00');
 
   React.useEffect(() => {
-    const handleScroll = () => {
+    let frameId = 0;
+
+    const updateNumber = () => {
+      frameId = 0;
       const skills = document.getElementById('skills');
-      const skillsPosition = skills.getBoundingClientRect();
       const unique = document.getElementById('unique');
-      const uniquePosition = unique.getBoundingClientRect();
       const projects = document.getElementById('projects');
-      const projectsPosition = projects.getBoundingClientRect();
       const footer = document.getElementById('footer');
+      if (!skills || !unique || !projects || !footer) return;
+
+      const skillsPosition = skills.getBoundingClientRect();
+      const uniquePosition = unique.getBoundingClientRect();
+      const projectsPosition = projects.getBoundingClientRect();
       const footerPosition = footer.getBoundingClientRect();
 
-      // Check if the unique section is in view
+      // The footer is shorter than the viewport and never reaches the top, so it counts once it fills the lower half
       if (projectsPosition.top >= 200) {
         setNumber('00');
       } else if (uniquePosition.top >= 25) {
         setNumber('01');
       } else if (skillsPosition.top >= 25) {
         setNumber('02');
-      } else if (footerPosition.top >= 25) {
+      } else if (footerPosition.top >= window.innerHeight / 2) {
         setNumber('03');
       } else {
         setNumber('04');
       }
     };
 
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
+    // Scroll fires far more often than frames render, so measure at most once per frame
+    const handleScroll = () => {
+      if (!frameId) frameId = requestAnimationFrame(updateNumber);
+    };
 
-    // Cleanup function to remove the event listener
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      cancelAnimationFrame(frameId);
+    };
   }, []);
+
+  React.useEffect(() => {
+    if (!menuOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    };
+    // Lock page scroll behind the fullscreen menu
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [menuOpen]);
+
   return (
     <>
       <nav className={menuOpen ? 'navActive' : 'nav'}>
@@ -48,7 +77,7 @@ function Navbar() {
             />
           </svg>
         </a>
-        <button onClick={() => setMenuOpen(!menuOpen)} className='svg menu' aria-label='Menu öffnen'>
+        <button onClick={() => setMenuOpen(!menuOpen)} className='svg menu' aria-label={menuOpen ? 'Menu schliessen' : 'Menu öffnen'} aria-expanded={menuOpen}>
           <h2>Menu</h2>
           <svg className='svgMenu' width='225' height='50' viewBox='0 0 208 76' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <path

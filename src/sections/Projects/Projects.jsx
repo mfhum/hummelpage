@@ -193,11 +193,17 @@ function Projects() {
 
 				{/* Slider Controls Container - Moved out of sliderWrapper but still in container */}
 				<div className="sliderControls">
+					<button type="button" className="sliderArrow" onClick={prevProject} aria-label="Vorheriges Projekt">
+						&larr;
+					</button>
 					<div className="sliderProgress">
-						{projectsData.map((_, i) => (
-							<div
+						{projectsData.map((project, i) => (
+							<button
+								type="button"
 								key={i}
 								className={`progressDot ${i === index ? 'active' : ''}`}
+								aria-label={`Projekt ${i + 1}: ${project.title}`}
+								aria-current={i === index ? 'true' : undefined}
 								onClick={() => {
 									setDirection(i > index ? 1 : -1);
 									setIndex(i);
@@ -205,6 +211,9 @@ function Projects() {
 							/>
 						))}
 					</div>
+					<button type="button" className="sliderArrow" onClick={nextProject} aria-label="Nächstes Projekt">
+						&rarr;
+					</button>
 				</div>
 			</div>
 

@@ -5,7 +5,7 @@
 */
 
 import { useTrail, animated } from "@react-spring/web";
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
 
 import "./BlobCursor.scss";
 
@@ -31,12 +31,22 @@ export default function BlobCursor({
     return { left: 0, top: 0 };
   }, []);
 
+  // Blobs stay hidden until the pointer is inside, otherwise they sit parked in the top-left corner
+  const [isActive, setIsActive] = useState(false);
+
   const handleMove = (e) => {
     const { left, top } = updatePosition();
     const x = e.clientX || (e.touches && e.touches[0].clientX);
     const y = e.clientY || (e.touches && e.touches[0].clientY);
-    api.start({ xy: [x - left, y - top] });
+    const target = [x - left, y - top];
+    if (!isActive) {
+      api.set({ xy: target });
+      setIsActive(true);
+    }
+    api.start({ xy: target });
   };
+
+  const handleLeave = () => setIsActive(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,9 +72,11 @@ export default function BlobCursor({
       </svg>
       <div
         ref={ref}
-        className="blobCursorContainer"
+        className={`blobCursorContainer${isActive ? ' isActive' : ''}`}
         onMouseMove={handleMove}
         onTouchMove={handleMove}
+        onMouseLeave={handleLeave}
+        onTouchEnd={handleLeave}
       >
         {trail.map((props, index) => (
           <animated.div

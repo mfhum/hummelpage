@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -164,27 +163,35 @@ table {
 
 @font-face {
   font-family: "Outfit";
-  font-optical-sizing: auto;
-  font-weight: 400;
   font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/outfit-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
   font-family: "Outfit";
-  font-optical-sizing: auto;
-  font-weight: 500;
   font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/outfit-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: "Outfit";
-  font-optical-sizing: auto;
-  font-weight: 600;
+  font-family: "Roboto Flex";
   font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("/fonts/roboto-flex-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Outfit";
-  font-optical-sizing: auto;
-  font-weight: 700;
+  font-family: "Roboto Flex";
   font-style: normal;
+  font-weight: 100 1000;
+  font-display: swap;
+  src: url("/fonts/roboto-flex-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 * {
   font-family: "Outfit", sans-serif;
@@ -202,8 +209,8 @@ img {
 }
 
 h1 {
-  font-size: clamp(6.25rem, 7dvw, 12.5rem);
-  line-height: clamp(6.875rem, 7dvw, 13.75rem);
+  font-size: clamp(6.25rem, 7vw, 12.5rem);
+  line-height: clamp(6.875rem, 7vw, 13.75rem);
   font-family: "Outfit", sans-serif;
   font-weight: 400;
 }
@@ -245,8 +252,8 @@ a:focus-visible {
 
 @media only screen and (max-width: 800px) {
   h1 {
-    font-size: clamp(3.125rem, 15dvw, 4.6875rem);
-    line-height: clamp(3.75rem, 30dvw, 5.625rem);
+    font-size: clamp(3.125rem, 15vw, 4.6875rem);
+    line-height: clamp(3.75rem, 30vw, 5.625rem);
   }
   h2 {
     font-size: 1.875rem;
@@ -263,11 +270,25 @@ a:focus-visible {
     line-height: 1.5rem;
   }
 }
+:focus-visible {
+  outline: 2px solid #1a57ba;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 .scrollProgressWrapper {
   position: fixed;
   right: 3rem;
-  top: 5dvh;
-  height: 90dvh;
+  top: 5vh;
+  height: 90vh;
   width: 1px;
   background: rgba(0, 0, 0, 0.05);
   z-index: 1000;
@@ -337,7 +358,7 @@ a:focus-visible {
 .navActive {
   position: fixed;
   background-color: #f6f6f6;
-  height: 100dvh;
+  height: 100vh;
   width: 100%;
   z-index: 5;
   animation: openMenu 1.5s;
@@ -418,7 +439,7 @@ a:focus-visible {
 .svgNav {
   position: absolute;
   display: none;
-  width: clamp(275px, 25dvw, 550px);
+  width: clamp(275px, 25vw, 550px);
   height: auto;
   margin-top: -16px;
 }
@@ -451,8 +472,8 @@ a:focus-visible {
 .navList {
   position: absolute;
   z-index: -1;
-  width: 80dvw;
-  height: 90dvh;
+  width: 80vw;
+  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -462,9 +483,9 @@ a:focus-visible {
 }
 
 .navItem {
-  width: clamp(300px, 50dvw, 1200px);
-  height: 8dvh;
-  margin-bottom: 5dvh;
+  width: clamp(300px, 50vw, 1200px);
+  height: 8vh;
+  margin-bottom: 5vh;
 }
 
 @keyframes openMenu {
@@ -473,11 +494,11 @@ a:focus-visible {
     opacity: 0%;
   }
   70% {
-    height: 70dvh;
+    height: 70vh;
     opacity: 100%;
   }
   100% {
-    height: 100dvh;
+    height: 100vh;
   }
 }
 @keyframes openMenuNavbar {
@@ -526,11 +547,10 @@ a:focus-visible {
     margin-left: -16px;
   }
   .backtotop {
-    margin-right: 32px;
-    margin-bottom: 86px;
+    display: none;
   }
   .navList {
-    margin-top: 5dvh;
+    margin-top: 5vh;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 32px;
@@ -542,7 +562,7 @@ a:focus-visible {
 }
 .Hero {
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   background-color: #f6f6f6;
@@ -560,7 +580,7 @@ a:focus-visible {
   z-index: 2;
   pointer-events: none;
   opacity: 0.04;
-  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  background-image: url("/noise.svg");
   filter: contrast(150%) brightness(100%);
 }
 
@@ -572,7 +592,9 @@ a:focus-visible {
   border-radius: 50%;
   pointer-events: none;
   z-index: 1;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  will-change: transform;
   mix-blend-mode: multiply;
 }
 
@@ -590,10 +612,21 @@ a:focus-visible {
   position: absolute;
   background: #1a57ba;
   border-radius: 50%;
-  opacity: 0.2;
+  top: 0;
+  left: 0;
   filter: blur(1px);
+  animation: dust-drift linear infinite;
+  will-change: transform;
 }
 
+@keyframes dust-drift {
+  from {
+    transform: translate(var(--from-x), var(--from-y));
+  }
+  to {
+    transform: translate(var(--to-x), var(--to-y));
+  }
+}
 .heroBackground {
   position: absolute;
   top: 0;
@@ -610,34 +643,34 @@ a:focus-visible {
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.6;
+  will-change: transform;
 }
 
 .legacy-circle {
   position: absolute;
-  top: -10dvh;
-  right: -10dvw;
+  top: -10vh;
+  right: -10vw;
   background: radial-gradient(#f6f6f6 10%, #1a57ba);
   width: 600px;
   height: 600px;
   filter: blur(40px);
   opacity: 0.85;
   z-index: 1;
+  border-radius: 50%;
   animation: circle-legacy 15s infinite;
+  will-change: transform;
   pointer-events: none;
 }
 
 @keyframes circle-legacy {
   0% {
-    transform: scale(1) translate(0, 15dvh);
-    border-radius: 40%;
+    transform: scale(1) translate(0, 15vh);
   }
   50% {
-    transform: scale(1.1) translate(-2dvw, 20dvh);
-    border-radius: 60%;
+    transform: scale(1.1) translate(-2vw, 20vh);
   }
   100% {
-    transform: scale(1) translate(0, 15dvh);
-    border-radius: 40%;
+    transform: scale(1) translate(0, 15vh);
   }
 }
 .content {
@@ -656,7 +689,7 @@ a:focus-visible {
 
 .svgHero {
   position: absolute;
-  width: clamp(350px, 35dvw, 750px);
+  width: clamp(350px, 35vw, 750px);
   height: auto;
   z-index: -1;
   opacity: 0.8;
@@ -711,8 +744,17 @@ a:focus-visible {
   overflow: hidden;
   white-space: nowrap;
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: sometimes-pulse 4s infinite;
 }
 
+@keyframes sometimes-pulse {
+  0%, 100% {
+    color: #888;
+  }
+  50% {
+    color: #1a57ba;
+  }
+}
 .descDesigner {
   transition: color 0.4s ease;
 }
@@ -743,8 +785,22 @@ a:focus-visible {
   height: 100%;
   background: #1a57ba;
   position: absolute;
+  top: 0;
+  transform-origin: top;
+  animation: scroll-fill 2.5s cubic-bezier(0.76, 0, 0.24, 1) infinite;
 }
 
+@keyframes scroll-fill {
+  0% {
+    transform: translateY(0) scaleY(0);
+  }
+  50% {
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    transform: translateY(100%) scaleY(0);
+  }
+}
 .scroll-text {
   font-family: "Outfit", sans-serif;
   font-size: 0.75rem;
@@ -767,6 +823,9 @@ a:focus-visible {
     border-radius: 20px;
     padding: 1rem;
   }
+  .descText .descSometimes {
+    display: none;
+  }
   .descText:hover .descSometimes {
     display: none;
   }
@@ -778,8 +837,8 @@ a:focus-visible {
   }
 }
 .slider {
-  margin-top: 10dvh;
-  margin-bottom: 10dvh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -800,7 +859,7 @@ a:focus-visible {
   left: 0;
   margin-left: 15px;
   width: calc(33.33% - 10px);
-  background-color: rgb(83.0377358491, 139.4339622642, 230.9622641509);
+  background-color: #1a57ba;
   border-radius: 25px;
   z-index: 0;
   transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), background-color 0.3s ease-in-out;
@@ -808,7 +867,7 @@ a:focus-visible {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-.sliderItem {
+.slider .sliderItem {
   flex: 1;
   text-align: center;
   background: none;
@@ -820,15 +879,15 @@ a:focus-visible {
   cursor: pointer;
 }
 @media (hover: hover) and (pointer: fine) {
-  .sliderItem {
+  .slider .sliderItem {
     cursor: none;
   }
 }
-.sliderItem:hover {
+.slider .sliderItem:hover {
   transform: scale(1.1) rotate(1deg);
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-.sliderItem.active {
+.slider .sliderItem.active {
   color: #f6f6f6;
   transition: color 0.5s ease-in-out;
 }
@@ -854,15 +913,17 @@ a:focus-visible {
   gap: 30px;
   padding: 10px;
   justify-content: center;
+  align-items: flex-start;
+  min-height: 220px;
+  margin-bottom: 144px;
 }
 
 .skillCategory {
   display: flex;
-  width: 80dvw;
+  width: 80vw;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin-bottom: 40dvh;
 }
 
 .skillLink {
@@ -929,6 +990,10 @@ a:focus-visible {
     margin: 32px;
     width: calc(100% - 2 * 32px);
   }
+  .skillsGrid {
+    min-height: 540px;
+    margin-bottom: 54px;
+  }
   .skillCard {
     padding: 10px 20px;
   }
@@ -937,7 +1002,7 @@ a:focus-visible {
   }
 }
 .UniqueSection {
-  height: 110dvh;
+  height: 110vh;
   width: 100%;
   background-color: rgba(26, 87, 186, 0.6);
 }
@@ -947,12 +1012,12 @@ a:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70dvh;
+  height: 70vh;
   width: 100%;
 }
 
 .uniqueText {
-  width: 50dvw;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -974,15 +1039,15 @@ a:focus-visible {
     padding-top: 86px;
   }
   .uniqueText {
-    width: 80dvw;
+    width: 80vw;
     margin-left: 32px;
     margin-top: 32px;
   }
   .uniqueTextContainer {
-    height: 60dvh;
+    height: 60vh;
   }
   .UniqueSection {
-    height: 100dvh;
+    height: 100vh;
   }
 }
 /* Process Section */
@@ -999,7 +1064,7 @@ a:focus-visible {
 
 .processSteps {
   margin-left: 144px;
-  width: clamp(700px, 70dvw, 1250px);
+  width: clamp(700px, 70vw, 1250px);
   display: flex;
   margin-top: 32px;
   flex-direction: column;
@@ -1055,7 +1120,7 @@ a:focus-visible {
 
 .projects {
   margin-left: 144px;
-  width: clamp(700px, 70dvw, 1250px);
+  width: clamp(700px, 70vw, 1250px);
 }
 
 .projectTitle {
@@ -1079,14 +1144,14 @@ a:focus-visible {
   }
   .processSteps {
     margin-left: 16px;
-    width: 90dvw;
+    width: 90vw;
   }
   .step {
     flex-direction: column;
     align-items: flex-start;
   }
   .step h2 {
-    width: 75dvw;
+    width: 75vw;
     word-wrap: break-word;
     margin-right: 32px;
     margin-bottom: 16px;
@@ -1115,12 +1180,12 @@ a:focus-visible {
   }
   .projects {
     margin-left: 32px;
-    width: calc(90dvw - 32px);
+    width: calc(90vw - 32px);
   }
 }
 .ProjectsSection {
-  width: 100dvw;
-  height: 100dvh;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   background-color: transparent;
   display: flex;
@@ -1132,7 +1197,7 @@ a:focus-visible {
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
-  padding: 0 4dvw;
+  padding: 0 4vw;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -1167,8 +1232,8 @@ a:focus-visible {
 .projectBackgroundNumber {
   position: absolute;
   top: -10vh;
-  left: -2dvw;
-  font-size: 35dvw;
+  left: -2vw;
+  font-size: 35vw;
   font-weight: 900;
   color: rgba(0, 0, 0, 0.03);
   pointer-events: none;
@@ -1190,7 +1255,7 @@ a:focus-visible {
   gap: 1.5rem;
 }
 .projectHeader .titleWrapper .title {
-  font-size: clamp(2.5rem, 6dvw, 5.5rem);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
   margin: 0;
@@ -1217,7 +1282,7 @@ a:focus-visible {
 }
 
 .descriptionSide .description {
-  font-size: clamp(1.1rem, 1.8dvw, 1.6rem);
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
   line-height: 1.6;
   color: rgba(0, 0, 0, 0.8);
   margin-bottom: 54px;
@@ -1314,13 +1379,12 @@ a:focus-visible {
   top: 50%;
   transform: translateY(-50%);
   z-index: 4;
-  outline: none;
 }
 .navHint.left {
-  left: 2dvw;
+  left: 2vw;
 }
 .navHint.right {
-  right: 2dvw;
+  right: 2vw;
 }
 .navHint:hover {
   opacity: 1;
@@ -1328,6 +1392,10 @@ a:focus-visible {
   color: #fff;
   border-color: #1a57ba;
   transform: translateY(-50%) scale(1.05);
+}
+
+.sliderArrow {
+  display: none;
 }
 
 .sliderProgress {
@@ -1339,10 +1407,18 @@ a:focus-visible {
 .progressDot {
   width: 8px;
   height: 8px;
+  padding: 0;
+  border: none;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.6s ease;
+  position: relative;
+}
+.progressDot::before {
+  content: "";
+  position: absolute;
+  inset: -12px -6px;
 }
 .progressDot:hover {
   background: rgba(0, 0, 0, 0.2);
@@ -1377,7 +1453,7 @@ a:focus-visible {
 @media only screen and (max-width: 900px) {
   .ProjectsSection {
     height: auto;
-    min-height: 100dvh;
+    min-height: 100vh;
     padding-top: 144px;
     padding-bottom: 180px;
     overflow-x: hidden;
@@ -1412,9 +1488,9 @@ a:focus-visible {
     cursor: grabbing;
   }
   .projectBackgroundNumber {
-    font-size: 50dvw;
-    top: -5dvh;
-    left: -10dvw;
+    font-size: 50vw;
+    top: -5vh;
+    left: -10vw;
   }
   .projectHeader .titleWrapper {
     flex-direction: column;
@@ -1448,19 +1524,39 @@ a:focus-visible {
     gap: 1.5rem;
     position: relative;
     z-index: 4;
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
   .sliderControls .sliderProgress {
-    width: 100%;
     justify-content: center;
-    margin-bottom: 0.5rem;
+  }
+  .sliderArrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    padding: 0;
+    border: 1px solid rgba(26, 87, 186, 0.2);
+    border-radius: 50%;
+    background: rgba(26, 87, 186, 0.05);
+    color: #1a57ba;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  .sliderArrow:active {
+    background: #1a57ba;
+    color: #fff;
   }
   .navHint {
     display: none;
   }
 }
 .impressumPage {
-  min-height: 100dvh;
-  padding: 10dvh 5dvw;
+  min-height: 100vh;
+  padding: 10vh 5vw;
   background-color: #f6f6f6;
   display: flex;
   flex-direction: column;
@@ -1527,7 +1623,7 @@ a:focus-visible {
 }
 
 .impressumTitle {
-  font-size: clamp(3rem, 6dvw, 5rem);
+  font-size: clamp(3rem, 6vw, 5rem);
   line-height: 1;
   margin-bottom: 5rem;
   font-weight: 700;
@@ -1560,7 +1656,7 @@ a:focus-visible {
 
 @media only screen and (max-width: 900px) {
   .impressumPage {
-    padding: 5dvh 3dvw;
+    padding: 5vh 3vw;
   }
   .impressumCard {
     padding: 3rem 2rem;
@@ -1577,9 +1673,9 @@ a:focus-visible {
 .footer {
   position: relative;
   width: 100%;
-  max-width: 100dvw;
-  padding: 5dvh 2dvw;
-  padding-bottom: 2dvh;
+  max-width: 100vw;
+  padding: 5vh 2vw;
+  padding-bottom: 2vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -1601,7 +1697,7 @@ a:focus-visible {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 80dvh;
+  min-height: 80vh;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
@@ -1655,7 +1751,7 @@ a:focus-visible {
   position: absolute;
   bottom: -20px;
   right: -50px;
-  width: 45dvw;
+  width: 45vw;
   max-width: 700px;
   z-index: 1;
   pointer-events: none;
@@ -1684,7 +1780,7 @@ a:focus-visible {
 .footerLink {
   font-size: 1.2rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -1711,11 +1807,11 @@ a:focus-visible {
   }
   .footerCard {
     padding: 3rem 2rem;
-    min-height: 60dvh;
+    min-height: 60vh;
     border-radius: 30px 0 0 30px;
     box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.1);
-    width: calc(100% - 10dvw);
-    margin-left: 10dvw;
+    width: calc(100% - 10vw);
+    margin-left: 10vw;
     align-self: flex-end;
   }
   .footerHeader h1 {
@@ -1731,9 +1827,9 @@ a:focus-visible {
     font-size: 1rem;
   }
   .footerImageContainer {
-    width: 80dvw;
-    right: -10dvw;
-    bottom: -2dvh;
+    width: 80vw;
+    right: -10vw;
+    bottom: -2vh;
     opacity: 0.6;
   }
   .footerBottom {
@@ -1744,6 +1840,10 @@ a:focus-visible {
   .socials {
     flex-wrap: wrap;
     gap: 1rem;
+  }
+  .footerLink {
+    color: #fff;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
   }
 }
 
